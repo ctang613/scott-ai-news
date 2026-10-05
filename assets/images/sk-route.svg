@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#1a2744"/>
+  <circle cx="160" cy="120" r="160" fill="#f0c36a" opacity="0.12"/>
+  <rect x="72" y="64" width="28" height="28" rx="6" fill="#f0c36a"/>
+  <text x="116" y="92" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="28">ROUTE</text>
+  <g fill="none" stroke-width="28" stroke-linecap="round">
+    <path d="M180 340 H420" stroke="#f7f3ec"/>
+    <path d="M420 340 C560 340 560 180 760 180 H980" stroke="#f0c36a"/>
+    <path d="M420 340 H980" stroke="#f7f3ec"/>
+    <path d="M420 340 C560 340 560 500 760 500 H980" stroke="#8fbfb2"/>
+  </g>
+  <circle cx="180" cy="340" r="22" fill="#f0c36a"/>
+  <circle cx="980" cy="180" r="18" fill="#f0c36a"/>
+  <circle cx="980" cy="340" r="18" fill="#f7f3ec"/>
+  <circle cx="980" cy="500" r="18" fill="#8fbfb2"/>
+  <text x="72" y="620" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="42">AI News Feed</text>
+</svg>

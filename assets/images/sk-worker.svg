@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#2c211c"/>
+  <circle cx="980" cy="120" r="200" fill="#f38020" opacity="0.16"/>
+  <rect x="72" y="64" width="28" height="28" rx="6" fill="#f38020"/>
+  <text x="116" y="92" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="28">MACHINE</text>
+  <rect x="180" y="180" width="720" height="340" rx="36" fill="#f7f3ec"/>
+  <rect x="230" y="240" width="250" height="150" rx="18" fill="#2c211c"/>
+  <rect x="520" y="240" width="250" height="18" rx="9" fill="#e4d5c6"/>
+  <rect x="520" y="280" width="190" height="18" rx="9" fill="#e4d5c6"/>
+  <rect x="520" y="320" width="220" height="18" rx="9" fill="#e4d5c6"/>
+  <rect x="940" y="250" width="120" height="120" rx="28" fill="#f38020"/>
+  <text x="72" y="610" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="42">Cloudflare</text>
+</svg>

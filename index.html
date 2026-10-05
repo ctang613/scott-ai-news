@@ -1,190 +1,473 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-HK">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI 新聞 · 2026-10-05</title>
-  <meta name="description" content="2026年10月5日 AI 新聞：一定要知、技術、技能，各五則。">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>香港 AI 日報 · 2026年10月5日</title>
+  <meta name="description" content="2026年10月5日，香港。一定要知、技術、技能，各五則。每則有圖同原文。">
+  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="香港 AI 日報">
+  <meta property="og:description" content="畀香港的 Scott：一定要知、技術、技能，各五則。">
+  <meta property="og:locale" content="zh_HK">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ctang613.github.io/scott-ai-news/">
+  <meta property="og:image" content="https://ctang613.github.io/scott-ai-news/assets/images/mk-argon.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://ctang613.github.io/scott-ai-news/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,560;7..72,700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f3efe4;
-      --ink: #1b1712;
-      --muted: #5e564c;
-      --line: #ddd4c4;
-      --card: #fffdf8;
+      --bg: #f3efe6;
+      --ink: #1c1714;
+      --muted: #5c534c;
+      --body: #3a332e;
+      --line: #e3d8c8;
+      --card: #fffcf8;
+      --chip: #efe6d6;
       --accent: #9a3412;
-      --accent-soft: #f3e0d4;
-      --chip: #efe8da;
-      --shadow: 0 1px 0 rgba(27, 23, 18, 0.04);
+      --shadow: 0 10px 28px rgba(60, 36, 18, 0.08);
+      --sans: "Noto Sans TC", "PingFang HK", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
+      --serif: "Noto Serif TC", "Songti TC", "Noto Serif CJK TC", "PMingLiU", "PingFang HK", "WenQuanYi Micro Hei", serif;
+      --section: var(--accent);
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141210;
+        --ink: #f6f1ea;
+        --muted: #cbbbaa;
+        --body: #f0e6da;
+        --line: #3a322c;
+        --card: #211c19;
+        --chip: #2c2622;
+        --accent: #f0a06a;
+        --shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+        color-scheme: dark;
+      }
+      #mustKnow { --section: #f0a06a; }
+      #tech { --section: #9ec0ea; }
+      #skills { --section: #8ddec0; }
+      .more { background: var(--ink); color: #1c1714; }
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-padding-top: 140px; text-size-adjust: 100%; }
     body {
       margin: 0;
       background:
-        radial-gradient(1200px 420px at 10% -10%, #f7e7d4 0%, transparent 55%),
+        radial-gradient(900px 280px at 0% -10%, rgba(224, 122, 61, 0.16), transparent 55%),
         var(--bg);
       color: var(--ink);
-      font-family: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", sans-serif;
+      font-family: var(--sans);
       font-size: 17px;
-      line-height: 1.65;
+      line-height: 1.75;
+      line-break: strict;
     }
+    img { max-width: 100%; }
     a { color: var(--accent); }
-    a:hover { text-decoration-thickness: 2px; }
-    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
-    header.mast {
-      padding: 28px 0 8px;
-      border-bottom: 1px solid var(--ink);
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    ::selection { background: #f3d2c2; color: #1c1714; }
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      z-index: 40;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
     }
-    .kicker {
-      margin: 0;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-    h1 {
-      font-family: Literata, "Iowan Old Style", Palatino, "Songti TC", serif;
-      font-size: clamp(40px, 8vw, 68px);
-      line-height: 0.95;
-      font-weight: 560;
-      margin: 8px 0 10px;
-      letter-spacing: -0.03em;
-    }
-    .edition {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      align-items: baseline;
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .edition strong { color: var(--ink); font-weight: 700; }
-    nav {
-      display: flex;
-      gap: 8px;
-      padding: 14px 0 18px;
+    .skip:focus { top: 8px; }
+    .wrap { width: min(1120px, calc(100% - 28px)); margin: 0 auto; }
+    .topbar {
       position: sticky;
       top: 0;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      backdrop-filter: blur(8px);
-      z-index: 2;
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      border-top: 4px solid #c2410c;
     }
-    nav a {
+    .bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 56px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: inherit;
       text-decoration: none;
-      background: var(--chip);
-      color: var(--ink);
+      font-weight: 700;
+      min-height: 44px;
+    }
+    .brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .place {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
       border-radius: 999px;
-      padding: 6px 12px;
+      background: var(--ink);
+      color: var(--bg);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .top-updated {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .mast { padding: 22px 0 6px; }
+    .hello {
+      margin: 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 15px;
+    }
+    h1 {
+      margin: 2px 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+    .intro {
+      margin: 0;
+      max-width: 42rem;
+      color: var(--body);
+      font-size: 1.05rem;
+    }
+    .updated {
+      margin: 8px 0 0;
+      color: var(--muted);
       font-size: 14px;
       font-weight: 700;
     }
-    nav a:hover, nav a:focus-visible { background: var(--accent-soft); }
-    .intro {
-      font-size: 18px;
-      max-width: 42rem;
-      margin: 0 0 8px;
+    nav[aria-label="欄目"] {
+      position: sticky;
+      top: 64px;
+      z-index: 15;
+      display: flex;
+      gap: 8px;
+      margin: 0 -4px;
+      padding: 12px 0;
+      overflow-x: auto;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(12px);
     }
+    nav[aria-label="欄目"] a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    nav[aria-label="欄目"] a small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    nav[aria-label="欄目"] a[aria-current="true"] {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    nav[aria-label="欄目"] a[aria-current="true"] small { color: inherit; }
+    main { padding-bottom: 12px; }
     section { padding: 8px 0 28px; }
-    section h2 {
-      font-family: Literata, Palatino, "Songti TC", serif;
-      font-size: 32px;
-      margin: 0 0 4px;
+    #mustKnow { --section: #9a3412; }
+    #tech { --section: #1d4e89; }
+    #skills { --section: #0f6e56; }
+    .section-head { margin-bottom: 14px; }
+    .eyebrow {
+      margin: 0;
+      color: var(--section);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    h2 {
+      margin: 2px 0;
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 4vw, 2.35rem);
+      line-height: 1.3;
       letter-spacing: -0.03em;
     }
-    .section-label {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    ol.stories {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-    }
-    article {
+    .section-note { margin: 0; color: var(--muted); }
+    .stories { display: grid; gap: 14px; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 16px 14px;
+      border-radius: 22px;
+      overflow: hidden;
       box-shadow: var(--shadow);
     }
+    .media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--chip);
+      overflow: hidden;
+    }
+    .media > img,
+    .media > .plate {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .media img {
+      object-fit: cover;
+      display: block;
+    }
+    .plate {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 16px;
+      color: #fff;
+      background:
+        radial-gradient(420px 180px at 100% 0%, rgba(255, 255, 255, 0.28), transparent 60%),
+        var(--tone, #3d342c);
+    }
+    .plate strong { font-size: 1.05rem; }
+    .monogram, .plate-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+    .monogram {
+      display: grid;
+      place-items: center;
+      color: var(--tone, #3d342c);
+      font-weight: 700;
+    }
+    .plate-logo { object-fit: contain; padding: 6px; }
+    .card-body { padding: 14px 16px 16px; }
     .meta {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      font-size: 12px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
+      gap: 10px;
+      align-items: center;
       margin-bottom: 6px;
-    }
-    article h3 {
-      font-family: Literata, Palatino, "Songti TC", serif;
-      font-size: 22px;
-      line-height: 1.25;
-      margin: 0 0 8px;
-      letter-spacing: -0.02em;
-    }
-    article p { margin: 0 0 12px; }
-    .source-link {
+      color: var(--muted);
       font-size: 14px;
+    }
+    .source {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      color: var(--ink);
       font-weight: 700;
-      text-underline-offset: 3px;
+    }
+    .source span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .logo, .mini-mark {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .logo { object-fit: contain; padding: 2px; }
+    .mini-mark {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--tone, #3d342c);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    time { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+    h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    h3 a { color: inherit; text-decoration: none; }
+    h3 a:hover { color: var(--section); }
+    .card p { margin: 0 0 14px; color: var(--body); max-width: 46rem; }
+    .more {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .more:hover { background: var(--accent); color: #fff; }
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .status, .skeleton {
+      padding: 18px;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+    .skeleton {
+      height: 240px;
+      border-style: solid;
+      background: linear-gradient(90deg, var(--chip), var(--card), var(--chip));
+      background-size: 200% 100%;
+      animation: sheen 1.2s ease-in-out infinite;
+    }
+    @keyframes sheen {
+      from { background-position: 100% 0; }
+      to { background-position: -100% 0; }
     }
     footer {
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 13px;
-      padding: 18px 0 36px;
+      padding: 8px 0 calc(28px + env(safe-area-inset-bottom));
+      font-size: 14px;
     }
-    .status {
-      padding: 18px;
-      border: 1px dashed var(--line);
-      border-radius: 12px;
+    .footer-label {
+      margin: 16px 0 8px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .source-rail {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 16px;
+      padding: 0 0 4px;
+      list-style: none;
+      overflow-x: auto;
+    }
+    .source-rail li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+      min-height: 40px;
+      padding: 4px 12px 4px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
       background: var(--card);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
     }
-    @media (min-width: 900px) {
-      ol.stories { grid-template-columns: 1fr 1fr; }
-      ol.stories article:first-child { grid-column: 1 / -1; }
+    @media (min-width: 840px) {
+      .stories { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .feature { grid-column: 1 / -1; }
+      .feature .media { aspect-ratio: 2.35 / 1; }
+      .feature .card-body { padding: 22px 26px 22px; }
+      .feature h3 { font-size: clamp(1.8rem, 2.6vw, 2.3rem); }
+      .card { transition: transform 160ms ease, box-shadow 160ms ease; }
+      .card:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(60, 36, 18, 0.12); }
+      .media img { transition: transform 280ms ease; }
+      .card:hover .media img { transform: scale(1.03); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .skeleton, .card, .media img { animation: none; transition: none; }
+    }
+    @media print {
+      .topbar, nav[aria-label="欄目"] { position: static; }
+      .more::after { content: " (" attr(href) ")"; font-weight: 400; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <a class="skip" href="#main">跳去新聞</a>
+    <div class="topbar">
+    <div class="wrap bar-inner">
+      <a class="brand" href="#top">
+        <img src="assets/favicon.svg" alt="" width="28" height="28">
+        <span>Scott</span>
+        <span class="place">香港</span>
+      </a>
+      <p class="top-updated" id="top-updated">香港時間</p>
+    </div>
+  </div>
+  <div class="wrap" id="top">
     <header class="mast">
-      <p class="kicker">Scott · daily digest</p>
-      <h1>AI 新聞</h1>
-      <p class="edition" id="edition">載入緊…</p>
+      <p class="hello" id="hello">你好，Scott</p>
+      <h1 id="page-title">香港 AI 日報</h1>
       <p class="intro" id="intro"></p>
+      <p class="updated" id="updated">更新時間載入緊…</p>
     </header>
     <nav aria-label="欄目">
-      <a href="#mustKnow">一定要知</a>
-      <a href="#tech">技術</a>
-      <a href="#skills">技能</a>
+      <a href="#mustKnow">一定要知 <small>5</small></a>
+      <a href="#tech">技術 <small>5</small></a>
+      <a href="#skills">技能 <small>5</small></a>
     </nav>
     <main id="main">
-      <p class="status">載入緊 data.json…</p>
+      <div class="skeleton" aria-hidden="true"></div>
+      <p class="status">載入緊今日新聞…</p>
     </main>
     <footer>
-      <p>靜態頁。資料係 <code>data.json</code>，欄位見 <code>schema/digest.schema.json</code>。每則摘要連去原始報道，唔係模型自行發揮的細節。</p>
+      <p class="footer-label">今期來源</p>
+      <ul class="source-rail" id="source-rail"></ul>
+      <p>靜態頁，資料喺 <code>data.json</code>。每則摘要跟返原文，撳「打開原文」睇細節。有原文預覽圖就用，冇就用來源標誌或插圖。時間以香港時間（Asia/Hong_Kong）顯示。</p>
     </footer>
   </div>
+  <noscript><p class="wrap">要開 JavaScript 先睇到今日新聞。資料喺 data.json。</p></noscript>
   <script>
+    const HK_TZ = "Asia/Hong_Kong";
     const SECTIONS = [
-      ["mustKnow", "一定要知", "五則，今日決策用"],
-      ["tech", "技術", "五則，價錢、上下文、決策模型"],
-      ["skills", "技能", "五則，本週可以落手"]
+      ["mustKnow", "一定要知", "今日做決定之前，先睇呢五則", "01"],
+      ["tech", "技術", "價錢、上下文同決策模型", "02"],
+      ["skills", "技能", "呢個星期可以落手做", "03"]
     ];
+    const LOGOS = {
+      "Mashable": "assets/logos/mashable.jpg",
+      "Aleph Alpha": "assets/logos/aleph.png",
+      "Cloudflare": "assets/logos/cloudflare.png",
+      "Cloudflare Blog": "assets/logos/cloudflare.png",
+      "Cursor Docs": "assets/logos/cursor.png"
+    };
+    const TONES = {
+      "Mashable": "#c41212",
+      "AI News Feed": "#1d4e89",
+      "Aleph Alpha": "#123c8c",
+      "shattered.io": "#3f3a36",
+      "The Hill": "#5e2430",
+      "Cloudflare": "#c45612",
+      "Cloudflare Blog": "#c45612",
+      "Cursor Docs": "#111111"
+    };
+    const FOCUS = { "mk-kolibri": "72% center" };
+    const MARKS = { "AI News Feed": "AI", "The Hill": "H", "shattered.io": "S" };
 
     function esc(value) {
       return String(value)
@@ -194,31 +477,190 @@
         .replaceAll('"', "&quot;");
     }
 
-    function renderItem(item) {
-      return `<article>
-        <div class="meta"><span>${esc(item.source)}</span><time datetime="${esc(item.published)}">${esc(item.published)}</time></div>
-        <h3>${esc(item.title)}</h3>
-        <p>${esc(item.summary)}</p>
-        <a class="source-link" href="${esc(item.url)}">睇原文</a>
+    function hongKongHour(date) {
+      const part = new Intl.DateTimeFormat("en-GB", {
+        timeZone: HK_TZ,
+        hour: "2-digit",
+        hourCycle: "h23"
+      }).formatToParts(date).find((item) => item.type === "hour");
+      return Number(part ? part.value : "12");
+    }
+
+    function greeting(now) {
+      const hour = hongKongHour(now);
+      if (hour >= 5 && hour < 12) return "早晨，Scott";
+      if (hour >= 12 && hour < 18) return "午安，Scott";
+      return "你好，Scott";
+    }
+
+    function formatParts(date) {
+      const zone = { timeZone: HK_TZ };
+      const day = new Intl.DateTimeFormat("zh-Hant-HK", {
+        ...zone,
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }).format(date);
+      const weekday = new Intl.DateTimeFormat("zh-Hant-HK", {
+        ...zone,
+        weekday: "long"
+      }).format(date);
+      const time = new Intl.DateTimeFormat("zh-Hant-HK", {
+        ...zone,
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+      }).format(date);
+      return { day, weekday, time };
+    }
+
+    function formatUpdated(iso, fallbackDay) {
+      const date = new Date(iso || `${fallbackDay}T12:00:00+08:00`);
+      if (Number.isNaN(date.getTime())) {
+        return { short: "香港時間", full: "更新時間未能讀取（香港時間）" };
+      }
+      try {
+        const parts = formatParts(date);
+        return {
+          short: `更新 ${parts.time}`,
+          full: `更新於 ${parts.day} ${parts.weekday} ${parts.time}（香港時間）`
+        };
+      } catch (error) {
+        return { short: "香港時間", full: `更新於 ${iso}（香港時間）` };
+      }
+    }
+
+    function formatDay(isoDate) {
+      const date = new Date(`${isoDate}T00:00:00+08:00`);
+      if (Number.isNaN(date.getTime())) return isoDate;
+      return new Intl.DateTimeFormat("zh-Hant-HK", {
+        timeZone: HK_TZ,
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }).format(date);
+    }
+
+    function monogram(source) {
+      return MARKS[source] || String(source).trim().slice(0, 1).toUpperCase();
+    }
+
+    function markHtml(source, large) {
+      const tone = TONES[source] || "#3d342c";
+      const logo = LOGOS[source];
+      if (logo && large) {
+        return `<img class="plate-logo" src="${esc(logo)}" alt="">`;
+      }
+      if (logo) {
+        return `<img class="logo" src="${esc(logo)}" alt="">`;
+      }
+      const cls = large ? "monogram" : "mini-mark";
+      return `<span class="${cls}" style="--tone:${esc(tone)}">${esc(monogram(source))}</span>`;
+    }
+
+    function plateHtml(source) {
+      const tone = TONES[source] || "#3d342c";
+      return `<div class="plate" style="--tone:${esc(tone)}">${markHtml(source, true)}<strong>${esc(source)}</strong></div>`;
+    }
+
+    function mediaHtml(item, eager) {
+      if (!item.image) return `<div class="media">${plateHtml(item.source)}</div>`;
+      const focus = FOCUS[item.id] || "center";
+      const loading = eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+      return `<div class="media"><img class="photo" style="object-position:${esc(focus)}" src="${esc(item.image)}" alt="${esc(item.imageAlt || item.title)}" ${loading} data-source="${esc(item.source)}"></div>`;
+    }
+
+    function renderItem(item, index) {
+      const feature = index === 0 ? " feature" : "";
+      return `<article class="card${feature}" id="${esc(item.id)}">
+        ${mediaHtml(item, index === 0)}
+        <div class="card-body">
+          <div class="meta">
+            <span class="source">${markHtml(item.source, false)}<span>${esc(item.source)}</span></span>
+            <time datetime="${esc(item.published)}">${esc(formatDay(item.published))}</time>
+          </div>
+          <h3><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a></h3>
+          <p>${esc(item.summary)}</p>
+          <a class="more" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">打開原文<span class="sr">：${esc(item.title)}</span></a>
+        </div>
       </article>`;
     }
 
-    function render(data) {
-      document.title = `AI 新聞 · ${data.edition}`;
-      document.getElementById("edition").innerHTML =
-        `<strong>${esc(data.edition)}</strong><span>${esc(data.weekday)}</span><span>資料更新至 ${esc(data.asOf)}</span>`;
-      document.getElementById("intro").textContent = data.intro;
-      document.getElementById("main").innerHTML = SECTIONS.map(([key, label, note]) => {
-        const items = data[key] || [];
-        return `<section id="${key}" aria-labelledby="${key}-title">
-          <p class="section-label">${esc(note)} · ${items.length}</p>
-          <h2 id="${key}-title">${esc(label)}</h2>
-          <ol class="stories">${items.map(renderItem).join("")}</ol>
-        </section>`;
-      }).join("");
+    function renderSources(data) {
+      const seen = new Set();
+      const items = [];
+      SECTIONS.forEach(([key]) => {
+        (data[key] || []).forEach((item) => {
+          if (seen.has(item.source)) return;
+          seen.add(item.source);
+          items.push(`<li>${markHtml(item.source, false)}<span>${esc(item.source)}</span></li>`);
+        });
+      });
+      document.getElementById("source-rail").innerHTML = items.join("");
     }
 
-    fetch("data.json")
+    function bindImages(root) {
+      root.querySelectorAll("img.photo").forEach((img) => {
+        img.addEventListener("error", () => {
+          const source = img.getAttribute("data-source") || "";
+          img.replaceWith(document.createRange().createContextualFragment(plateHtml(source)).firstChild);
+        });
+      });
+    }
+
+    function watchSections() {
+      const links = [...document.querySelectorAll('nav[aria-label="欄目"] a')];
+      const mark = () => {
+        const nav = document.querySelector('nav[aria-label="欄目"]');
+        const line = (nav ? nav.getBoundingClientRect().bottom : 0) + 16;
+        let currentKey = SECTIONS[0][0];
+        SECTIONS.forEach(([key]) => {
+          const section = document.getElementById(key);
+          if (section && section.getBoundingClientRect().top <= line) currentKey = key;
+        });
+        links.forEach((link) => {
+          if (link.getAttribute("href") === `#${currentKey}`) link.setAttribute("aria-current", "true");
+          else link.removeAttribute("aria-current");
+        });
+      };
+      window.addEventListener("scroll", mark, { passive: true });
+      mark();
+    }
+
+    function render(data) {
+      const updated = formatUpdated(data.updatedAt, data.asOf || data.edition);
+      document.title = `${data.title} · ${data.edition}`;
+      document.getElementById("hello").textContent = greeting(new Date());
+      document.getElementById("page-title").textContent = data.title;
+      document.getElementById("intro").textContent = data.intro;
+      document.getElementById("updated").textContent = updated.full;
+      document.getElementById("top-updated").textContent = updated.short;
+      const description = document.querySelector('meta[name="description"]');
+      if (description) description.setAttribute("content", data.intro);
+      document.getElementById("main").innerHTML = SECTIONS.map(([key, label, note, index]) => {
+        const items = Array.isArray(data[key]) ? data[key] : [];
+        const body = items.length
+          ? `<div class="stories">${items.map((item, itemIndex) => renderItem(item, itemIndex)).join("")}</div>`
+          : `<p class="status">呢欄暫時未有新聞。</p>`;
+        return `<section id="${key}" aria-labelledby="${key}-title">
+          <header class="section-head">
+            <p class="eyebrow">${index} · ${items.length} 則</p>
+            <h2 id="${key}-title">${esc(label)}</h2>
+            <p class="section-note">${esc(note)}</p>
+          </header>
+          ${body}
+        </section>`;
+      }).join("");
+      renderSources(data);
+      bindImages(document.getElementById("main"));
+      watchSections();
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) target.scrollIntoView({ block: "start" });
+      }
+    }
+
+    fetch("data.json", { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
@@ -226,7 +668,7 @@
       .then(render)
       .catch((error) => {
         document.getElementById("main").innerHTML =
-          `<p class="status">載入唔到 data.json（${esc(error.message)}）。請用 HTTP 開啟，例如 <code>python3 -m http.server</code>，唔好用 file://。</p>`;
+          `<p class="status">載入唔到今日新聞（${esc(error.message)}）。請用 HTTP 開，例如 <code>python3 -m http.server</code>。直接雙擊檔案（file://）會失敗。</p>`;
       });
   </script>
 </body>

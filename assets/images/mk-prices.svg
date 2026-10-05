@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#1c2836"/>
+  <circle cx="1040" cy="80" r="220" fill="#e8894a" opacity="0.18"/>
+  <rect x="72" y="64" width="28" height="28" rx="6" fill="#e8894a"/>
+  <g>
+    <rect x="120" y="210" width="200" height="300" rx="24" fill="#f3d7be"/>
+    <rect x="370" y="280" width="200" height="230" rx="24" fill="#e8894a"/>
+    <rect x="620" y="330" width="200" height="180" rx="24" fill="#8fbfb2"/>
+    <rect x="870" y="160" width="200" height="350" rx="24" fill="#f7f3ec"/>
+  </g>
+  <text x="116" y="92" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="28">PRICE</text>
+  <text x="72" y="600" fill="#f7f3ec" font-family="Georgia, 'Times New Roman', serif" font-size="42">AI News Feed</text>
+</svg>
