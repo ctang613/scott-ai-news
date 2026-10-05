@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate data.json against schema/digest.schema.json.
 
-Uses the stdlib only. Exits 0 when the 2026-10-05 digest is well formed:
+Uses the stdlib only. Exits 0 when the 2026-10-06 digest is well formed:
 mustKnow, tech, and skills each have exactly five items, updatedAt falls on
 that edition in Asia/Hong_Kong, and every local thumbnail exists.
 """
@@ -29,7 +29,7 @@ SECTIONS = ("mustKnow", "tech", "skills")
 REQUIRED_ROOT = ("edition", "asOf", "updatedAt", "title", "weekday", "intro", *SECTIONS)
 REQUIRED_ITEM = ("id", "title", "summary", "source", "url", "published")
 OPTIONAL_ITEM = ("image", "imageAlt")
-EDITION = "2026-10-05"
+EDITION = "2026-10-06"
 HK = ZoneInfo("Asia/Hong_Kong")
 
 
