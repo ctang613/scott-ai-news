@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ctang613.github.io/scott-ai-news/schema/digest.schema.json",
+  "title": "Scott AI 新聞 digest",
+  "description": "Top-level data.json for one daily edition. mustKnow, tech, and skills each contain exactly five items.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["edition", "asOf", "title", "weekday", "intro", "mustKnow", "tech", "skills"],
+  "properties": {
+    "edition": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Edition date. The 2026-10-05 digest uses 2026-10-05."
+    },
+    "asOf": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "weekday": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intro": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mustKnow": {
+      "$ref": "#/$defs/section"
+    },
+    "tech": {
+      "$ref": "#/$defs/section"
+    },
+    "skills": {
+      "$ref": "#/$defs/section"
+    }
+  },
+  "$defs": {
+    "section": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "summary", "source", "url", "published"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{1,63}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://\\S+$"
+        },
+        "published": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    }
+  }
+}

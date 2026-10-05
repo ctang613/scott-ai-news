@@ -1,0 +1,133 @@
+{
+  "edition": "2026-10-05",
+  "asOf": "2026-10-05",
+  "title": "AI 新聞",
+  "weekday": "星期一",
+  "intro": "2026年10月5日。今期睇三件事：邊個模型其實用到、價錢同上下文點計，以及本週可以落手的做法。",
+  "mustKnow": [
+    {
+      "id": "mk-argon",
+      "title": "Gemini 4 Argon 公布，但而家只限 Fairwind",
+      "summary": "Mashable 10月5日報道，Google 推出 frontier 模型 Gemini 4 Argon，主打寫程式、專業工作同網絡安全。Sundar Pichai 話內部已經用嚟寫 code 同做量子計算。使用權未全面開放：公司先經 Fairwind 計劃交畀選定的網絡防衛者同美國政府，之後先打算開放畀付費 API 同 Google AI Ultra。介紹價係每百萬 token 輸入約 $2、輸出約 $10，介紹期之後會升到約 $4 同 $20。",
+      "source": "Mashable",
+      "url": "https://in.mashable.com/tech/114549/google-gemini-4-argon-explained-from-coding-to-cyber-defence-heres-what-makes-it-different",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "mk-prices",
+      "title": "30 日內四個 frontier 模型，分數近、價錢同分發差很遠",
+      "summary": "AI News Feed 10月5日整理 MarkTechPost 的比較：Claude Fable 5.1（9月1日）、GPT-6 Astra（9月3日）、GPT-6.1 Sol 同 Gemini 4 Argon（9月底）基準有重叠，但標價同入口唔同。Astra 同 Fable 5.1 標價係每百萬 token 輸入 $10、輸出 $50；Sol 同 Argon 係 $2／$10，Argon 介紹期後會加到 $4／$20。Astra 可經 OpenAI API、ChatGPT 同 Codex；Sol 再加 ChatGPT Work；Argon 只經 Fairwind；Fable 5.1 經 Claude API、Bedrock、Google Cloud 同 Microsoft Foundry。OpenAI 喺 9月28日取消 GPT-6.1 Astra，因為內部 scope 同授權測試未過，旗艦仍係 GPT-6 Astra。四個都冇開放權重。",
+      "source": "AI News Feed",
+      "url": "https://ainewsfeed.tech/articles/four-frontier-models-in-30-days-diverge-on-price-access-and-cost-per-task-24898-en-us-v1/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "mk-kolibri",
+      "title": "Aleph Alpha 發布歐洲主權模型 Kolibri",
+      "summary": "10月5日海德堡新聞稿：Kolibri 由 10月3日起提供，面向公共行政同工業的關鍵任務，支援德文同英文，部署喺客戶自己控制的基建，並附有數據來源同設計決定的文件。模型、適用授權同說明放喺 Hugging Face。Aleph Alpha 同 Cohere 的跨大西洋交易仍待監管批准；成交前公司繼續獨立運作。",
+      "source": "Aleph Alpha",
+      "url": "https://aleph-alpha.com/en/news/kolibri-sovereign-ai-made-in-germany/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "mk-haiku",
+      "title": "Claude Haiku 5.5 仍未有發布日",
+      "summary": "Anthropic 已喺 9月22日推出 Claude Opus 5.5，9月28日推出 Claude Sonnet 5.5。公司的發布說明話 Haiku 5.5 面向高流量、對成本敏感的應用，會在之後數週加入 5.5 家族，但未有確切日期。而家揀日常模型，確認到的係 Opus 5.5 同 Sonnet 5.5，唔好當 Haiku 5.5 已經上線。",
+      "source": "shattered.io",
+      "url": "https://shattered.io/claude-5-5-family-2-models-6-days-haiku-next-2026/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "mk-ftc",
+      "title": "FTC 確認調查 OpenAI 同 Anthropic 的消費者風險",
+      "summary": "The Hill 10月1日報道，FTC 發言人確認，委員會已就模型對消費者的潛在風險調查 OpenAI 同 Anthropic。紐約郵報 9月30日率先報道，調查由主席 Andrew Ferguson 主導，範圍亦包括其他實驗室，並打算發出類似傳票的民事調查要求。調查唔等於已認定違法。本頁唔重述個別安全事件的做法。",
+      "source": "The Hill",
+      "url": "https://thehill.com/policy/technology/6124265-ftc-investigates-openai-anthropic/",
+      "published": "2026-10-01"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-clef",
+      "title": "Cloudflare Clef：決策模型，唔係再生成一段文字",
+      "summary": "10月1日 Cloudflare 推出自己訓練的 Clef 同 Clef-flash，放喺 Workers AI（@cf/cloudflare/clef、@cf/cloudflare/clef-flash）。模型讀取狀態同一組有類型的問題，對每個允許答案返回概率，方便直接分流、攔截或升級人工，而唔使解析自由文字或等推理 token。Changelog 話每次請求最多 64 條問題，並兼容 System One API，現有 Jev 整合可以改 endpoint 同模型名。權重以 Apache 2.0 放上 Hugging Face。",
+      "source": "Cloudflare",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/",
+      "published": "2026-10-01"
+    },
+    {
+      "id": "tech-clef-rl",
+      "title": "Clef 的微調路徑：先人手，再自助 RL",
+      "summary": "同一篇發布講，Cloudflare 會先由 FDE 團隊幫客戶用自己的工作負載微調 Clef，再做成自助平台：用 AI Gateway 收集請求、Workers AI 產生 rollout、Containers 做評分同重放、Trainer 更新權重，然後用 Workers AI 的 BYO Model 重新部署。而家未係完全自助，適合當路線圖，唔好當今日已經一鍵微調。",
+      "source": "Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/clef-decision-models/",
+      "published": "2026-10-01"
+    },
+    {
+      "id": "tech-windows",
+      "title": "上下文同輸出上限：Argon 的 100 萬輸出係例外",
+      "summary": "AI News Feed 引述的比較：Astra 同 Sol 的上下文係 105 萬 token，Fable 5.1 係 100 萬，Argon 的上下文未有公布。Astra、Sol、Fable 5.1 每個回應輸出上限 12.8 萬 token；Argon 的 100 萬 token 輸出上限係四個入面唯一的結構例外。快取輸入：Astra $1.00／百萬、Fable 5.1 $0.25、Sol $0.10、Argon 介紹期亦係 $0.10。超過 27.2 萬 token 時，Astra 輸入 $20、輸出 $75；Sol 的輸入加倍、輸出 1.5 倍。Fable 5.1 長 prompt 價錢平到 100 萬 token，Argon 未有公布。",
+      "source": "AI News Feed",
+      "url": "https://ainewsfeed.tech/articles/four-frontier-models-in-30-days-diverge-on-price-access-and-cost-per-task-24898-en-us-v1/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "tech-benchmarks",
+      "title": "基準無人通吃，任務成本先至分開高下",
+      "summary": "同一比較入面，Google 公布、MarkTechPost 標明係廠商數字的結果：Argon 喺 DeepSWE v1.1 77.9%（Astra 74.1%、Fable 5.1 67.4%），Vals Index 68.9%。Astra 喺 FrontierSWE v2 65.5%、OSWorld-2.0 72.6% 領先。Terminal-Bench 4.0 三者都喺 57–58% 附近，Opus 5.5 喺呢項更高，但唔喺呢組四模型入面。Artificial Analysis 的每任務成本：Fable 5.1 $9.18、Astra $4.72，差距嚟自 token 數量；Anthropic 亦話新 tokenizer 對同一段文字大約多 30% token。快取重的 agent 循環可以再倒轉排名。",
+      "source": "AI News Feed",
+      "url": "https://ainewsfeed.tech/articles/four-frontier-models-in-30-days-diverge-on-price-access-and-cost-per-task-24898-en-us-v1/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "tech-clef-latency",
+      "title": "決策模型的延遲例子：分類流程 2.2 秒",
+      "summary": "Cloudflare Changelog 舉威脅情報分類做例：Clef 配 Browser Run，抓取、渲染再分類一個網域用 2.2 秒；同一流程用 gpt-oss-120b 係 4.7 秒。適用範圍係「答案集合已固定」的判斷，例如工單緊急度、是否攔截、邊隊接手。需要寫說明、改 code 或長文時，仍然用生成模型。",
+      "source": "Cloudflare",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/",
+      "published": "2026-10-01"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-access",
+      "title": "落計劃之前先核實模型係咪真係叫到",
+      "summary": "Argon 而家只經 Fairwind，唔喺一般 API。Haiku 5.5 仍係「之後數週」，未有日期。GPT-6.1 Astra 已取消。本週若果要寫架構或報價，先寫低實際入口：Astra／Sol／Fable 5.1 的公開渠道，同 Argon 的限制名單。未得授權就唔好把模型寫進上線範圍。",
+      "source": "Mashable",
+      "url": "https://in.mashable.com/tech/114549/google-gemini-4-argon-explained-from-coding-to-cyber-defence-heres-what-makes-it-different",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "sk-route",
+      "title": "用自己的 trace 分流，唔好只睇標價",
+      "summary": "標價相同都唔代表每任務成本相同：Fable 5.1 同 Astra 都係 $10／$50，但 Artificial Analysis 的每任務成本差大約 1.9 倍。Sol 同 Argon 介紹價係五分之一，快取輸入更平。做法：抽幾條真實 agent trace，分開計未快取輸入、快取輸入同輸出，再決定邊類工作留喺 Astra 或 Fable，邊類試 Sol。Argon 未有一般 API 就唔好納入這條分流。",
+      "source": "AI News Feed",
+      "url": "https://ainewsfeed.tech/articles/four-frontier-models-in-30-days-diverge-on-price-access-and-cost-per-task-24898-en-us-v1/",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "sk-guard",
+      "title": "工具呼叫前加一個有限答案的守門",
+      "summary": "Clef 這類決策模型適合放喺生成模型之前：問題寫成有限選項（做／唔做／升級人工），讀概率再行動。Cloudflare 的例子包括工單分流、信任與安全評分，同「應唔應該執行呢個動作」。守門模型唔取代寫 code 的模型，只減少自由文字解析同無謂的工具呼叫。",
+      "source": "Cloudflare",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/",
+      "published": "2026-10-01"
+    },
+    {
+      "id": "sk-skills",
+      "title": "Cursor skills：repo 入面的雲端睇到，個人的要同步",
+      "summary": "專案 skills 放喺 repo，Cloud Agent 會一齊用。個人 skills 喺 ~/.cursor/skills/，預設只喺自己部機；要雲端用，去 Settings → Agents → Context and Tools，開 Sync Skills for Cloud Agents。同步內容只屬於你自己。想隊友用，就放進 repo 或者團隊 marketplace，唔好假設本機 skill 會跟住 agent 走。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-05"
+    },
+    {
+      "id": "sk-worker",
+      "title": "要自己控制執行環境，就用 self-hosted worker",
+      "summary": "Cloudflare 9月2日宣布 Cursor Cloud Agents 可以跑喺客戶 Cloudflare 帳戶入面的 Sandboxes。Cursor 仍然負責 agent loop（推理、計劃、編排），工作喺你揀的 worker 上做。一臺機可以經 My Machines 駁上；團隊可以用 worker pool 做路由。適合已經要守網路、機密同審計邊界的 repo，而唔係預設的託管環境。",
+      "source": "Cloudflare",
+      "url": "https://cloudflare.net/news/news-details/2026/Cloudflare-Expands-Support-for-AI-Coding-Agents-with-Cursor-Cloud-Agents-on-Cloudflare-Sandboxes/default.aspx",
+      "published": "2026-09-02"
+    }
+  ]
+}
