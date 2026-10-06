@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>香港 AI 日報 · 2026年10月5日</title>
-  <meta name="description" content="2026年10月5日，香港。一定要知、技術、技能，各五則。每則有圖同原文。">
+  <title>香港 AI 日報</title>
+  <meta name="description" content="一定要知、技術、技能，各五則。每則有圖同原文。">
   <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="香港 AI 日報">
@@ -530,6 +530,12 @@
       }
     }
 
+    function formatEdition(isoDate) {
+      const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(isoDate || ""));
+      if (!match) return String(isoDate || "");
+      return `${match[1]}年${match[2]}月${match[3]}日`;
+    }
+
     function formatDay(isoDate) {
       const date = new Date(`${isoDate}T00:00:00+08:00`);
       if (Number.isNaN(date.getTime())) return isoDate;
@@ -629,7 +635,10 @@
 
     function render(data) {
       const updated = formatUpdated(data.updatedAt, data.asOf || data.edition);
-      document.title = `${data.title} · ${data.edition}`;
+      const pageTitle = `${data.title}｜${formatEdition(data.edition)}`;
+      document.title = pageTitle;
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", pageTitle);
       document.getElementById("hello").textContent = greeting(new Date());
       document.getElementById("page-title").textContent = data.title;
       document.getElementById("intro").textContent = data.intro;
