@@ -1,10 +1,10 @@
 {
   "edition": "2026-10-13",
   "asOf": "2026-10-13",
-  "updatedAt": "2026-10-13T07:08:54+08:00",
+  "updatedAt": "2026-10-13T07:11:20+08:00",
   "title": "香港 AI 日報",
   "weekday": "二",
-  "intro": "今日重點：Meta Muse Wonder、Azure Maia 300、Anthropic 自我複製研究同虛假線報；基建要睇 pgJDBC／pgvector／ZooKeeper 補洞。另附 10/8 補刊歸檔。",
+  "intro": "今日重點：Meta Muse Wonder、Azure Maia 300、Anthropic 自我複製研究同虛假線報；基建要睇 pgJDBC／pgvector／ZooKeeper 補洞；skills 加 Cursor／Agent Skills／Grafana Operator。",
   "mustKnow": [
     {
       "id": "mk-meta-muse-wonder",
@@ -117,28 +117,28 @@
       "published": "2026-10-13"
     },
     {
-      "id": "sk-zookeeper-patch",
-      "title": "ZooKeeper 補洞 checklist（Hadoop／舊 Kafka）",
-      "summary": "影響版 3.8.0–3.8.6／3.9.0–3.9.5 → 升 3.8.7 或 3.9.6；2181 只開畀內網；升完核對 quorum／認證同 audit log，再做 ensemble 健康檢查。",
-      "source": "SecurityOnline",
-      "url": "https://securityonline.info/apache-zookeeper-vulnerabilities-fixed/",
+      "id": "sk-cursor-migrate-skills",
+      "title": "Cursor /migrate-to-skills：rules 同 slash commands 轉 SKILL.md",
+      "summary": "把 Apply Intelligently 嘅 rules 同 slash commands 一次過轉成可攜 SKILL.md，適合清舊設定、統一成 skill 庫。Agent chat 打 /migrate-to-skills，之後 check .cursor/skills/。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
       "published": "2026-10-13"
     },
     {
-      "id": "sk-pg-plan-filter",
-      "title": "pg_plan_filter 防超貴 query 拖垮 production",
-      "summary": "用 planner 成本做閘：statement_cost_limit／transaction_cost_limit；可 filter_select_only。先喺 staging 用 EXPLAIN 定 limit。PG14–18。（10/8 補刊）",
-      "source": "Postgres News",
-      "url": "https://www.postgresql.org/about/news/pg_plan_filter-100-released-3352/",
-      "published": "2026-10-08"
+      "id": "sk-agentskills-path",
+      "title": "Agent Skills 放邊：.agents/skills/",
+      "summary": "跨 Cursor／Claude／Codex 共用同一套 skill 格式；project 放 repo、個人放 ~/.agents/skills/。description 寫清楚「幾時用」先會被自動揀中。",
+      "source": "Agent Skills",
+      "url": "https://agentskills.io/skill.md",
+      "published": "2026-10-13"
     },
     {
-      "id": "sk-pgx-bm25",
-      "title": "Postgres 內做 BM25 搜尋（pgx-bm25）",
-      "summary": "CREATE EXTENSION bm25_native 後建 bm25_native index；@@@ 篩選、&@@ 排序。有 WAL／crash recovery／replica；用戶輸入用 builder 防注入。PG17／18。（10/8 補刊）",
-      "source": "Postgres News",
-      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
-      "published": "2026-10-08"
+      "id": "sk-grafana-operator-pits",
+      "title": "Grafana Operator 生產五坑",
+      "summary": "Dashboard 冇持久儲存重啟會空、憑證唔好寫死喺 CR、instanceSelector 要對準單一 instance。GitOps 管 Grafana／K8s 前值得對照。",
+      "source": "Perun",
+      "url": "https://perun.au/insights/grafana-operator-production/",
+      "published": "2026-10-13"
     }
   ]
 }
