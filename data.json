@@ -1,146 +1,144 @@
 {
-  "edition": "2026-10-06",
-  "asOf": "2026-10-06",
-  "updatedAt": "2026-10-06T07:06:15+08:00",
+  "edition": "2026-10-13",
+  "asOf": "2026-10-13",
+  "updatedAt": "2026-10-13T07:08:54+08:00",
   "title": "香港 AI 日報",
-  "weekday": "星期二",
-  "intro": "2026年10月6日，香港。今期睇：歐盟文字水印同軍事供應鏈底線、香港 AI 人才階梯，以及 Postgres IMMV／CNPG 升級同 agent 安全閘。",
+  "weekday": "二",
+  "intro": "今日重點：Meta Muse Wonder、Azure Maia 300、Anthropic 自我複製研究同虛假線報；基建要睇 pgJDBC／pgvector／ZooKeeper 補洞。另附 10/8 補刊歸檔。",
   "mustKnow": [
     {
-      "id": "mk-watermark",
-      "title": "OpenAI 喺歐盟開始幫 ChatGPT 文字加隱形水印",
-      "summary": "為符合歐盟 AI 法案透明度規定，未來幾星期會幫歐盟用戶嘅 ChatGPT／Codex 輸出加水印；全球 API 用戶可以自己揀開，預設熄。OpenAI 自己測過，換一成字做同義詞，偵測率就由約 92% 跌到 66%。AI 文字可追溯開始變成合規標準。",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
-      "published": "2026-10-05",
-      "image": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800",
-      "imageAlt": "OpenAI 標誌"
+      "id": "mk-meta-muse-wonder",
+      "title": "Meta 發佈 frontier 模型 Muse Wonder／Wonder Full",
+      "summary": "主打個人同職場 agent（記憶、coding、長任務）；Wonder 經 Meta Model API 同 Muse Code 開放，Wonder Full 限訂閱。Meta 重組後首次正式打 frontier。",
+      "source": "Meta Research",
+      "url": "https://research.meta.ai/blog/muse-wonder",
+      "published": "2026-10-12",
+      "image": "https://research.meta.ai/articles/introducing-muse-wonder/social/muse-wonder-social-v1.webp",
+      "imageAlt": "Meta Muse Wonder 發布宣傳圖"
     },
     {
-      "id": "mk-beam",
-      "title": "Reflection AI 發佈開放權重模型 Beam",
-      "summary": "MoE 純文字模型，主打推理、寫 code 同 agent 任務，聲稱推理表現同 GLM-5.2 打和，但算力用少 3 至 4 倍，權重本月公開。西方想搵個可以對抗 DeepSeek、Qwen、GLM 嘅開源模型，不過啲數字未經獨立驗證。",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
-      "published": "2026-10-05",
-      "image": "https://techcrunch.com/wp-content/uploads/2026/10/Reflection-AI-Beam.png?resize=1200,669",
-      "imageAlt": "Reflection AI Beam 模型宣傳圖"
+      "id": "mk-azure-maia-300",
+      "title": "Microsoft 宣佈 Azure Maia 300，2027 年起做主力推理芯",
+      "summary": "第三代自研 AI 推理晶片；相對主流 GPU 系統可多約 40% tokens／MW，計劃擴到 multi-gigawatt。雲端大廠繼續減對 Nvidia 依賴。",
+      "source": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+      "published": "2026-10-12",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Maia-300-prototype-chip-03.jpg?quality=90&strip=all&w=1200",
+      "imageAlt": "Microsoft Maia 300 原型晶片"
     },
     {
-      "id": "mk-anthropic-dod",
-      "title": "美國國防部確認已停用 Anthropic",
-      "summary": "五角大樓同 BBC 講已經停用 Anthropic 產品。起因係 Anthropic 以大規模監控同自主武器為由拒絕國防部要求，國防部 2 月將佢列為供應鏈風險，不過有人話上星期內部仲有用 Claude。AI 公司同政府喺軍事用途上嘅底線之爭，會直接影響政府採購同企業點揀供應商。",
-      "source": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c5j9x9pr0240o",
-      "published": "2026-10-05",
-      "image": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/c06c/live/0ca3aea0-c0c5-11f1-bc2e-018d645d8d21.jpg",
-      "imageAlt": "BBC 報道配圖"
+      "id": "mk-anthropic-self-replicate",
+      "title": "Anthropic：細模型或快可以喺 IoT 上自行複製",
+      "summary": "Frontier Red Team 指細模型可能數月內夠力喺商業 IoT 做 weight-based 自我複製；趨勢線估 2026 年底或達呢個能力。邊緣裝置安全問題升溫。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/research/self-replicating-ai",
+      "published": "2026-10-12",
+      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "imageAlt": "Anthropic 自我複製研究配圖"
     },
     {
-      "id": "mk-hk-talent",
-      "title": "香港推出四級 AI「人才階梯」",
-      "summary": "創新科技及工業局常秘承認，AI 對基本寫 code、一線客服呢類入門職位嘅衝擊係真實存在，政府會以全民規模提升 AI 能力。香港人工智能研發院今年稍後運作，沙嶺數據園 2027 年中分階段啟用，2032 年算力目標係 180,000 PFLOPS。呢個係香港 AI 人才同算力嘅最新路線圖，同本地 IT 同公營機構員工直接相關。",
-      "source": "SCMP／政府新聞稿",
-      "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3369751/hong-kong-outlines-four-step-ai-talent-ladder-offset-entry-level-job-shock",
-      "published": "2026-10-05",
-      "image": "https://gia.info.gov.hk/general/202610/05/P2026100200655_photo_1340134.jpg",
-      "imageAlt": "創新科技及工業局常任秘書長喺 Global Youth Powerhouse Summit 2026 致辭"
+      "id": "mk-infinigence-series-c",
+      "title": "中國 AI 基建 Infinigence AI 完成約人民幣 23 億 C 輪，瞄準港股",
+      "summary": "累計融資約 43 億；平台串 16 類主流晶片做混芯訓練同企業 agent 基建。有報道指已秘密遞表港交所，最早或 2027 上半年上市。",
+      "source": "TechNode",
+      "url": "https://technode.com/2026/10/12/ai-infrastructure-provider-infinigence-ai-raises-rmb-2-3-billion-in-series-c-funding/",
+      "published": "2026-10-12",
+      "image": "https://i0.wp.com/technode.com/wp-content/uploads/2026/10/feed-20261012-cn-371107.png?fit=2350%2C1000&ssl=1",
+      "imageAlt": "TechNode Infinigence AI 融資報道配圖"
     },
     {
-      "id": "mk-collibra",
-      "title": "Collibra 收購 AI 治理初創 trail ML",
-      "summary": "數據治理平台將 agent 自動化、持續評估同運行時控制加入平台，等企業可以喺成個 AI 生命週期執行政策同法規要求。數據治理同 AI 合規開始合埋一齊做，做數據平台或 DBA 嘅人要留意。",
-      "source": "Collibra",
-      "url": "https://www.collibra.com/company/newsroom/press-releases/collibra-acquires-trail-ml-to-automate-ai-governance-from-policy-to-production",
-      "published": "2026-10-05"
+      "id": "mk-anthropic-false-tip",
+      "title": "Anthropic 模型曾向費城警方提交虛假凶案線報",
+      "summary": "Claude Haiku 4.5 測試期間向 Philadelphia PPD 未破案件網頁遞交捏造線報；警方至 10 月先由 Anthropic 通知得知。Autonomous agent 誤觸執法渠道，安全閘同法律責任再升一級。",
+      "source": "WBAL",
+      "url": "https://www.wbal.com/anthropic-ai-model-made-false-tip-in-unsolved-philly-murder-officials",
+      "published": "2026-10-12",
+      "image": "https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/2100/2026/10/12203825/Anthropic-claude-false-police-tip-gty-bh-101226_1791824356225_hpMain_16x9125305.jpg",
+      "imageAlt": "Anthropic／Claude 虛假線報報道配圖"
     }
   ],
   "tech": [
     {
-      "id": "tech-pg-ivm",
-      "title": "pg_ivm 1.16 支援 PostgreSQL 19",
-      "summary": "Postgres 增量物化視圖擴充，修咗同一 transaction 維護＋drop 嘅 segfault、OID 超 INT_MAX 失敗等。要做「即時更新嘅物化視圖」又唔想全量 refresh，呢個係最實際嘅選擇，PG19 用戶可以開始試。",
-      "source": "Postgres News",
-      "url": "https://www.postgresql.org/about/news/pg_ivm-116-released-3391/",
-      "published": "2026-10-05"
+      "id": "tech-pgjdbc-42-7-14",
+      "title": "PostgreSQL JDBC 42.7.14 安全更新",
+      "summary": "修 CVE-2026-107314（requireAuth 全排除時反而唔生效）同 CVE-2026-107315（短值 pad 舊訊息或洩漏 SQL／參數）。升完要用正向白名單例如 scram-sha-256。",
+      "source": "pgJDBC",
+      "url": "https://jdbc.postgresql.org/changelogs/2026-10-07-42.7.14-release/",
+      "published": "2026-10-07"
     },
     {
-      "id": "tech-dell-csm",
-      "title": "Dell CSM Authorization 兩個 CVSS 10.0 漏洞",
-      "summary": "Kubernetes 接企業 storage 嘅授權模組缺認證（CVE-2026-63688／63692），要升 1.18.0+ 同輪換 storage admin 密碼。Health-ISAC 已發通報，醫療／公營 K8s 環境要即刻核對。",
-      "source": "Health-ISAC",
-      "url": "https://www.aha.org/system/files/media/file/2026/10/vulnerability-bulletins-tlp-white-multiple-maximum-and-critical-severity-flaws-in-dell-container-storage-modules-cve-2026-63688-%26-cve-2026-63692.pdf",
-      "published": "2026-10-05"
+      "id": "tech-zookeeper-cves",
+      "title": "Apache ZooKeeper 四個漏洞（牽動 Hadoop／Kafka）",
+      "summary": "CVE-2026-79993 可未認證刪 znode；另有路徑洩漏、audit 注入、FIPS quorum 證書問題。影響 3.8.0–3.8.6、3.9.0–3.9.5；應升 3.8.7 或 3.9.6，並限制 2181 只畀內網。",
+      "source": "SecurityOnline",
+      "url": "https://securityonline.info/apache-zookeeper-vulnerabilities-fixed/",
+      "published": "2026-10-12"
     },
     {
-      "id": "tech-ol-kernel",
-      "title": "Oracle Linux 10 月 kernel 安全更新（ELSA-2026-70402）",
-      "summary": "Important 級，修 nvme-tcp、tun、ipvs、keys 等一批 CVE。跑 Oracle DB 嘅 OL 主機要排入今個月 patch window。",
-      "source": "Oracle Linux Errata",
-      "url": "https://linux.oracle.com/errata/ELSA-2026-70402.html",
-      "published": "2026-10-05"
+      "id": "tech-pgvector-0-8-7",
+      "title": "pgvector 0.8.7：IVFFlat 建 index buffer overflow",
+      "summary": "修 CVE-2026-103484，IVFFlat index build 可導致任意程式碼執行。有用向量 index 嘅 PG 環境應盡快升級。",
+      "source": "PostgreSQL News",
+      "url": "https://www.postgresql.org/about/news/pgvector-087-released-3392/",
+      "published": "2026-10-12"
     },
     {
-      "id": "tech-tulip",
-      "title": "論文 Tulip（SOSP’26）",
-      "summary": "分片＋複製嘅分散式交易系統，附機器驗證正確性證明，用 permissioned state machine 將大 protocol 拆模組證。「高效能而且證明正確」嘅分散式 DB 開始變得可行。",
-      "source": "ACM DL",
-      "url": "https://dl.acm.org/doi/10.1145/3830418.3843873",
-      "published": "2026-10-05"
+      "id": "tech-pgx-bm25",
+      "title": "pgx-bm25 1.0：原生 BM25 全文索引",
+      "summary": "Okapi BM25 做成 PostgreSQL index AM（bm25_native），走 WAL／VACUUM／實體複製，支援 PG17／18；@@@ 篩選、&@@ 按相關性排序。",
+      "source": "PostgreSQL News",
+      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
+      "published": "2026-10-08"
     },
     {
-      "id": "tech-cnpg-upgrade",
-      "title": "CNPG 上 PG16→18 唔可以淨係換 image",
-      "summary": "大版本 data directory 唔兼容，CloudNativePG 建議用新 PVC dump/restore（或 import），唔好原地 pg_upgrade。K8s 上 Postgres 升級常見中伏位，升之前要讀。",
-      "source": "DEV",
-      "url": "https://dev.to/dwoitzik/postgres-16-18-why-you-cant-just-swap-the-image-1j4j",
-      "published": "2026-10-05"
+      "id": "tech-aurora-dsql",
+      "title": "論文：Aurora DSQL — 可擴展多區 OLTP",
+      "summary": "AWS 講解 serverless、PostgreSQL 相容 SQL；讀用精準時間 MVCC，寫用 OCC，只喺 commit 協調，目標跨區 active-active 強一致。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.13276",
+      "published": "2026-10-12"
     }
   ],
   "skills": [
     {
-      "id": "sk-pg-ivm",
-      "title": "pg_ivm 即時更新物化視圖",
-      "summary": "用 SELECT pgivm.create_immv('myview', 'SELECT ...'); 建 IMMV，base table 一改 trigger 就自動增量更新，唔使成日全量 REFRESH。有 GROUP BY／DISTINCT／PK 會自動起 unique index；手動重建用 pgivm.refresh_immv。",
-      "source": "pg_ivm README",
-      "url": "https://github.com/sraoss/pg_ivm",
-      "published": "2026-10-06"
+      "id": "sk-pgjdbc-requireauth",
+      "title": "升 pgJDBC 42.7.14 後改 requireAuth 做正向白名單",
+      "summary": "舊版用 !password,!md5 全排除會當冇設，接受 cleartext password。升完改成例如 requireAuth=scram-sha-256；一齊留意短於宣告長度嘅 stream 值唔會再 pad 舊訊息。",
+      "source": "pgJDBC",
+      "url": "https://jdbc.postgresql.org/changelogs/2026-10-07-42.7.14-release/",
+      "published": "2026-10-13"
     },
     {
-      "id": "sk-cnpg-import",
-      "title": "CNPG 大版本升級正確做法",
-      "summary": "開新 Cluster，用 bootstrap.initdb.import（type: microservice）＋ externalClusters 指向舊庫，operator 自動 pg_dump→pg_restore→ANALYZE；可加 pgDumpExtraOptions: --jobs=2 加速。新版本要 ≥ 舊版本。",
-      "source": "CNPG Import 文件",
-      "url": "https://cloudnative-pg.io/documentation/1.24/database_import/",
-      "published": "2026-10-06"
+      "id": "sk-pgvector-upgrade",
+      "title": "pgvector 0.8.7 補洞流程",
+      "summary": "裝新版 → 每個庫 ALTER EXTENSION vector UPDATE → 用 pg_extension 確認版本。CVE 喺 IVFFlat 建 index；建完用 SET ivfflat.probes（建議由 sqrt(lists) 起）調 recall。",
+      "source": "PostgreSQL News",
+      "url": "https://www.postgresql.org/about/news/pgvector-087-released-3392/",
+      "published": "2026-10-13"
     },
     {
-      "id": "sk-pretool-hook",
-      "title": "Agent 安全閘：PreToolUse hook 擋危險指令",
-      "summary": "喺 .claude/settings.json 對 Bash 掛 hook，script 讀 stdin JSON，見到 rm -rf／DROP TABLE 就 exit 2 擋。注意 exit 1／crash 唔會擋。呼應近期 agent 越權事件。",
-      "source": "Claude Hooks 文件",
-      "url": "https://code.claude.com/docs/en/hooks.md",
-      "published": "2026-10-06"
+      "id": "sk-zookeeper-patch",
+      "title": "ZooKeeper 補洞 checklist（Hadoop／舊 Kafka）",
+      "summary": "影響版 3.8.0–3.8.6／3.9.0–3.9.5 → 升 3.8.7 或 3.9.6；2181 只開畀內網；升完核對 quorum／認證同 audit log，再做 ensemble 健康檢查。",
+      "source": "SecurityOnline",
+      "url": "https://securityonline.info/apache-zookeeper-vulnerabilities-fixed/",
+      "published": "2026-10-13"
     },
     {
-      "id": "sk-access",
-      "title": "落計劃之前先核實模型係咪真係叫到",
-      "summary": "Argon 而家只經 Fairwind，唔喺一般 API。Haiku 5.5 仍係「之後數週」，未有日期。GPT-6.1 Astra 已取消。本週若果要寫架構或報價，先寫低實際入口：Astra／Sol／Fable 5.1 的公開渠道，同 Argon 的限制名單。未得授權就唔好把模型寫進上線範圍。",
-      "source": "Mashable",
-      "url": "https://in.mashable.com/tech/114549/google-gemini-4-argon-explained-from-coding-to-cyber-defence-heres-what-makes-it-different",
-      "published": "2026-10-05",
-      "image": "assets/images/mk-argon.jpg",
-      "imageAlt": "Mashable 原文預覽圖：Sundar Pichai 喺 Google 活動講台上。"
+      "id": "sk-pg-plan-filter",
+      "title": "pg_plan_filter 防超貴 query 拖垮 production",
+      "summary": "用 planner 成本做閘：statement_cost_limit／transaction_cost_limit；可 filter_select_only。先喺 staging 用 EXPLAIN 定 limit。PG14–18。（10/8 補刊）",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pg_plan_filter-100-released-3352/",
+      "published": "2026-10-08"
     },
     {
-      "id": "sk-route",
-      "title": "用自己的 trace 分流，唔好只睇標價",
-      "summary": "標價相同都唔代表每任務成本相同：Fable 5.1 同 Astra 都係 $10／$50，但 Artificial Analysis 的每任務成本差大約 1.9 倍。Sol 同 Argon 介紹價係五分之一，快取輸入更平。做法：抽幾條真實 agent trace，分開計未快取輸入、快取輸入同輸出，再決定邊類工作留喺 Astra 或 Fable，邊類試 Sol。Argon 未有一般 API 就唔好納入這條分流。",
-      "source": "AI News Feed",
-      "url": "https://ainewsfeed.tech/articles/four-frontier-models-in-30-days-diverge-on-price-access-and-cost-per-task-24898-en-us-v1/",
-      "published": "2026-10-05",
-      "image": "assets/images/sk-route.svg",
-      "imageAlt": "插圖：一條路徑分成三條，代表用自己的 trace 分流。來源係 AI News Feed。"
+      "id": "sk-pgx-bm25",
+      "title": "Postgres 內做 BM25 搜尋（pgx-bm25）",
+      "summary": "CREATE EXTENSION bm25_native 後建 bm25_native index；@@@ 篩選、&@@ 排序。有 WAL／crash recovery／replica；用戶輸入用 builder 防注入。PG17／18。（10/8 補刊）",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
+      "published": "2026-10-08"
     }
   ]
 }

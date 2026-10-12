@@ -1,0 +1,134 @@
+{
+  "edition": "2026-10-08",
+  "asOf": "2026-10-08",
+  "updatedAt": "2026-10-08T08:01:00+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "三",
+  "intro": "10/8 補刊：OpenAI 數學論文爭議、ChatGPT Intelligent UI、香港設 AI 專員；基建有 PG19 時程、pg_plan_filter、K8s CVE 同 pgx-bm25。",
+  "mustKnow": [
+    {
+      "id": "mk-openai-math-722",
+      "title": "OpenAI 一次過發表 722 篇數學論文",
+      "summary": "用未公開內部模型為逾 370 條未解數學題提供完整或部分解答，平均每條約 3 小時運算。規模大，但批評指冇公開模型名、prompt 同成本，亦未形式化證明。",
+      "source": "New Scientist",
+      "url": "https://www.newscientist.com/article/2592421-openai-announces-722-mathematical-discoveries-in-one-go/",
+      "published": "2026-10-07"
+    },
+    {
+      "id": "mk-chatgpt-intelligent-ui",
+      "title": "ChatGPT 隨 GPT-6 推出 Intelligent UI",
+      "summary": "答案可嵌入掣、計算機、互動圖表同可編輯圖。付費版先用，免費同 Go 版由 10/8 起有。聊天機械人由出文字變成即場砌小工具。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/",
+      "published": "2026-10-07"
+    },
+    {
+      "id": "mk-hk-ai-commissioner",
+      "title": "香港五年規劃：設 AI 專員，公營 AI 投標要申報安全",
+      "summary": "數字政策辦公室將委任 AI 專員；試點部門要求面向公眾嘅 AI 服務投標者作安全及道德合規申報；AI 資助再注資 10 億，並擬出 AI agent 安全管理指引。",
+      "source": "政府新聞稿",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600279.htm",
+      "published": "2026-10-06"
+    },
+    {
+      "id": "mk-ms-windows-agents",
+      "title": "Microsoft Windows／Surface 發佈會主打 agent 同本地 AI",
+      "summary": "Windows 11 新增 Get Started 一鍵設定常用 agent；本地模型配 Nvidia RTX Spark，Copilot 同 Agent 365 整合入系統核心。企業桌面 agent 同權限管控要提早諗。",
+      "source": "BGR",
+      "url": "https://www.bgr.com/2279488/windows-surface-event-october-2026-liveblog-updates/",
+      "published": "2026-10-07"
+    },
+    {
+      "id": "mk-google-unity-playground",
+      "title": "Google × Unity 推出 Playground，用文字生成遊戲",
+      "summary": "18 歲以上用戶用自然語言即可生成同改遊戲，唔使寫 code。生成式 AI 再降低遊戲開發門檻。",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-07/google-unity-launch-platform-to-create-video-games-from-prompts",
+      "published": "2026-10-07"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-pg19-rc1",
+      "title": "PostgreSQL 19 RC1 定 10/15，GA 定 10/29",
+      "summary": "冇大問題就月尾正式出。PG19 升級評估可開始排期，extension（例如 pg_ivm 1.16）兼容性要逐個對。",
+      "source": "pgsql-hackers",
+      "url": "https://www.postgresql.org/message-id/915517c4-d0ee-49f9-bbeb-c683ef2b9d3f%40postgresql.org",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "tech-pg-plan-filter",
+      "title": "pg_plan_filter 1.0.0：按 planner 成本攔 query",
+      "summary": "可限制單句 statement_cost_limit 同成個 transaction 總成本，支援 PG14–18。production 庫加多一道防超貴 query 嘅閘。",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pg_plan_filter-100-released-3352/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "tech-k8s-cve-oct8",
+      "title": "Kubernetes 新 CVE：kubelet NTLM 同跨 namespace 起 Pod",
+      "summary": "kubelet 要升到 1.34.12／1.35.9／1.36.5／1.37.1+；另有 Windows kubectl cp path traversal。多租戶 cluster 要即刻 review 寫權限。",
+      "source": "K8s CVE Feed",
+      "url": "https://kubernetes.io/docs/reference/issues-security/official-cve-feed/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "tech-pgx-bm25-1008",
+      "title": "pgx-bm25 1.0：Postgres 原生 BM25 全文搜尋 index",
+      "summary": "支援 PG17／18，做成 index access method，有 crash recovery 同 replica 一致性測試。混合搜尋可留喺 Postgres。",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "tech-rabitq-ssd",
+      "title": "論文 RaBitQ-SSD：向量放 SSD 頂百億級",
+      "summary": "DRAM 只留部分 binary code，配非同步 I/O；90% recall 下吞吐係 graph baseline 1.74 倍，SSD 讀取少 3.8 倍。大規模向量搜尋唔一定要大量記憶體。",
+      "source": "arXiv",
+      "url": "https://arxiv.science/abs/2610.02652",
+      "published": "2026-10-08"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-pg-plan-filter",
+      "title": "pg_plan_filter 防超貴 query 拖垮 production",
+      "summary": "用 planner 預估成本做閘：statement_cost_limit 限單句、transaction_cost_limit 限成個 transaction；filter_select_only 可只管 SELECT。先喺 staging 用 EXPLAIN 定 limit。PG14–18。",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pg_plan_filter-100-released-3352/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "sk-pgx-bm25",
+      "title": "Postgres 內做 BM25 搜尋（pgx-bm25）",
+      "summary": "CREATE EXTENSION bm25_native 後用 bm25_native index；查詢用 @@@ 篩選、&@@ 排序。index 有 WAL／crash recovery／replica；用戶輸入用 builder 傳值防注入。PG17／18。",
+      "source": "Postgres News",
+      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "sk-kubelet-cve-check",
+      "title": "一句睇晒 kubelet 版本對 K8s CVE",
+      "summary": "kubectl get nodes -o custom-columns=NAME:.metadata.name,KUBELET:.status.nodeInfo.kubeletVersion；對照升到 1.34.12／1.35.9／1.36.5／1.37.1+。升 node 跟 kubeadm：drain → 升 kubelet → restart。",
+      "source": "Kubernetes Docs",
+      "url": "https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/upgrading-linux-nodes/",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "sk-pg19-upgrade-plan",
+      "title": "PG19 升級評估：先對 extension 兼容",
+      "summary": "RC1 10/15、GA 10/29。先列出現役 extension（如 pg_ivm），對照 PG19 支援；staging 做 dump／restore 同回歸測，再排 production 窗口。",
+      "source": "pgsql-hackers",
+      "url": "https://www.postgresql.org/message-id/915517c4-d0ee-49f9-bbeb-c683ef2b9d3f%40postgresql.org",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "sk-vector-ssd-eval",
+      "title": "大向量庫評估：SSD 方案 vs 全入 DRAM",
+      "summary": "睇 RaBitQ-SSD：向量放 SSD、DRAM 留 binary code。評估 recall／吞吐同現有 graph index 成本，決定係咪要加大記憶體或改 I/O pipeline。",
+      "source": "arXiv",
+      "url": "https://arxiv.science/abs/2610.02652",
+      "published": "2026-10-08"
+    }
+  ]
+}
