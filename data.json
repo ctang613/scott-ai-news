@@ -1,10 +1,10 @@
 {
   "edition": "2026-10-14",
   "asOf": "2026-10-14",
-  "updatedAt": "2026-10-14T07:08:12+08:00",
+  "updatedAt": "2026-10-14T07:09:14+08:00",
   "title": "香港 AI 日報",
   "weekday": "三",
-  "intro": "今日重點：Gemini 4 Argon 全面開放、英美 AI 規管分裂；基建要睇 Grafana 13.2.4、SQL Server October GDR、Oracle 九月 CSPU，同 K8s 1.34 10/27 EOL。",
+  "intro": "今日重點：Gemini 4 Argon 全面開放、英美 AI 規管分裂；基建要睇 Grafana 13.2.4、SQL Server October GDR、Oracle 九月 CSPU、K8s 1.34 EOL；skills 加 Cursor Custom Mode／progressive disclosure／paths。",
   "mustKnow": [
     {
       "id": "mk-gemini-4-argon",
@@ -93,7 +93,7 @@
     {
       "id": "sk-grafana-patch",
       "title": "Grafana 升到 13.2.4／13.1.8／13.0.11",
-      "summary": "自架先對版本線揀對應 patch（今日修 4 個 CVE，含 Git Sync 授權問題）。流程：睇 grafana-cli／容器 image tag → 升 → 開 UI 確認 build → spot-check Git Sync／provisioning 權限。",
+      "summary": "自架先對版本線揀對應 patch（修 4 個 CVE，含 Git Sync 授權問題）。流程：睇 grafana-cli／容器 image tag → 升 → 開 UI 確認 build → spot-check Git Sync／provisioning 權限。",
       "source": "Grafana",
       "url": "https://github.com/grafana/grafana/releases/tag/v13.2.4",
       "published": "2026-10-14"
@@ -107,28 +107,28 @@
       "published": "2026-10-14"
     },
     {
-      "id": "sk-catune-knob-order",
-      "title": "Postgres 自動調參先守 ordering 約束（CATune）",
-      "summary": "例如 superuser_reserved_connections < max_connections、max_parallel_workers ≤ max_worker_processes。盲搜會浪費 crash／無效試；抽樣前先過濾違規 knob 組合。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.09276",
+      "id": "sk-cursor-custom-mode",
+      "title": "Custom Mode 鎖住 skill",
+      "summary": "長 checklist、TDD、code review 唔想每句再 @。/ 揀 skill 之後按 Option+Enter（Win：Alt+Enter），整場對話都帶住嗰套流程。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
       "published": "2026-10-14"
     },
     {
-      "id": "sk-cursor-migrate-skills",
-      "title": "Cursor /migrate-to-skills：rules 同 slash commands 轉 SKILL.md",
-      "summary": "把 Apply Intelligently 嘅 rules 同 slash commands 一次過轉成可攜 SKILL.md。Agent chat 打 /migrate-to-skills，之後 check .cursor/skills/。",
-      "source": "Cursor Docs",
-      "url": "https://cursor.com/docs/skills",
-      "published": "2026-10-13"
-    },
-    {
-      "id": "sk-agentskills-path",
-      "title": "Agent Skills 放邊：.agents/skills/",
-      "summary": "跨 Cursor／Claude／Codex 共用同一套 skill 格式；project 放 repo、個人放 ~/.agents/skills/。description 寫清楚「幾時用」先會被自動揀中。",
+      "id": "sk-progressive-disclosure",
+      "title": "Progressive disclosure 寫法",
+      "summary": "SKILL.md 只放短步驟（建議 <500 行）；長參考放 references/，可執行腳本放 scripts/。Agent 先睇 name／description，用到先再 load，慳 context。",
       "source": "Agent Skills",
       "url": "https://agentskills.io/skill.md",
-      "published": "2026-10-13"
+      "published": "2026-10-14"
+    },
+    {
+      "id": "sk-skill-paths",
+      "title": "paths 限定 skill 自動觸發",
+      "summary": "frontmatter 加例如 paths: [\"**/*.tsx\"]，只有改緊相關檔先會自動拉起 skill；想純手動就用 disable-model-invocation: true。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-14"
     }
   ]
 }
