@@ -1,50 +1,58 @@
 {
   "edition": "2026-10-14",
   "asOf": "2026-10-14",
-  "updatedAt": "2026-10-14T07:09:14+08:00",
+  "updatedAt": "2026-10-14T07:11:10+08:00",
   "title": "香港 AI 日報",
   "weekday": "三",
-  "intro": "今日重點：Gemini 4 Argon 全面開放、英美 AI 規管分裂；基建要睇 Grafana 13.2.4、SQL Server October GDR、Oracle 九月 CSPU、K8s 1.34 EOL；skills 加 Cursor Custom Mode／progressive disclosure／paths。",
+  "intro": "今日重點：Gemini 4 Argon 全面開放、英美 AI 規管分裂、Anthropic 反蒸餾；基建要睇 Grafana 13.2.4、SQL Server October GDR、Oracle 九月 CSPU、K8s 1.34 EOL。",
   "mustKnow": [
     {
       "id": "mk-gemini-4-argon",
-      "title": "Gemini 4 Argon 全面開放",
-      "summary": "由原先只俾網安防禦人員試，改為全球 API／AI Studio、企業同 Gemini Pro／Ultra 用戶可用；主打長流程 coding、科學同 agent，API 100 萬 token 上限，導賞價 $2／$10 per M tokens（11/30 後加倍）。",
+      "title": "Gemini 4 Argon 全球開放",
+      "summary": "即日起全面開放 API／AI Studio、企業同 Gemini Pro／Ultra。主打長流程 coding、科學同 agent；API 100 萬 token 統一上下限。導賞價 $2／$10 per M tokens，11/30 後升至 $4／$20。",
       "source": "Google Blog",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
-      "published": "2026-10-14"
+      "published": "2026-10-14",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-4-argon__blog-header__2784x1566.width-1300.png",
+      "imageAlt": "Gemini 4 Argon Google blog header"
     },
     {
       "id": "mk-uk-binding-ai-rules",
       "title": "OpenAI、Anthropic 喺英國國會要求「有約束力」AI 規管",
-      "summary": "兩家話自願承諾唔夠，要法定框架；Google DeepMind 同 Meta 拒絕跟，寧願靠標準同現有監管。大廠對「要唔要立法」正式分裂。",
+      "summary": "兩家話自願承諾唔夠，要法定框架；Google DeepMind 同 Meta 拒絕跟。同日 MI5 警告 AI 可能抬高生物武器風險。四大廠對立法公開分裂。",
       "source": "WIRED",
       "url": "https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/",
-      "published": "2026-10-14"
+      "published": "2026-10-14",
+      "image": "https://media.wired.com/photos/6ace48fd005dc85af95e36ae/191:100/w_1280,c_limit/101326-Big%20Four%20UK%20parliment.jpg",
+      "imageAlt": "WIRED illustration of AI firms and UK parliament hearing"
     },
     {
-      "id": "mk-safety-review-control",
-      "title": "OpenAI、Anthropic 據報想限制第三方安全評審公開結果",
-      "summary": "Reuters 指兩家擔心商業秘密外洩，考慮收緊評審可發佈內容；預發佈安全測試嘅透明度同獨立性再受質疑。",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1010444/openai-and-anthropic-reportedly-wanted-control-over-what-safety-reviewers-can-publish",
-      "published": "2026-10-14"
+      "id": "mk-anthropic-distill-defense",
+      "title": "Anthropic：反蒸餾防禦令 Claude 推理數據被抽走減約 90–99%",
+      "summary": "preserved thinking、兩階段分類器同快速封號，令 distillers 抽走嘅 reasoning tokens 跌約 10–100 倍。Frontier 知識產權同安全護欄爭奪白熱化。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/research/distillation-defenses",
+      "published": "2026-10-12",
+      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a5934d1ae8428b2a97fae1963a5f427594fc7202-1200x630.jpg",
+      "imageAlt": "Anthropic distillation defenses research post"
     },
     {
-      "id": "mk-argon-robotics",
-      "title": "Gemini 4 Argon 同時推 robotics 用法",
-      "summary": "Google 講 Argon 喺 embodied reasoning（ERQA）達 87%，可撐機械人視覺、控制同模擬工作流。Frontier 模型開始正式打實體 AI／機械人場景。",
-      "source": "Google Developers",
-      "url": "https://developers.googleblog.com/gemini-4-argon-for-robotics/",
-      "published": "2026-10-14"
+      "id": "mk-openai-apple-hiring",
+      "title": "法官下令 OpenAI 交出招聘紀錄（Apple 商業秘密案）",
+      "summary": "Apple 可加速取得 OpenAI 硬件／機械人招聘相關面試材料；OpenAI 須限期交出。消費硬件路線同大廠人才戰進入法庭披露階段。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/",
+      "published": "2026-10-13",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024",
+      "imageAlt": "OpenAI logo"
     },
     {
-      "id": "mk-muse-wonder-pricing",
-      "title": "Muse Wonder 定價同取用細節補料",
-      "summary": "API $4／$20 per M tokens；Wonder Full 暫時只喺 Muse Code $50／$200 月費計劃，未有公開 API。評估 Meta frontier 成本要睇清楚。",
-      "source": "TechRepublic",
-      "url": "https://www.techrepublic.com/article/news-meta-muse-wonder-ai-models-launch/",
-      "published": "2026-10-14"
+      "id": "mk-unitypoint-evidently",
+      "title": "UnityPoint Health 將 Evidently 臨床數據 AI 擴至 18 間醫院",
+      "summary": "由縱向病歷抽出可追溯來源嘅重點，協助臨床決策同文件；評估稱平均每份入院紀錄多發現 4–5 個未記錄狀況。醫院級臨床數據智能由試點變全系統 rollout。",
+      "source": "Business Wire",
+      "url": "https://www.financialcontent.com/article/bizwire-2026-10-13-unitypoint-health-expands-evidentlys-clinical-data-intelligence-across-18-hospitals",
+      "published": "2026-10-13"
     }
   ],
   "tech": [
