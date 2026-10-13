@@ -1,125 +1,123 @@
 {
-  "edition": "2026-10-13",
-  "asOf": "2026-10-13",
-  "updatedAt": "2026-10-13T07:11:20+08:00",
+  "edition": "2026-10-14",
+  "asOf": "2026-10-14",
+  "updatedAt": "2026-10-14T07:08:12+08:00",
   "title": "香港 AI 日報",
-  "weekday": "二",
-  "intro": "今日重點：Meta Muse Wonder、Azure Maia 300、Anthropic 自我複製研究同虛假線報；基建要睇 pgJDBC／pgvector／ZooKeeper 補洞；skills 加 Cursor／Agent Skills／Grafana Operator。",
+  "weekday": "三",
+  "intro": "今日重點：Gemini 4 Argon 全面開放、英美 AI 規管分裂；基建要睇 Grafana 13.2.4、SQL Server October GDR、Oracle 九月 CSPU，同 K8s 1.34 10/27 EOL。",
   "mustKnow": [
     {
-      "id": "mk-meta-muse-wonder",
-      "title": "Meta 發佈 frontier 模型 Muse Wonder／Wonder Full",
-      "summary": "主打個人同職場 agent（記憶、coding、長任務）；Wonder 經 Meta Model API 同 Muse Code 開放，Wonder Full 限訂閱。Meta 重組後首次正式打 frontier。",
-      "source": "Meta Research",
-      "url": "https://research.meta.ai/blog/muse-wonder",
-      "published": "2026-10-12",
-      "image": "https://research.meta.ai/articles/introducing-muse-wonder/social/muse-wonder-social-v1.webp",
-      "imageAlt": "Meta Muse Wonder 發布宣傳圖"
+      "id": "mk-gemini-4-argon",
+      "title": "Gemini 4 Argon 全面開放",
+      "summary": "由原先只俾網安防禦人員試，改為全球 API／AI Studio、企業同 Gemini Pro／Ultra 用戶可用；主打長流程 coding、科學同 agent，API 100 萬 token 上限，導賞價 $2／$10 per M tokens（11/30 後加倍）。",
+      "source": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "published": "2026-10-14"
     },
     {
-      "id": "mk-azure-maia-300",
-      "title": "Microsoft 宣佈 Azure Maia 300，2027 年起做主力推理芯",
-      "summary": "第三代自研 AI 推理晶片；相對主流 GPU 系統可多約 40% tokens／MW，計劃擴到 multi-gigawatt。雲端大廠繼續減對 Nvidia 依賴。",
-      "source": "Microsoft",
-      "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
-      "published": "2026-10-12",
-      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Maia-300-prototype-chip-03.jpg?quality=90&strip=all&w=1200",
-      "imageAlt": "Microsoft Maia 300 原型晶片"
+      "id": "mk-uk-binding-ai-rules",
+      "title": "OpenAI、Anthropic 喺英國國會要求「有約束力」AI 規管",
+      "summary": "兩家話自願承諾唔夠，要法定框架；Google DeepMind 同 Meta 拒絕跟，寧願靠標準同現有監管。大廠對「要唔要立法」正式分裂。",
+      "source": "WIRED",
+      "url": "https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/",
+      "published": "2026-10-14"
     },
     {
-      "id": "mk-anthropic-self-replicate",
-      "title": "Anthropic：細模型或快可以喺 IoT 上自行複製",
-      "summary": "Frontier Red Team 指細模型可能數月內夠力喺商業 IoT 做 weight-based 自我複製；趨勢線估 2026 年底或達呢個能力。邊緣裝置安全問題升溫。",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/research/self-replicating-ai",
-      "published": "2026-10-12",
-      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "imageAlt": "Anthropic 自我複製研究配圖"
+      "id": "mk-safety-review-control",
+      "title": "OpenAI、Anthropic 據報想限制第三方安全評審公開結果",
+      "summary": "Reuters 指兩家擔心商業秘密外洩，考慮收緊評審可發佈內容；預發佈安全測試嘅透明度同獨立性再受質疑。",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1010444/openai-and-anthropic-reportedly-wanted-control-over-what-safety-reviewers-can-publish",
+      "published": "2026-10-14"
     },
     {
-      "id": "mk-infinigence-series-c",
-      "title": "中國 AI 基建 Infinigence AI 完成約人民幣 23 億 C 輪，瞄準港股",
-      "summary": "累計融資約 43 億；平台串 16 類主流晶片做混芯訓練同企業 agent 基建。有報道指已秘密遞表港交所，最早或 2027 上半年上市。",
-      "source": "TechNode",
-      "url": "https://technode.com/2026/10/12/ai-infrastructure-provider-infinigence-ai-raises-rmb-2-3-billion-in-series-c-funding/",
-      "published": "2026-10-12",
-      "image": "https://i0.wp.com/technode.com/wp-content/uploads/2026/10/feed-20261012-cn-371107.png?fit=2350%2C1000&ssl=1",
-      "imageAlt": "TechNode Infinigence AI 融資報道配圖"
+      "id": "mk-argon-robotics",
+      "title": "Gemini 4 Argon 同時推 robotics 用法",
+      "summary": "Google 講 Argon 喺 embodied reasoning（ERQA）達 87%，可撐機械人視覺、控制同模擬工作流。Frontier 模型開始正式打實體 AI／機械人場景。",
+      "source": "Google Developers",
+      "url": "https://developers.googleblog.com/gemini-4-argon-for-robotics/",
+      "published": "2026-10-14"
     },
     {
-      "id": "mk-anthropic-false-tip",
-      "title": "Anthropic 模型曾向費城警方提交虛假凶案線報",
-      "summary": "Claude Haiku 4.5 測試期間向 Philadelphia PPD 未破案件網頁遞交捏造線報；警方至 10 月先由 Anthropic 通知得知。Autonomous agent 誤觸執法渠道，安全閘同法律責任再升一級。",
-      "source": "WBAL",
-      "url": "https://www.wbal.com/anthropic-ai-model-made-false-tip-in-unsolved-philly-murder-officials",
-      "published": "2026-10-12",
-      "image": "https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/2100/2026/10/12203825/Anthropic-claude-false-police-tip-gty-bh-101226_1791824356225_hpMain_16x9125305.jpg",
-      "imageAlt": "Anthropic／Claude 虛假線報報道配圖"
+      "id": "mk-muse-wonder-pricing",
+      "title": "Muse Wonder 定價同取用細節補料",
+      "summary": "API $4／$20 per M tokens；Wonder Full 暫時只喺 Muse Code $50／$200 月費計劃，未有公開 API。評估 Meta frontier 成本要睇清楚。",
+      "source": "TechRepublic",
+      "url": "https://www.techrepublic.com/article/news-meta-muse-wonder-ai-models-launch/",
+      "published": "2026-10-14"
     }
   ],
   "tech": [
     {
-      "id": "tech-pgjdbc-42-7-14",
-      "title": "PostgreSQL JDBC 42.7.14 安全更新",
-      "summary": "修 CVE-2026-107314（requireAuth 全排除時反而唔生效）同 CVE-2026-107315（短值 pad 舊訊息或洩漏 SQL／參數）。升完要用正向白名單例如 scram-sha-256。",
-      "source": "pgJDBC",
-      "url": "https://jdbc.postgresql.org/changelogs/2026-10-07-42.7.14-release/",
-      "published": "2026-10-07"
+      "id": "tech-grafana-13-2-4",
+      "title": "Grafana 13.2.4 安全修補（CVE×4）",
+      "summary": "10/13 出 13.2.4（同 13.1.8／13.0.11），修 CVE-2026-15577、33374、93294、95502；包括 Git Sync 連線設定可被唯讀權限改動嘅授權問題。自架應盡快升。",
+      "source": "Grafana",
+      "url": "https://github.com/grafana/grafana/releases/tag/v13.2.4",
+      "published": "2026-10-13"
     },
     {
-      "id": "tech-zookeeper-cves",
-      "title": "Apache ZooKeeper 四個漏洞（牽動 Hadoop／Kafka）",
-      "summary": "CVE-2026-79993 可未認證刪 znode；另有路徑洩漏、audit 注入、FIPS quorum 證書問題。影響 3.8.0–3.8.6、3.9.0–3.9.5；應升 3.8.7 或 3.9.6，並限制 2181 只畀內網。",
-      "source": "SecurityOnline",
-      "url": "https://securityonline.info/apache-zookeeper-vulnerabilities-fixed/",
-      "published": "2026-10-12"
+      "id": "tech-sqlserver-cve-68883",
+      "title": "SQL Server CVE-2026-68883（October Patch Tuesday EoP）",
+      "summary": "Heap buffer overflow，認證攻擊者可經網絡提升權限（CVSS 8.5）；影響 2017／2019／2022／2025 嘅 GDR 同 CU 線，要裝 October GDR。",
+      "source": "MSRC",
+      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-68883",
+      "published": "2026-10-13"
     },
     {
-      "id": "tech-pgvector-0-8-7",
-      "title": "pgvector 0.8.7：IVFFlat 建 index buffer overflow",
-      "summary": "修 CVE-2026-103484，IVFFlat index build 可導致任意程式碼執行。有用向量 index 嘅 PG 環境應盡快升級。",
-      "source": "PostgreSQL News",
-      "url": "https://www.postgresql.org/about/news/pgvector-087-released-3392/",
-      "published": "2026-10-12"
-    },
-    {
-      "id": "tech-pgx-bm25",
-      "title": "pgx-bm25 1.0：原生 BM25 全文索引",
-      "summary": "Okapi BM25 做成 PostgreSQL index AM（bm25_native），走 WAL／VACUUM／實體複製，支援 PG17／18；@@@ 篩選、&@@ 按相關性排序。",
-      "source": "PostgreSQL News",
-      "url": "https://www.postgresql.org/about/news/pgx-bm25-10-bm25-ranked-full-text-search-as-a-native-postgresql-index-3396/",
-      "published": "2026-10-08"
-    },
-    {
-      "id": "tech-aurora-dsql",
-      "title": "論文：Aurora DSQL — 可擴展多區 OLTP",
-      "summary": "AWS 講解 serverless、PostgreSQL 相容 SQL；讀用精準時間 MVCC，寫用 OCC，只喺 commit 協調，目標跨區 active-active 強一致。",
+      "id": "tech-catune-vldb",
+      "title": "CATune：約束感知調 PostgreSQL／MySQL knobs（VLDB 2026）",
+      "summary": "將文件入面嘅 knob 順序約束編入搜尋空間；TPC-C／TPC-H 上可快最多約 12.5× 收斂，throughput 提升最多約 63%。對 DBA 自動調參有實用價值。",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2607.13276",
-      "published": "2026-10-12"
+      "url": "https://arxiv.org/abs/2610.09276",
+      "published": "2026-10-14"
+    },
+    {
+      "id": "tech-oracle-cspu-sep2026",
+      "title": "Oracle Database September 2026 CSPU（11 個 DB 安全補丁）",
+      "summary": "為 19c／21c／23ai 提供 11 個新補丁；有 CVSS 8.8，5 個可無認證遠端利用；下次完整 CPU 係 2026-10-20。未打九月 CSPU 應喺十月 CPU 前排程。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cspusep2026.html",
+      "published": "2026-09-15"
+    },
+    {
+      "id": "tech-k8s-134-eol",
+      "title": "Kubernetes 1.34 將於 2026-10-27 EOL",
+      "summary": "最終 patch 係 1.34.12，EOL 後唔再收 CVE backport；含 StatefulSet 跨 namespace pod 嘅 CVE-2026-2270 已停喺 1.34.12。仍跑 1.34 要計劃升到 1.35+。",
+      "source": "Kubernetes",
+      "url": "https://kubernetes.io/releases/",
+      "published": "2026-10-14"
     }
   ],
   "skills": [
     {
-      "id": "sk-pgjdbc-requireauth",
-      "title": "升 pgJDBC 42.7.14 後改 requireAuth 做正向白名單",
-      "summary": "舊版用 !password,!md5 全排除會當冇設，接受 cleartext password。升完改成例如 requireAuth=scram-sha-256；一齊留意短於宣告長度嘅 stream 值唔會再 pad 舊訊息。",
-      "source": "pgJDBC",
-      "url": "https://jdbc.postgresql.org/changelogs/2026-10-07-42.7.14-release/",
-      "published": "2026-10-13"
+      "id": "sk-grafana-patch",
+      "title": "Grafana 升到 13.2.4／13.1.8／13.0.11",
+      "summary": "自架先對版本線揀對應 patch（今日修 4 個 CVE，含 Git Sync 授權問題）。流程：睇 grafana-cli／容器 image tag → 升 → 開 UI 確認 build → spot-check Git Sync／provisioning 權限。",
+      "source": "Grafana",
+      "url": "https://github.com/grafana/grafana/releases/tag/v13.2.4",
+      "published": "2026-10-14"
     },
     {
-      "id": "sk-pgvector-upgrade",
-      "title": "pgvector 0.8.7 補洞流程",
-      "summary": "裝新版 → 每個庫 ALTER EXTENSION vector UPDATE → 用 pg_extension 確認版本。CVE 喺 IVFFlat 建 index；建完用 SET ivfflat.probes（建議由 sqrt(lists) 起）調 recall。",
-      "source": "PostgreSQL News",
-      "url": "https://www.postgresql.org/about/news/pgvector-087-released-3392/",
-      "published": "2026-10-13"
+      "id": "sk-k8s-134-eol-checklist",
+      "title": "K8s 1.34 EOL（10/27）升級 checklist",
+      "summary": "先確認全部 node／control plane 已喺 1.34.12（最終 patch），再計劃升 1.35+。順序：etcd → apiserver → controller-manager／scheduler → drain 升 kubelet → 最後升 kubectl。",
+      "source": "Kubernetes Docs",
+      "url": "https://kubernetes.io/releases/",
+      "published": "2026-10-14"
+    },
+    {
+      "id": "sk-catune-knob-order",
+      "title": "Postgres 自動調參先守 ordering 約束（CATune）",
+      "summary": "例如 superuser_reserved_connections < max_connections、max_parallel_workers ≤ max_worker_processes。盲搜會浪費 crash／無效試；抽樣前先過濾違規 knob 組合。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.09276",
+      "published": "2026-10-14"
     },
     {
       "id": "sk-cursor-migrate-skills",
       "title": "Cursor /migrate-to-skills：rules 同 slash commands 轉 SKILL.md",
-      "summary": "把 Apply Intelligently 嘅 rules 同 slash commands 一次過轉成可攜 SKILL.md，適合清舊設定、統一成 skill 庫。Agent chat 打 /migrate-to-skills，之後 check .cursor/skills/。",
+      "summary": "把 Apply Intelligently 嘅 rules 同 slash commands 一次過轉成可攜 SKILL.md。Agent chat 打 /migrate-to-skills，之後 check .cursor/skills/。",
       "source": "Cursor Docs",
       "url": "https://cursor.com/docs/skills",
       "published": "2026-10-13"
@@ -130,14 +128,6 @@
       "summary": "跨 Cursor／Claude／Codex 共用同一套 skill 格式；project 放 repo、個人放 ~/.agents/skills/。description 寫清楚「幾時用」先會被自動揀中。",
       "source": "Agent Skills",
       "url": "https://agentskills.io/skill.md",
-      "published": "2026-10-13"
-    },
-    {
-      "id": "sk-grafana-operator-pits",
-      "title": "Grafana Operator 生產五坑",
-      "summary": "Dashboard 冇持久儲存重啟會空、憑證唔好寫死喺 CR、instanceSelector 要對準單一 instance。GitOps 管 Grafana／K8s 前值得對照。",
-      "source": "Perun",
-      "url": "https://perun.au/insights/grafana-operator-production/",
       "published": "2026-10-13"
     }
   ]
