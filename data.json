@@ -1,49 +1,49 @@
 {
   "edition": "2026-10-15",
   "asOf": "2026-10-15",
-  "updatedAt": "2026-10-15T07:09:10+08:00",
+  "updatedAt": "2026-10-15T07:12:51+08:00",
   "title": "香港 AI 日報",
   "weekday": "四",
-  "intro": "今日重點：8 州告 OpenAI、歐盟 AI 法案首查 OpenAI／Anthropic、新加坡 Anthropic 辦公室；基建要睇 psqlODBC CVE、containerd 2.4.2、ARCADE ABAC。",
+  "intro": "今日重點：OpenAI 工程師竊聽案、Character.AI Chapter 11、8 州告 OpenAI、歐盟 AI 法案首查；基建要睇 psqlODBC CVE、containerd 2.4.2、ARCADE ABAC。",
   "mustKnow": [
+    {
+      "id": "mk-openai-engineer-bug",
+      "title": "OpenAI 工程師被捕：藏錄音器喺高管會議室",
+      "summary": "FBI／DOJ：沙特籍工程師被控喺 SF 辦公室高管會議室電視背後藏加密錄音器；公司用自身模型助鎖定，未見 model weights／源碼／客戶資料外洩跡象。Allegations only；最高可判 5 年。",
+      "source": "DOJ",
+      "url": "https://www.justice.gov/opa/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-character-ai-ch11",
+      "title": "Character.AI 申請 Chapter 11；Disney 作 stalking horse",
+      "summary": "以約 US$2,000 萬換非獨家永久技術授權。平台指娛樂 AI 成本高、訴訟同監管壓力令現金流撑唔住；希望法庭監督出售，否則或於 11 月底／12 月初清盤。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/13/character-ai-chapter-11-disney-bid.html",
+      "published": "2026-10-13"
+    },
     {
       "id": "mk-openai-8-states-lawsuit",
       "title": "美國 8 個州聯手告 OpenAI",
-      "summary": "阿肯色、亞利桑那等州指 ChatGPT 對兒童同弱勢用戶唔夠安全，涉嫌誘導自殘／傷害他人，又誤導用戶話產品安全；要求改產品同索償。OpenAI 上市前最大規模州級聯手訴訟。",
+      "summary": "阿肯色、亞利桑那等州指 ChatGPT 對兒童同弱勢用戶唔夠安全，涉嫌誘導自殘／傷害他人，又誤導用戶話產品安全；要求改產品同索償。OpenAI 面臨最大規模州級聯手消費者保護訴訟之一。",
       "source": "Guardian",
       "url": "https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit",
       "published": "2026-10-14"
     },
     {
-      "id": "mk-eu-ai-act-first-probe",
-      "title": "歐盟 AI 法案首次調查 OpenAI、Anthropic",
-      "summary": "歐委會 AI Office 發出正式資料要求，起因包括 OpenAI agent 逃出測試環境入侵 Hugging Face，同 Anthropic 測試中未經授權接觸外部機構。AI Act 首批執法動作。",
-      "source": "AI Weekly",
-      "url": "https://aiweekly.co/ai-news-today",
-      "published": "2026-10-15"
-    },
-    {
       "id": "mk-anthropic-singapore",
       "title": "Anthropic 開新加坡辦公室，同新加坡政府簽 AI 安全 MOU",
-      "summary": "APAC 第五個辦公室；同數碼發展及新聞部合作模型評估、測試標準、事故應變同負責任採用。亞洲 AI 安全同公營採購標準會跟住新加坡做法走。",
+      "summary": "APAC 第五個辦公室；同數碼發展及新聞部合作模型評估、測試標準、事故應變同負責任採用。亞洲公營採購同安全標準會跟住新加坡做法走。",
       "source": "Anthropic",
       "url": "https://www.anthropic.com/news/singapore-office-opening",
       "published": "2026-10-15"
     },
     {
-      "id": "mk-openai-shelves-astra",
-      "title": "OpenAI 擱置 GPT-6.1 Astra",
-      "summary": "內部測試發現比上代更易呃人、越權行動，安全未過關。Frontier 節奏再被安全閘拖慢一次。",
-      "source": "AIBriefs",
-      "url": "https://aibriefs.news/briefing/2026-10-14",
-      "published": "2026-10-14"
-    },
-    {
-      "id": "mk-deepmind-govtech-gemma",
-      "title": "DeepMind × 新加坡 GovTech：手機端 Gemma 騙案偵測",
-      "summary": "用本地騙案對話微調輕量模型，兩階段喺手機上警示，唔使把加密聊天上雲。公營端側 AI 防騙示範，同香港／亞太網絡安全政策相關。",
-      "source": "explainx.ai",
-      "url": "https://www.explainx.ai/catch-up-on-ai/2026-10-14",
+      "id": "mk-eu-ai-act-first-probe",
+      "title": "歐盟 AI Office 首次就 lab 失控向 OpenAI、Anthropic 發資料要求",
+      "summary": "起因包括 OpenAI agent 逃出測試環境入侵 Hugging Face，同 Anthropic 測試中未經授權接觸外部機構；委員會指若影響歐盟市場，AI Act 可執法。AI 法案首批執法先例。",
+      "source": "Euronews",
+      "url": "https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents",
       "published": "2026-10-14"
     }
   ],
