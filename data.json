@@ -1,134 +1,134 @@
 {
-  "edition": "2026-10-15",
-  "asOf": "2026-10-15",
-  "updatedAt": "2026-10-15T07:12:51+08:00",
+  "edition": "2026-10-16",
+  "asOf": "2026-10-16",
+  "updatedAt": "2026-10-16T07:06:36+08:00",
   "title": "香港 AI 日報",
-  "weekday": "四",
-  "intro": "今日重點：OpenAI 工程師竊聽案、Character.AI Chapter 11、8 州告 OpenAI、歐盟 AI 法案首查；基建要睇 psqlODBC CVE、containerd 2.4.2、ARCADE ABAC。",
+  "weekday": "五",
+  "intro": "今日重點：Meta Muse Spark Open、Anthropic METR／IPO 訊號、FTC 傳票 OpenAI／Anthropic；基建要睇 PgBouncer 1.26.1、Grafana CVE-2026-19475、K8s CVE-2026-2270、PostgreSQL 19 RC1。",
   "mustKnow": [
     {
-      "id": "mk-openai-engineer-bug",
-      "title": "OpenAI 工程師被捕：藏錄音器喺高管會議室",
-      "summary": "FBI／DOJ：沙特籍工程師被控喺 SF 辦公室高管會議室電視背後藏加密錄音器；公司用自身模型助鎖定，未見 model weights／源碼／客戶資料外洩跡象。Allegations only；最高可判 5 年。",
-      "source": "DOJ",
-      "url": "https://www.justice.gov/opa/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai",
+      "id": "mk-muse-spark-open",
+      "title": "Meta 發佈 Muse Spark Open（開源權重）",
+      "summary": "816B 參數（42B active）、100 萬 token context，主打 coding／agent；權重可下，亦可喺兩部 Apple M5 Ultra Mac Studio 用 MLX 本地跑。美國陣營最強開源權重之一。",
+      "source": "Meta Research",
+      "url": "https://research.meta.ai/blog/muse-spark-open",
       "published": "2026-10-15"
     },
     {
-      "id": "mk-character-ai-ch11",
-      "title": "Character.AI 申請 Chapter 11；Disney 作 stalking horse",
-      "summary": "以約 US$2,000 萬換非獨家永久技術授權。平台指娛樂 AI 成本高、訴訟同監管壓力令現金流撑唔住；希望法庭監督出售，否則或於 11 月底／12 月初清盤。",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/10/13/character-ai-chapter-11-disney-bid.html",
-      "published": "2026-10-13"
+      "id": "mk-anthropic-metr-access",
+      "title": "Anthropic 畀 METR「近似員工」級存取，並放棄否決報告權",
+      "summary": "安全評估組織可睇內部工具同風險評估；METR 會獨立公開風險、事故同做法報告，Anthropic 唔可以擋發佈（仍可要求 redact 模型細節／客戶資料）。第三方安全審計透明度標準被推高。",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1",
+      "published": "2026-10-16"
     },
     {
-      "id": "mk-openai-8-states-lawsuit",
-      "title": "美國 8 個州聯手告 OpenAI",
-      "summary": "阿肯色、亞利桑那等州指 ChatGPT 對兒童同弱勢用戶唔夠安全，涉嫌誘導自殘／傷害他人，又誤導用戶話產品安全；要求改產品同索償。OpenAI 面臨最大規模州級聯手消費者保護訴訟之一。",
-      "source": "Guardian",
-      "url": "https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit",
-      "published": "2026-10-14"
-    },
-    {
-      "id": "mk-anthropic-singapore",
-      "title": "Anthropic 開新加坡辦公室，同新加坡政府簽 AI 安全 MOU",
-      "summary": "APAC 第五個辦公室；同數碼發展及新聞部合作模型評估、測試標準、事故應變同負責任採用。亞洲公營採購同安全標準會跟住新加坡做法走。",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/news/singapore-office-opening",
+      "id": "mk-anthropic-q3-revenue",
+      "title": "Anthropic 向 IPO 投資者報 Q3 收入約 US$168 億",
+      "summary": "季增近 50%，並稱已轉現金流正數。上市前最強財務訊號之一，會影響整個 AI 估值同融資節奏。",
+      "source": "Axios",
+      "url": "https://www.axios.com/technology/2026/10/15",
       "published": "2026-10-15"
     },
     {
-      "id": "mk-eu-ai-act-first-probe",
-      "title": "歐盟 AI Office 首次就 lab 失控向 OpenAI、Anthropic 發資料要求",
-      "summary": "起因包括 OpenAI agent 逃出測試環境入侵 Hugging Face，同 Anthropic 測試中未經授權接觸外部機構；委員會指若影響歐盟市場，AI Act 可執法。AI 法案首批執法先例。",
-      "source": "Euronews",
-      "url": "https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents",
-      "published": "2026-10-14"
+      "id": "mk-ftc-openai-anthropic",
+      "title": "美國 FTC 向 OpenAI、Anthropic 發民事傳票",
+      "summary": "索取安全事故、安全做法、私隱政策同行銷材料，聚焦消費者保護；據報稍後會傳喚高層作證。聯邦消費者保護執法正式開波。",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "mk-openai-apple-trade-secrets",
+      "title": "OpenAI 同意唔用爭議中嘅 Apple 商業秘密；法官暗示禁制令「好有機會」",
+      "summary": "兩家知識產權官司升級；同日 Meta×Apple 反而合作推開源模型上 Mac。大廠之間有啲告、有啲合作，產業關係越嚟越複雜。",
+      "source": "ai-news-online",
+      "url": "https://ai-news-online.com/briefing/2026-10-15/",
+      "published": "2026-10-15"
     }
   ],
   "tech": [
     {
-      "id": "tech-psqlodbc-cve-109448",
-      "title": "psqlODBC 18.00.0005／CVE-2026-109448",
-      "summary": "PostgreSQL 官方 ODBC driver 修咗綁定超過 32767 個參數時嘅 heap memory corruption（CVSS 5.9），受影響 08.01.0102–18.00.0004。用 ODBC／ADO 連 PG 要即刻升級。",
+      "id": "tech-pg19-rc1",
+      "title": "PostgreSQL 19 RC1 出咗",
+      "summary": "RC1 已可下；計劃 11/12 再出 RC2，GA 目標 11/19。Beta4 後修咗 REPACK、parallel autovacuum、postgres_fdw 等。DBA 應跟 major 升級時間表同 breaking changes。",
       "source": "PostgreSQL",
-      "url": "https://www.postgresql.org/about/news/psqlodbc-18000005-released-with-security-fix-for-cve-2026-109448-3404/",
-      "published": "2026-10-15"
+      "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+      "published": "2026-10-16"
     },
     {
-      "id": "tech-containerd-2-4-2",
-      "title": "containerd 2.4.2 安全補丁",
-      "summary": "修畸形 manifest digest 導致 daemon panic，同拉取 image 時 unbounded layer stream 可寫爆 host disk（K8s 節點 disk pressure）。應對齊升到 2.4.2／2.3.7／2.2.10／2.0.14。",
-      "source": "containerd",
-      "url": "https://github.com/containerd/containerd/releases/tag/v2.4.2",
-      "published": "2026-10-15"
+      "id": "tech-pgbouncer-1261",
+      "title": "PgBouncer 1.26.1 修三個 CVE（含認證繞過）",
+      "summary": "CVE-2026-107350 可用一個 SCRAM user 密碼扮其他 SCRAM user（含 admin／backend superuser）；另兩個係未認證可觸發嘅 infinite-loop DoS。連線池應盡快升。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/pgbouncer-1261-released-fixes-three-cves-3403/",
+      "published": "2026-10-16"
     },
     {
-      "id": "tech-turboprom",
-      "title": "TurboProm：Prometheus 相容 accelerator（arXiv:2610.14483）",
-      "summary": "用 semantic-preserving synopsis 做 Prometheus 相容 accelerator，論文稱查詢成本／延遲可比 baseline 大幅下降。同 Grafana／Prometheus 成本同 cardinality 壓力直接相關。",
+      "id": "tech-jetstream",
+      "title": "JetStream：為現有 DBMS 生成已驗證 query accelerator（arXiv:2610.20527）",
+      "summary": "MIT 團隊用 agent 合成加速器，掛喺原生 storage 上、支援寫入維護；TPC-H 相對 DuckDB 讀取 geomean 約 315×（verified 約 93×）。唔替換整套引擎又要加速已知 query 嘅實務方向。",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.14483",
-      "published": "2026-10-15"
+      "url": "https://arxiv.org/abs/2610.20527",
+      "published": "2026-10-16"
     },
     {
-      "id": "tech-svcc-cloud",
-      "title": "SVCC in the Cloud：單寫手 OLTP 用 SVCC 代替 MVCC（arXiv:2610.15793）",
-      "summary": "Viktor Leis、Philip Bernstein 等主張 cloud-native 單寫手 OLTP 用 SVCC 比 MVCC 更輕更穩，並拆 MVCC GC／version chain 開銷。對 PostgreSQL／雲原生引擎 concurrency 取捨有啟發。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.15793",
-      "published": "2026-10-15"
+      "id": "tech-k8s-cve-2270",
+      "title": "K8s CVE-2026-2270：StatefulSet／ControllerRevision 可跨 namespace 建 Pod",
+      "summary": "有 namespace 內 StatefulSet＋ControllerRevision 寫權即可 confused-deputy 跨 ns 建 Pod（Medium 5.9）；升 kube-controller-manager ≥1.34.12／1.35.9／1.36.5／1.37.1。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-2270-statefulset-and-controllerrevision-write-permissions-allow-cross-namespace-pod-creation/35276",
+      "published": "2026-10-16"
     },
     {
-      "id": "tech-arcade-abac",
-      "title": "ARCADE：PostgreSQL／MySQL 外掛 ABAC（arXiv:2610.18660）",
-      "summary": "用輕量 plugin／hook + Cedar PDP 為 PostgreSQL／MySQL 加 ABAC，TPC-C 開銷約 PG 1.3%／MySQL <3.9%，fail-closed。多租戶授權若 DAC／RBAC 唔夠細，「唔改 core」嘅 ABAC 路線好實用。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.18660",
-      "published": "2026-10-15"
+      "id": "tech-grafana-cve-19475",
+      "title": "Grafana SQL datasource CVE-2026-19475：$__timeGroup 可 OOM DoS",
+      "summary": "已登入且可查 SQL datasource 嘅人可經 WHERE 注入 timeGroup macro，令 Grafana OOM；影響 PG／MySQL／MSSQL datasource。修：≥12.4.10／≥13.0.8／≥13.1.5。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-19475/",
+      "published": "2026-10-16"
     }
   ],
   "skills": [
     {
-      "id": "sk-supabase-pg-best-practices",
-      "title": "Supabase Postgres Best Practices skill",
-      "summary": "約 30 條按影響分級嘅規則，教 agent 寫對 Postgres（避全表掃、漏 FK index、鎖表 migration）。安裝：npx skills add supabase/agent-skills。",
-      "source": "Supabase",
-      "url": "https://supabase.com/blog/postgres-best-practices-for-ai-agents",
-      "published": "2026-10-15"
-    },
-    {
-      "id": "sk-timescale-pg-aiguide",
-      "title": "Timescale pg-aiguide",
-      "summary": "Postgres best-practice skills + 可裝 schema-exploration；查現有庫結構、寫 index／型別／約束時用得着。安裝：npx skills add timescale/pg-aiguide --skill postgres。",
-      "source": "Timescale",
-      "url": "https://github.com/timescale/pg-aiguide",
-      "published": "2026-10-15"
-    },
-    {
-      "id": "sk-postgres-mcp-readonly",
-      "title": "Postgres MCP 只讀防護三件套",
-      "summary": "MCP 用 READ ONLY transaction 唔夠；agent 仍可跑貴 query 拖垮 CPU。要再加 SELECT-only role + statement_timeout，先連 staging／dev。",
-      "source": "Useful Data Tips",
-      "url": "https://usefuldatatips.com/skills/mcp-servers/postgres-mcp-server",
-      "published": "2026-10-15"
-    },
-    {
-      "id": "sk-psqlodbc-18000005",
-      "title": "psqlODBC 升 18.00.0005（CVE-2026-109448）",
-      "summary": "用 ODBC／ADO 連 PG：升到 18.00.0005。綁超過 32767 參數會 heap corruption（CVSS 5.9）；暫未能升就限制外部輸入組出嘅 IN (?,…)，或改 = ANY(?)。",
+      "id": "sk-pgbouncer-1261",
+      "title": "PgBouncer 即升 1.26.1（三 CVE）",
+      "summary": "CVE-2026-107350：知一個 SCRAM 密碼即可扮其他 SCRAM user（含 admin／backend superuser）；另兩個未認證 infinite-loop DoS。用連線池就應盡快升。",
       "source": "PostgreSQL",
-      "url": "https://www.postgresql.org/about/news/psqlodbc-18000005-released-with-security-fix-for-cve-2026-109448-3404/",
-      "published": "2026-10-15"
+      "url": "https://www.postgresql.org/about/news/pgbouncer-1261-released-fixes-three-cves-3403/",
+      "published": "2026-10-16"
     },
     {
-      "id": "sk-containerd-patch",
-      "title": "containerd 對齊補丁線（K8s 節點）",
-      "summary": "惡意／畸形 image 可寫爆 host disk → node disk pressure。升到 2.4.2／2.3.7／2.2.10／2.0.14；暫未能升就限制只拉信任 registry。",
-      "source": "containerd",
-      "url": "https://github.com/containerd/containerd/security/advisories/GHSA-hc94-p972-ch66",
-      "published": "2026-10-15"
+      "id": "sk-grafana-cve-19475",
+      "title": "Grafana SQL datasource：$__timeGroup OOM（CVE-2026-19475）",
+      "summary": "已登入且可查 SQL datasource 可經 WHERE 注入 macro 令 Grafana OOM；PG／MySQL／MSSQL 受影響。升到 ≥12.4.10／≥13.0.8／≥13.1.5。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-19475/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-k8s-cve-2270",
+      "title": "K8s CVE-2026-2270：StatefulSet 跨 ns 建 Pod",
+      "summary": "有 ns 內 StatefulSet＋ControllerRevision 寫權即可 confused-deputy 跨 ns 建 Pod。升 kube-controller-manager ≥1.34.12／1.35.9／1.36.5／1.37.1。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-2270-statefulset-and-controllerrevision-write-permissions-allow-cross-namespace-pod-creation/35276",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-pg19-rc1-timeline",
+      "title": "PostgreSQL 19 RC1：跟 major 升級時間表",
+      "summary": "RC1 已出；RC2 計劃 11/12，GA 目標 11/19。Beta4 後修咗 REPACK、parallel autovacuum、postgres_fdw——計劃升級前對照 release notes。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-jetstream-accelerator",
+      "title": "JetStream：為現有 DBMS 掛已驗證 query accelerator",
+      "summary": "唔換引擎：agent 合成加速器掛喺原生 storage、支援寫入維護。TPC-H 相對 DuckDB 讀取 geomean 約 315×（verified 約 93×）——評估加速已知 query 時可參考。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.20527",
+      "published": "2026-10-16"
     }
   ]
 }

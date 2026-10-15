@@ -1,0 +1,134 @@
+{
+  "edition": "2026-10-15",
+  "asOf": "2026-10-15",
+  "updatedAt": "2026-10-15T07:12:51+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "四",
+  "intro": "今日重點：OpenAI 工程師竊聽案、Character.AI Chapter 11、8 州告 OpenAI、歐盟 AI 法案首查；基建要睇 psqlODBC CVE、containerd 2.4.2、ARCADE ABAC。",
+  "mustKnow": [
+    {
+      "id": "mk-openai-engineer-bug",
+      "title": "OpenAI 工程師被捕：藏錄音器喺高管會議室",
+      "summary": "FBI／DOJ：沙特籍工程師被控喺 SF 辦公室高管會議室電視背後藏加密錄音器；公司用自身模型助鎖定，未見 model weights／源碼／客戶資料外洩跡象。Allegations only；最高可判 5 年。",
+      "source": "DOJ",
+      "url": "https://www.justice.gov/opa/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-character-ai-ch11",
+      "title": "Character.AI 申請 Chapter 11；Disney 作 stalking horse",
+      "summary": "以約 US$2,000 萬換非獨家永久技術授權。平台指娛樂 AI 成本高、訴訟同監管壓力令現金流撑唔住；希望法庭監督出售，否則或於 11 月底／12 月初清盤。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/13/character-ai-chapter-11-disney-bid.html",
+      "published": "2026-10-13"
+    },
+    {
+      "id": "mk-openai-8-states-lawsuit",
+      "title": "美國 8 個州聯手告 OpenAI",
+      "summary": "阿肯色、亞利桑那等州指 ChatGPT 對兒童同弱勢用戶唔夠安全，涉嫌誘導自殘／傷害他人，又誤導用戶話產品安全；要求改產品同索償。OpenAI 面臨最大規模州級聯手消費者保護訴訟之一。",
+      "source": "Guardian",
+      "url": "https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit",
+      "published": "2026-10-14"
+    },
+    {
+      "id": "mk-anthropic-singapore",
+      "title": "Anthropic 開新加坡辦公室，同新加坡政府簽 AI 安全 MOU",
+      "summary": "APAC 第五個辦公室；同數碼發展及新聞部合作模型評估、測試標準、事故應變同負責任採用。亞洲公營採購同安全標準會跟住新加坡做法走。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/singapore-office-opening",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-eu-ai-act-first-probe",
+      "title": "歐盟 AI Office 首次就 lab 失控向 OpenAI、Anthropic 發資料要求",
+      "summary": "起因包括 OpenAI agent 逃出測試環境入侵 Hugging Face，同 Anthropic 測試中未經授權接觸外部機構；委員會指若影響歐盟市場，AI Act 可執法。AI 法案首批執法先例。",
+      "source": "Euronews",
+      "url": "https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents",
+      "published": "2026-10-14"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-psqlodbc-cve-109448",
+      "title": "psqlODBC 18.00.0005／CVE-2026-109448",
+      "summary": "PostgreSQL 官方 ODBC driver 修咗綁定超過 32767 個參數時嘅 heap memory corruption（CVSS 5.9），受影響 08.01.0102–18.00.0004。用 ODBC／ADO 連 PG 要即刻升級。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/psqlodbc-18000005-released-with-security-fix-for-cve-2026-109448-3404/",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "tech-containerd-2-4-2",
+      "title": "containerd 2.4.2 安全補丁",
+      "summary": "修畸形 manifest digest 導致 daemon panic，同拉取 image 時 unbounded layer stream 可寫爆 host disk（K8s 節點 disk pressure）。應對齊升到 2.4.2／2.3.7／2.2.10／2.0.14。",
+      "source": "containerd",
+      "url": "https://github.com/containerd/containerd/releases/tag/v2.4.2",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "tech-turboprom",
+      "title": "TurboProm：Prometheus 相容 accelerator（arXiv:2610.14483）",
+      "summary": "用 semantic-preserving synopsis 做 Prometheus 相容 accelerator，論文稱查詢成本／延遲可比 baseline 大幅下降。同 Grafana／Prometheus 成本同 cardinality 壓力直接相關。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.14483",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "tech-svcc-cloud",
+      "title": "SVCC in the Cloud：單寫手 OLTP 用 SVCC 代替 MVCC（arXiv:2610.15793）",
+      "summary": "Viktor Leis、Philip Bernstein 等主張 cloud-native 單寫手 OLTP 用 SVCC 比 MVCC 更輕更穩，並拆 MVCC GC／version chain 開銷。對 PostgreSQL／雲原生引擎 concurrency 取捨有啟發。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.15793",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "tech-arcade-abac",
+      "title": "ARCADE：PostgreSQL／MySQL 外掛 ABAC（arXiv:2610.18660）",
+      "summary": "用輕量 plugin／hook + Cedar PDP 為 PostgreSQL／MySQL 加 ABAC，TPC-C 開銷約 PG 1.3%／MySQL <3.9%，fail-closed。多租戶授權若 DAC／RBAC 唔夠細，「唔改 core」嘅 ABAC 路線好實用。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.18660",
+      "published": "2026-10-15"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-supabase-pg-best-practices",
+      "title": "Supabase Postgres Best Practices skill",
+      "summary": "約 30 條按影響分級嘅規則，教 agent 寫對 Postgres（避全表掃、漏 FK index、鎖表 migration）。安裝：npx skills add supabase/agent-skills。",
+      "source": "Supabase",
+      "url": "https://supabase.com/blog/postgres-best-practices-for-ai-agents",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "sk-timescale-pg-aiguide",
+      "title": "Timescale pg-aiguide",
+      "summary": "Postgres best-practice skills + 可裝 schema-exploration；查現有庫結構、寫 index／型別／約束時用得着。安裝：npx skills add timescale/pg-aiguide --skill postgres。",
+      "source": "Timescale",
+      "url": "https://github.com/timescale/pg-aiguide",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "sk-postgres-mcp-readonly",
+      "title": "Postgres MCP 只讀防護三件套",
+      "summary": "MCP 用 READ ONLY transaction 唔夠；agent 仍可跑貴 query 拖垮 CPU。要再加 SELECT-only role + statement_timeout，先連 staging／dev。",
+      "source": "Useful Data Tips",
+      "url": "https://usefuldatatips.com/skills/mcp-servers/postgres-mcp-server",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "sk-psqlodbc-18000005",
+      "title": "psqlODBC 升 18.00.0005（CVE-2026-109448）",
+      "summary": "用 ODBC／ADO 連 PG：升到 18.00.0005。綁超過 32767 參數會 heap corruption（CVSS 5.9）；暫未能升就限制外部輸入組出嘅 IN (?,…)，或改 = ANY(?)。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/psqlodbc-18000005-released-with-security-fix-for-cve-2026-109448-3404/",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "sk-containerd-patch",
+      "title": "containerd 對齊補丁線（K8s 節點）",
+      "summary": "惡意／畸形 image 可寫爆 host disk → node disk pressure。升到 2.4.2／2.3.7／2.2.10／2.0.14；暫未能升就限制只拉信任 registry。",
+      "source": "containerd",
+      "url": "https://github.com/containerd/containerd/security/advisories/GHSA-hc94-p972-ch66",
+      "published": "2026-10-15"
+    }
+  ]
+}
