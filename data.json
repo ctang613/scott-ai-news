@@ -1,49 +1,49 @@
 {
   "edition": "2026-10-16",
   "asOf": "2026-10-16",
-  "updatedAt": "2026-10-16T07:06:36+08:00",
+  "updatedAt": "2026-10-16T07:09:15+08:00",
   "title": "香港 AI 日報",
   "weekday": "五",
-  "intro": "今日重點：Meta Muse Spark Open、Anthropic METR／IPO 訊號、FTC 傳票 OpenAI／Anthropic；基建要睇 PgBouncer 1.26.1、Grafana CVE-2026-19475、K8s CVE-2026-2270、PostgreSQL 19 RC1。",
+  "intro": "今日重點：金管局 ART 銀行 AI 框架、Meta Muse Spark Open、Cohere×AISLE、Anthropic×METR、DeepMind Antigravity；基建要睇 PgBouncer 1.26.1、Grafana CVE-2026-19475、K8s CVE-2026-2270、PostgreSQL 19 RC1。",
   "mustKnow": [
     {
+      "id": "mk-hkma-art",
+      "title": "金管局推「ART」銀行 AI 框架 + 訓練數據平台",
+      "summary": "香港金管局公布「ART」框架（Accountability／Resilience／Trust），更新銀行 AI 監管指引，並與 Cyberport、港大合作建 AI 訓練數據共享平台；同日 GenA.I. Sandbox 第二期成果顯示逾六成用例屬 agentic AI。",
+      "source": "HKMA",
+      "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/10/20261015-3/",
+      "published": "2026-10-15"
+    },
+    {
       "id": "mk-muse-spark-open",
-      "title": "Meta 發佈 Muse Spark Open（開源權重）",
-      "summary": "816B 參數（42B active）、100 萬 token context，主打 coding／agent；權重可下，亦可喺兩部 Apple M5 Ultra Mac Studio 用 MLX 本地跑。美國陣營最強開源權重之一。",
+      "title": "Meta 開源 Muse Spark Open（可 Mac Studio 本地跑）",
+      "summary": "816B 總參數（約 42B 活躍）、1M context、原生多模態，主打 coding／agentic；用 MLX 優化後可喺兩部 M5 Ultra Mac Studio 本地跑，權重已上 Hugging Face 等同平台。",
       "source": "Meta Research",
       "url": "https://research.meta.ai/blog/muse-spark-open",
       "published": "2026-10-15"
     },
     {
-      "id": "mk-anthropic-metr-access",
-      "title": "Anthropic 畀 METR「近似員工」級存取，並放棄否決報告權",
-      "summary": "安全評估組織可睇內部工具同風險評估；METR 會獨立公開風險、事故同做法報告，Anthropic 唔可以擋發佈（仍可要求 redact 模型細節／客戶資料）。第三方安全審計透明度標準被推高。",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1",
-      "published": "2026-10-16"
-    },
-    {
-      "id": "mk-anthropic-q3-revenue",
-      "title": "Anthropic 向 IPO 投資者報 Q3 收入約 US$168 億",
-      "summary": "季增近 50%，並稱已轉現金流正數。上市前最強財務訊號之一，會影響整個 AI 估值同融資節奏。",
-      "source": "Axios",
-      "url": "https://www.axios.com/technology/2026/10/15",
+      "id": "mk-cohere-aisle",
+      "title": "Cohere 擬收購 AISLE，成立 Cohere Cyber",
+      "summary": "擬收購 AISLE（自主發現／修復未知軟件漏洞），並成立 Cohere Cyber；AISLE 創辦團隊將入領導層，布拉格定為 AI 網絡安全中心。Frontier 商用由模型轉向安全棧。",
+      "source": "Cohere",
+      "url": "https://cohere.com/blog/cohere-and-aisle-sign-letter-of-intent-to-advance-cyber-resilient-sovereign-ai",
       "published": "2026-10-15"
     },
     {
-      "id": "mk-ftc-openai-anthropic",
-      "title": "美國 FTC 向 OpenAI、Anthropic 發民事傳票",
-      "summary": "索取安全事故、安全做法、私隱政策同行銷材料，聚焦消費者保護；據報稍後會傳喚高層作證。聯邦消費者保護執法正式開波。",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1",
-      "published": "2026-10-16"
+      "id": "mk-anthropic-metr-access",
+      "title": "Anthropic 畀 METR 接近員工級獨立評估存取",
+      "summary": "非牟利評估機構 METR 六人團隊獲接近內部風險評估人員嘅硬件、辦公室同內部工具存取；METR 可公開發表風險／事故／實務評估，Anthropic 無否決權（僅可要求狹窄類別刪改）。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "published": "2026-10-15"
     },
     {
-      "id": "mk-openai-apple-trade-secrets",
-      "title": "OpenAI 同意唔用爭議中嘅 Apple 商業秘密；法官暗示禁制令「好有機會」",
-      "summary": "兩家知識產權官司升級；同日 Meta×Apple 反而合作推開源模型上 Mac。大廠之間有啲告、有啲合作，產業關係越嚟越複雜。",
-      "source": "ai-news-online",
-      "url": "https://ai-news-online.com/briefing/2026-10-15/",
+      "id": "mk-deepmind-antigravity",
+      "title": "DeepMind Antigravity 加速搵抗菌肽候選",
+      "summary": "用 agentic 科學工作台 Antigravity，結合 ProtNLM 喺 UniProt「暗物質」序列中鎖定一個 97 氨基酸 bacteriocin 候選（UniProt A0A0U0D591）；候選已進入 wet-lab 驗證。",
+      "source": "DeepMind",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
       "published": "2026-10-15"
     }
   ],
