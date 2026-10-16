@@ -1,0 +1,134 @@
+{
+  "edition": "2026-10-16",
+  "asOf": "2026-10-16",
+  "updatedAt": "2026-10-16T07:09:15+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "五",
+  "intro": "今日重點：金管局 ART 銀行 AI 框架、Meta Muse Spark Open、Cohere×AISLE、Anthropic×METR、DeepMind Antigravity；基建要睇 PgBouncer 1.26.1、Grafana CVE-2026-19475、K8s CVE-2026-2270、PostgreSQL 19 RC1。",
+  "mustKnow": [
+    {
+      "id": "mk-hkma-art",
+      "title": "金管局推「ART」銀行 AI 框架 + 訓練數據平台",
+      "summary": "香港金管局公布「ART」框架（Accountability／Resilience／Trust），更新銀行 AI 監管指引，並與 Cyberport、港大合作建 AI 訓練數據共享平台；同日 GenA.I. Sandbox 第二期成果顯示逾六成用例屬 agentic AI。",
+      "source": "HKMA",
+      "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/10/20261015-3/",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-muse-spark-open",
+      "title": "Meta 開源 Muse Spark Open（可 Mac Studio 本地跑）",
+      "summary": "816B 總參數（約 42B 活躍）、1M context、原生多模態，主打 coding／agentic；用 MLX 優化後可喺兩部 M5 Ultra Mac Studio 本地跑，權重已上 Hugging Face 等同平台。",
+      "source": "Meta Research",
+      "url": "https://research.meta.ai/blog/muse-spark-open",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-cohere-aisle",
+      "title": "Cohere 擬收購 AISLE，成立 Cohere Cyber",
+      "summary": "擬收購 AISLE（自主發現／修復未知軟件漏洞），並成立 Cohere Cyber；AISLE 創辦團隊將入領導層，布拉格定為 AI 網絡安全中心。Frontier 商用由模型轉向安全棧。",
+      "source": "Cohere",
+      "url": "https://cohere.com/blog/cohere-and-aisle-sign-letter-of-intent-to-advance-cyber-resilient-sovereign-ai",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-anthropic-metr-access",
+      "title": "Anthropic 畀 METR 接近員工級獨立評估存取",
+      "summary": "非牟利評估機構 METR 六人團隊獲接近內部風險評估人員嘅硬件、辦公室同內部工具存取；METR 可公開發表風險／事故／實務評估，Anthropic 無否決權（僅可要求狹窄類別刪改）。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "published": "2026-10-15"
+    },
+    {
+      "id": "mk-deepmind-antigravity",
+      "title": "DeepMind Antigravity 加速搵抗菌肽候選",
+      "summary": "用 agentic 科學工作台 Antigravity，結合 ProtNLM 喺 UniProt「暗物質」序列中鎖定一個 97 氨基酸 bacteriocin 候選（UniProt A0A0U0D591）；候選已進入 wet-lab 驗證。",
+      "source": "DeepMind",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+      "published": "2026-10-15"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-pg19-rc1",
+      "title": "PostgreSQL 19 RC1 出咗",
+      "summary": "RC1 已可下；計劃 11/12 再出 RC2，GA 目標 11/19。Beta4 後修咗 REPACK、parallel autovacuum、postgres_fdw 等。DBA 應跟 major 升級時間表同 breaking changes。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "tech-pgbouncer-1261",
+      "title": "PgBouncer 1.26.1 修三個 CVE（含認證繞過）",
+      "summary": "CVE-2026-107350 可用一個 SCRAM user 密碼扮其他 SCRAM user（含 admin／backend superuser）；另兩個係未認證可觸發嘅 infinite-loop DoS。連線池應盡快升。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/pgbouncer-1261-released-fixes-three-cves-3403/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "tech-jetstream",
+      "title": "JetStream：為現有 DBMS 生成已驗證 query accelerator（arXiv:2610.20527）",
+      "summary": "MIT 團隊用 agent 合成加速器，掛喺原生 storage 上、支援寫入維護；TPC-H 相對 DuckDB 讀取 geomean 約 315×（verified 約 93×）。唔替換整套引擎又要加速已知 query 嘅實務方向。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.20527",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "tech-k8s-cve-2270",
+      "title": "K8s CVE-2026-2270：StatefulSet／ControllerRevision 可跨 namespace 建 Pod",
+      "summary": "有 namespace 內 StatefulSet＋ControllerRevision 寫權即可 confused-deputy 跨 ns 建 Pod（Medium 5.9）；升 kube-controller-manager ≥1.34.12／1.35.9／1.36.5／1.37.1。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-2270-statefulset-and-controllerrevision-write-permissions-allow-cross-namespace-pod-creation/35276",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "tech-grafana-cve-19475",
+      "title": "Grafana SQL datasource CVE-2026-19475：$__timeGroup 可 OOM DoS",
+      "summary": "已登入且可查 SQL datasource 嘅人可經 WHERE 注入 timeGroup macro，令 Grafana OOM；影響 PG／MySQL／MSSQL datasource。修：≥12.4.10／≥13.0.8／≥13.1.5。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-19475/",
+      "published": "2026-10-16"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-pgbouncer-1261",
+      "title": "PgBouncer 即升 1.26.1（三 CVE）",
+      "summary": "CVE-2026-107350：知一個 SCRAM 密碼即可扮其他 SCRAM user（含 admin／backend superuser）；另兩個未認證 infinite-loop DoS。用連線池就應盡快升。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/pgbouncer-1261-released-fixes-three-cves-3403/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-grafana-cve-19475",
+      "title": "Grafana SQL datasource：$__timeGroup OOM（CVE-2026-19475）",
+      "summary": "已登入且可查 SQL datasource 可經 WHERE 注入 macro 令 Grafana OOM；PG／MySQL／MSSQL 受影響。升到 ≥12.4.10／≥13.0.8／≥13.1.5。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-19475/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-k8s-cve-2270",
+      "title": "K8s CVE-2026-2270：StatefulSet 跨 ns 建 Pod",
+      "summary": "有 ns 內 StatefulSet＋ControllerRevision 寫權即可 confused-deputy 跨 ns 建 Pod。升 kube-controller-manager ≥1.34.12／1.35.9／1.36.5／1.37.1。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-2270-statefulset-and-controllerrevision-write-permissions-allow-cross-namespace-pod-creation/35276",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-pg19-rc1-timeline",
+      "title": "PostgreSQL 19 RC1：跟 major 升級時間表",
+      "summary": "RC1 已出；RC2 計劃 11/12，GA 目標 11/19。Beta4 後修咗 REPACK、parallel autovacuum、postgres_fdw——計劃升級前對照 release notes。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/",
+      "published": "2026-10-16"
+    },
+    {
+      "id": "sk-jetstream-accelerator",
+      "title": "JetStream：為現有 DBMS 掛已驗證 query accelerator",
+      "summary": "唔換引擎：agent 合成加速器掛喺原生 storage、支援寫入維護。TPC-H 相對 DuckDB 讀取 geomean 約 315×（verified 約 93×）——評估加速已知 query 時可參考。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.20527",
+      "published": "2026-10-16"
+    }
+  ]
+}
