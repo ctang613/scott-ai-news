@@ -4,6 +4,8 @@
 Uses the stdlib only. Exits 0 when the 2026-10-18 digest is well formed:
 mustKnow, tech, and skills each have exactly five items, updatedAt falls on
 that edition in Asia/Hong_Kong, and every local thumbnail exists.
+politics is optional: missing or empty stays valid; a populated section has
+3 to 9 items.
 """
 
 from __future__ import annotations
@@ -27,8 +29,13 @@ HTTPS_URL = re.compile(r"^https://\S+$")
 LOCAL_IMAGE = re.compile(r"^assets/images/[a-z0-9][a-z0-9_-]*\.(jpg|jpeg|png|webp|svg)$")
 SECTIONS = ("mustKnow", "tech", "skills")
 REQUIRED_ROOT = ("edition", "asOf", "updatedAt", "title", "weekday", "intro", *SECTIONS)
+ALLOWED_ROOT = (*REQUIRED_ROOT, "politics")
 REQUIRED_ITEM = ("id", "title", "summary", "source", "url", "published")
 OPTIONAL_ITEM = ("image", "imageAlt")
+POLITICS_REGIONS = ("美國", "中國", "香港", "全球")
+POLITICS_REQUIRED = ("id", "region", "title", "what", "why", "hkImpact", "published", "sources")
+POLITICS_OPTIONAL = ("image", "imageAlt")
+SOURCE_REQUIRED = ("name", "url")
 EDITION = "2026-10-18"
 HK = ZoneInfo("Asia/Hong_Kong")
 
@@ -81,6 +88,63 @@ def check_image(body: dict, label: str) -> None:
     fail(f"{label}.image must be an https URL or a file under assets/images")
 
 
+def check_sources(sources: object, label: str) -> None:
+    if not isinstance(sources, list) or not sources:
+        fail(f"{label}.sources must be a non-empty array")
+    for index, source in enumerate(sources, start=1):
+        body = expect_object(source, f"{label}.sources[{index}]")
+        extra = set(body) - set(SOURCE_REQUIRED)
+        if extra:
+            fail(f"{label}.sources[{index}] has unknown fields: {', '.join(sorted(extra))}")
+        missing = [key for key in SOURCE_REQUIRED if key not in body]
+        if missing:
+            fail(f"{label}.sources[{index}] missing fields: {', '.join(missing)}")
+        expect_nonempty_string(body["name"], f"{label}.sources[{index}].name")
+        url = expect_nonempty_string(body["url"], f"{label}.sources[{index}].url")
+        if not HTTPS_URL.fullmatch(url):
+            fail(f"{label}.sources[{index}].url must be an https URL")
+
+
+def check_politics_item(item: object, label: str, seen_ids: set[str]) -> None:
+    body = expect_object(item, label)
+    extra = set(body) - set(POLITICS_REQUIRED) - set(POLITICS_OPTIONAL)
+    if extra:
+        fail(f"{label} has unknown fields: {', '.join(sorted(extra))}")
+    missing = [key for key in POLITICS_REQUIRED if key not in body]
+    if missing:
+        fail(f"{label} missing fields: {', '.join(missing)}")
+
+    item_id = expect_nonempty_string(body["id"], f"{label}.id")
+    if not ITEM_ID.fullmatch(item_id):
+        fail(f"{label}.id must match {ITEM_ID.pattern}")
+    if item_id in seen_ids:
+        fail(f"duplicate id {item_id}")
+    seen_ids.add(item_id)
+
+    region = expect_nonempty_string(body["region"], f"{label}.region")
+    if region not in POLITICS_REGIONS:
+        fail(f"{label}.region must be one of {', '.join(POLITICS_REGIONS)}")
+    expect_nonempty_string(body["title"], f"{label}.title")
+    expect_nonempty_string(body["what"], f"{label}.what")
+    expect_nonempty_string(body["why"], f"{label}.why")
+    expect_nonempty_string(body["hkImpact"], f"{label}.hkImpact")
+    published = expect_nonempty_string(body["published"], f"{label}.published")
+    if not DATE.fullmatch(published):
+        fail(f"{label}.published must be YYYY-MM-DD")
+    check_sources(body["sources"], label)
+    check_image(body, label)
+
+
+def check_politics(section: object, seen_ids: set[str]) -> None:
+    if not isinstance(section, list):
+        fail("politics must be an array")
+    count = len(section)
+    if count not in (0,) and not 3 <= count <= 9:
+        fail(f"politics must be empty or contain 3 to 9 items, found {count}")
+    for index, item in enumerate(section, start=1):
+        check_politics_item(item, f"politics[{index}]", seen_ids)
+
+
 def check_item(item: object, label: str, seen_ids: set[str]) -> None:
     body = expect_object(item, label)
     extra = set(body) - set(REQUIRED_ITEM) - set(OPTIONAL_ITEM)
@@ -114,7 +178,7 @@ def check_item(item: object, label: str, seen_ids: set[str]) -> None:
 
 def check_data(data: object) -> None:
     root = expect_object(data, "data.json")
-    extra = set(root) - set(REQUIRED_ROOT)
+    extra = set(root) - set(ALLOWED_ROOT)
     if extra:
         fail(f"data.json has unknown fields: {', '.join(sorted(extra))}")
     missing = [key for key in REQUIRED_ROOT if key not in root]
@@ -154,6 +218,9 @@ def check_data(data: object) -> None:
         for index, item in enumerate(section, start=1):
             check_item(item, f"{name}[{index}]", seen_ids)
 
+    if "politics" in root:
+        check_politics(root["politics"], seen_ids)
+
 
 def check_schema_file(schema: object) -> None:
     body = expect_object(schema, "schema")
@@ -169,6 +236,33 @@ def check_schema_file(schema: object) -> None:
     dependent = item.get("dependentRequired")
     if dependent != {"image": ["imageAlt"], "imageAlt": ["image"]}:
         fail("schema must require image and imageAlt together")
+    if "politics" in required:
+        fail("politics must stay optional")
+    props = expect_object(body.get("properties"), "schema.properties")
+    politics = expect_object(props.get("politics"), "schema.properties.politics")
+    options = politics.get("anyOf")
+    if not isinstance(options, list) or len(options) != 2:
+        fail("politics must allow an empty array or 3 to 9 items")
+    empty, populated = options
+    if empty.get("type") != "array" or empty.get("maxItems") != 0:
+        fail("politics empty branch must allow only an empty array")
+    if populated.get("minItems") != 3 or populated.get("maxItems") != 9:
+        fail("politics must allow 3 to 9 items")
+    defs = expect_object(body.get("$defs"), "schema.$defs")
+    politics_item = expect_object(defs.get("politicsItem"), "politicsItem")
+    if politics_item.get("required") != list(POLITICS_REQUIRED):
+        fail("politics item required fields drifted")
+    if politics_item.get("dependentRequired") != {"image": ["imageAlt"], "imageAlt": ["image"]}:
+        fail("politics image and imageAlt must be set together")
+    region = politics_item.get("properties", {}).get("region", {})
+    if region.get("enum") != list(POLITICS_REGIONS):
+        fail("politics region enum drifted")
+    sources = politics_item.get("properties", {}).get("sources", {})
+    if sources.get("type") != "array" or sources.get("minItems") != 1:
+        fail("politics sources must be a non-empty array")
+    source_link = expect_object(defs.get("sourceLink"), "sourceLink")
+    if source_link.get("required") != list(SOURCE_REQUIRED):
+        fail("politics source link must require name and url")
 
 
 def check_page() -> None:
@@ -182,6 +276,12 @@ def check_page() -> None:
         "mustKnow",
         "tech",
         "skills",
+        "politics",
+        "全球政治",
+        "發生咩事",
+        "點解重要",
+        "對香港影響",
+        "hkImpact",
         "一定要知",
         "打開原文",
     )
@@ -197,9 +297,13 @@ def main() -> None:
     check_data(data)
     check_page()
     stamp = datetime.fromisoformat(data["updatedAt"]).astimezone(HK)
+    politics_note = ""
+    if isinstance(data, dict) and "politics" in data:
+        politics = data["politics"]
+        politics_note = f", politics={len(politics) if isinstance(politics, list) else '?'}"
     print(
         f"ok: {DATA_PATH.relative_to(ROOT)} edition {EDITION} "
-        f"({', '.join(f'{name}=5' for name in SECTIONS)}) "
+        f"({', '.join(f'{name}=5' for name in SECTIONS)}{politics_note}) "
         f"updatedAt {stamp.strftime('%Y-%m-%d %H:%M')} HKT"
     )
 

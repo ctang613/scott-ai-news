@@ -50,6 +50,11 @@
       #mustKnow { --section: #f0a06a; }
       #tech { --section: #9ec0ea; }
       #skills { --section: #8ddec0; }
+      #politics { --section: #e7c27a; }
+      .region-chip[data-region="美國"] { color: #f0a06a; background: color-mix(in srgb, #f0a06a 22%, var(--card)); }
+      .region-chip[data-region="中國"] { color: #f0b0b6; background: color-mix(in srgb, #f0b0b6 18%, var(--card)); }
+      .region-chip[data-region="香港"] { color: #8ddec0; background: color-mix(in srgb, #8ddec0 18%, var(--card)); }
+      .region-chip[data-region="全球"] { color: #9ec0ea; background: color-mix(in srgb, #9ec0ea 18%, var(--card)); }
       .more { background: var(--ink); color: #1c1714; }
     }
     * { box-sizing: border-box; }
@@ -194,6 +199,7 @@
     #mustKnow { --section: #9a3412; }
     #tech { --section: #1d4e89; }
     #skills { --section: #0f6e56; }
+    #politics { --section: #8a5a12; }
     .section-head { margin-bottom: 14px; }
     .eyebrow {
       margin: 0;
@@ -210,6 +216,86 @@
       letter-spacing: -0.03em;
     }
     .section-note { margin: 0; color: var(--muted); }
+    .region-filters {
+      display: flex;
+      gap: 8px;
+      margin: 0 -4px 14px;
+      padding: 0 0 4px;
+      overflow-x: auto;
+    }
+    .region-filters button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .region-filters button small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .region-filters button[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .region-filters button[aria-pressed="true"] small { color: inherit; }
+    .region-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .region-chip[data-region="美國"] {
+      color: #9a3412;
+      background: color-mix(in srgb, #9a3412 16%, var(--card));
+    }
+    .region-chip[data-region="中國"] {
+      color: #8f1d2c;
+      background: color-mix(in srgb, #8f1d2c 14%, var(--card));
+    }
+    .region-chip[data-region="香港"] {
+      color: #0f6e56;
+      background: color-mix(in srgb, #0f6e56 16%, var(--card));
+    }
+    .region-chip[data-region="全球"] {
+      color: #1d4e89;
+      background: color-mix(in srgb, #1d4e89 16%, var(--card));
+    }
+    .card .brief { margin: 0 0 12px; }
+    .card .brief h4 {
+      margin: 0 0 2px;
+      color: var(--section);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .card .brief p { margin: 0; }
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-links .more {
+      max-width: 100%;
+      height: auto;
+      white-space: normal;
+      text-align: left;
+    }
     .stories { display: grid; gap: 14px; }
     .card {
       display: flex;
@@ -426,7 +512,7 @@
       <p class="intro" id="intro"></p>
       <p class="updated" id="updated">更新時間載入緊…</p>
     </header>
-    <nav aria-label="欄目">
+    <nav id="section-nav" aria-label="欄目">
       <a href="#mustKnow">一定要知 <small>5</small></a>
       <a href="#tech">技術 <small>5</small></a>
       <a href="#skills">技能 <small>5</small></a>
@@ -444,11 +530,23 @@
   <noscript><p class="wrap">要開 JavaScript 先睇到今日新聞。資料喺 data.json。</p></noscript>
   <script>
     const HK_TZ = "Asia/Hong_Kong";
-    const SECTIONS = [
-      ["mustKnow", "一定要知", "今日做決定之前，先睇呢五則", "01"],
-      ["tech", "技術", "價錢、上下文同決策模型", "02"],
-      ["skills", "技能", "呢個星期可以落手做", "03"]
+    const BASE_SECTIONS = [
+      ["mustKnow", "一定要知", "今日做決定之前，先睇呢五則"],
+      ["tech", "技術", "價錢、上下文同決策模型"],
+      ["skills", "技能", "呢個星期可以落手做"]
     ];
+    const REGIONS = ["美國", "中國", "香港", "全球"];
+    let sectionOrder = BASE_SECTIONS.map((section, index) => [...section, String(index + 1).padStart(2, "0")]);
+
+    function sectionsFor(data) {
+      const politics = Array.isArray(data.politics) ? data.politics : [];
+      const rows = [BASE_SECTIONS[0]];
+      if (politics.length) {
+        rows.push(["politics", "🌏 全球政治", "美國、中國、香港同全球"]);
+      }
+      rows.push(BASE_SECTIONS[1], BASE_SECTIONS[2]);
+      return rows.map((section, index) => [...section, String(index + 1).padStart(2, "0")]);
+    }
     const LOGOS = {
       "Mashable": "assets/logos/mashable.jpg",
       "Aleph Alpha": "assets/logos/aleph.png",
@@ -592,17 +690,95 @@
       </article>`;
     }
 
+    function httpsUrl(url) {
+      return /^https:\/\/\S+$/.test(String(url || "")) ? String(url) : "";
+    }
+
+    function renderPoliticsItem(item, index) {
+      const sources = Array.isArray(item.sources) ? item.sources : [];
+      const primary = sources.find((source) => source && httpsUrl(source.url));
+      const title = esc(item.title || "");
+      const titleHtml = primary
+        ? `<a href="${esc(primary.url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+        : title;
+      const blocks = [
+        ["發生咩事", item.what],
+        ["點解重要", item.why],
+        ["對香港影響", item.hkImpact]
+      ].map(([label, text]) => `<div class="brief"><h4>${label}</h4><p>${esc(text || "")}</p></div>`).join("");
+      const links = sources.map((source) => {
+        const url = httpsUrl(source && source.url);
+        if (!url) return "";
+        return `<a class="more" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc((source && source.name) || url)}<span class="sr">：${title}</span></a>`;
+      }).join("");
+      const region = esc(item.region || "");
+      const mediaSource = (primary && primary.name) || item.region || "";
+      const media = item.image ? mediaHtml({ ...item, source: mediaSource }, index === 0) : "";
+      const feature = index === 0 ? " feature" : "";
+      return `<article class="card politics-card${feature}" id="${esc(item.id || "")}" data-region="${region}">
+        ${media}
+        <div class="card-body">
+          <div class="meta">
+            <span class="region-chip" data-region="${region}">${region}</span>
+            <time datetime="${esc(item.published || "")}">${esc(formatDay(item.published))}</time>
+          </div>
+          <h3>${titleHtml}</h3>
+          ${blocks}
+          <div class="source-links">${links}</div>
+        </div>
+      </article>`;
+    }
+
+    function renderPolitics(items) {
+      const present = REGIONS.filter((region) => items.some((item) => item.region === region));
+      const filters = [["all", "全部", items.length]].concat(
+        present.map((region) => [region, region, items.filter((item) => item.region === region).length])
+      ).map(([value, label, count]) =>
+        `<button type="button" data-region="${esc(value)}" aria-pressed="${value === "all" ? "true" : "false"}">${esc(label)} <small>${count}</small></button>`
+      ).join("");
+      const cards = items.map((item, index) => renderPoliticsItem(item, index)).join("");
+      return `<div class="region-filters" role="group" aria-label="按地區篩選">${filters}</div><div class="stories" id="politics-stories">${cards}</div>`;
+    }
+
     function renderSources(data) {
       const seen = new Set();
       const items = [];
-      SECTIONS.forEach(([key]) => {
-        (data[key] || []).forEach((item) => {
-          if (seen.has(item.source)) return;
-          seen.add(item.source);
-          items.push(`<li>${markHtml(item.source, false)}<span>${esc(item.source)}</span></li>`);
-        });
+      const push = (name) => {
+        if (!name || seen.has(name)) return;
+        seen.add(name);
+        items.push(`<li>${markHtml(name, false)}<span>${esc(name)}</span></li>`);
+      };
+      BASE_SECTIONS.forEach(([key]) => {
+        (data[key] || []).forEach((item) => push(item.source));
+      });
+      (Array.isArray(data.politics) ? data.politics : []).forEach((item) => {
+        (item.sources || []).forEach((source) => push(source && source.name));
       });
       document.getElementById("source-rail").innerHTML = items.join("");
+    }
+
+    function renderNav(counts) {
+      const nav = document.querySelector('nav[aria-label="欄目"]');
+      nav.innerHTML = sectionOrder.map(([key, label]) =>
+        `<a href="#${esc(key)}">${esc(label)} <small>${counts[key]}</small></a>`
+      ).join("");
+    }
+
+    function bindPoliticsFilters(root) {
+      const bar = root.querySelector(".region-filters");
+      if (!bar) return;
+      const cards = [...root.querySelectorAll("#politics .card")];
+      bar.addEventListener("click", (event) => {
+        const button = event.target.closest("button");
+        if (!button || !bar.contains(button)) return;
+        const region = button.getAttribute("data-region");
+        bar.querySelectorAll("button").forEach((item) => {
+          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+        });
+        cards.forEach((card) => {
+          card.hidden = region !== "all" && card.getAttribute("data-region") !== region;
+        });
+      });
     }
 
     function bindImages(root) {
@@ -619,8 +795,8 @@
       const mark = () => {
         const nav = document.querySelector('nav[aria-label="欄目"]');
         const line = (nav ? nav.getBoundingClientRect().bottom : 0) + 16;
-        let currentKey = SECTIONS[0][0];
-        SECTIONS.forEach(([key]) => {
+        let currentKey = sectionOrder[0][0];
+        sectionOrder.forEach(([key]) => {
           const section = document.getElementById(key);
           if (section && section.getBoundingClientRect().top <= line) currentKey = key;
         });
@@ -646,22 +822,30 @@
       document.getElementById("top-updated").textContent = updated.short;
       const description = document.querySelector('meta[name="description"]');
       if (description) description.setAttribute("content", data.intro);
-      document.getElementById("main").innerHTML = SECTIONS.map(([key, label, note, index]) => {
+      sectionOrder = sectionsFor(data);
+      const counts = {};
+      document.getElementById("main").innerHTML = sectionOrder.map(([key, label, note, index]) => {
         const items = Array.isArray(data[key]) ? data[key] : [];
-        const body = items.length
-          ? `<div class="stories">${items.map((item, itemIndex) => renderItem(item, itemIndex)).join("")}</div>`
-          : `<p class="status">呢欄暫時未有新聞。</p>`;
-        return `<section id="${key}" aria-labelledby="${key}-title">
+        counts[key] = items.length;
+        const body = key === "politics"
+          ? renderPolitics(items)
+          : (items.length
+            ? `<div class="stories">${items.map((item, itemIndex) => renderItem(item, itemIndex)).join("")}</div>`
+            : `<p class="status">呢欄暫時未有新聞。</p>`);
+        return `<section id="${esc(key)}" aria-labelledby="${esc(key)}-title">
           <header class="section-head">
-            <p class="eyebrow">${index} · ${items.length} 則</p>
-            <h2 id="${key}-title">${esc(label)}</h2>
+            <p class="eyebrow">${esc(index)} · ${items.length} 則</p>
+            <h2 id="${esc(key)}-title">${esc(label)}</h2>
             <p class="section-note">${esc(note)}</p>
           </header>
           ${body}
         </section>`;
       }).join("");
+      renderNav(counts);
       renderSources(data);
-      bindImages(document.getElementById("main"));
+      const main = document.getElementById("main");
+      bindImages(main);
+      bindPoliticsFilters(main);
       watchSections();
       if (location.hash) {
         const target = document.querySelector(location.hash);

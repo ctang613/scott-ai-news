@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://ctang613.github.io/scott-ai-news/schema/digest.schema.json",
   "title": "Scott AI 新聞 digest",
-  "description": "Top-level data.json for one daily edition. mustKnow, tech, and skills each contain exactly five items. updatedAt is an absolute timestamp; the page formats it in Asia/Hong_Kong.",
+  "description": "Top-level data.json for one daily edition. mustKnow, tech, and skills each contain exactly five items. politics is optional so older archives stay valid: omit it, use an empty array, or include 3 to 9 items. updatedAt is an absolute timestamp; the page formats it in Asia/Hong_Kong.",
   "type": "object",
   "additionalProperties": false,
   "required": ["edition", "asOf", "updatedAt", "title", "weekday", "intro", "mustKnow", "tech", "skills"],
@@ -41,6 +41,23 @@
     },
     "skills": {
       "$ref": "#/$defs/section"
+    },
+    "politics": {
+      "description": "Optional world-politics briefs (display: 全球政治). Missing or empty is valid. A populated section has 3 to 9 items, about 1 to 3 each for 美國, 中國, and 香港. 全球 is allowed.",
+      "anyOf": [
+        {
+          "type": "array",
+          "maxItems": 0
+        },
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 9,
+          "items": {
+            "$ref": "#/$defs/politicsItem"
+          }
+        }
+      ]
     }
   },
   "$defs": {
@@ -94,6 +111,80 @@
           "type": "string",
           "minLength": 1,
           "description": "Traditional Chinese description of the thumbnail."
+        }
+      }
+    },
+    "politicsItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "region", "title", "what", "why", "hkImpact", "published", "sources"],
+      "dependentRequired": {
+        "image": ["imageAlt"],
+        "imageAlt": ["image"]
+      },
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{1,63}$"
+        },
+        "region": {
+          "enum": ["美國", "中國", "香港", "全球"],
+          "description": "美國, 中國, 香港, or 全球."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "what": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What happened (發生咩事)."
+        },
+        "why": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Why it matters (點解重要)."
+        },
+        "hkImpact": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Effect on Hong Kong (對香港影響)."
+        },
+        "published": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceLink"
+          }
+        },
+        "image": {
+          "type": "string",
+          "pattern": "^(https://\\S+|assets/images/[a-z0-9][a-z0-9_-]*\\.(jpg|jpeg|png|webp|svg))$",
+          "description": "Thumbnail. Prefer the source og:image. Local illustrated covers live under assets/images/."
+        },
+        "imageAlt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Traditional Chinese description of the thumbnail."
+        }
+      }
+    },
+    "sourceLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://\\S+$"
         }
       }
     }
