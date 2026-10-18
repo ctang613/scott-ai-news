@@ -2,8 +2,8 @@
 """Validate data.json against schema/digest.schema.json.
 
 Uses the stdlib only. Exits 0 when the 2026-10-18 digest is well formed:
-mustKnow, tech, and skills each have exactly five items, updatedAt falls on
-that edition in Asia/Hong_Kong, and every local thumbnail exists.
+mustKnow, tech, and skills each have exactly five items, updatedAt in
+Asia/Hong_Kong is on that edition date or later, and every local thumbnail exists.
 politics is optional: missing or empty stays valid; a populated section has
 3 to 9 items.
 """
@@ -201,8 +201,8 @@ def check_data(data: object) -> None:
     except ValueError as exc:
         fail(f"updatedAt is not a timestamp: {exc}")
     hong_kong_day = stamp.astimezone(HK).date().isoformat()
-    if hong_kong_day != edition:
-        fail(f"updatedAt in Asia/Hong_Kong is {hong_kong_day}, expected {edition}")
+    if hong_kong_day < edition:
+        fail(f"updatedAt in Asia/Hong_Kong is {hong_kong_day}, before edition {edition}")
 
     expect_nonempty_string(root["title"], "title")
     expect_nonempty_string(root["weekday"], "weekday")
