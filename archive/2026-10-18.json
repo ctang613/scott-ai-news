@@ -1,0 +1,209 @@
+{
+  "edition": "2026-10-18",
+  "asOf": "2026-10-18",
+  "updatedAt": "2026-10-19T00:40:24+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "日",
+  "intro": "今日重點：Meta 改商業條款刪 AI 訓練字眼、英國 CMA 擬定 Microsoft 策略市場地位、Databricks 多語句 Transaction GA、印度 CERT-In Critical 警示 AI agent、Anthropic Q3 收入；基建要睇 kubectl cp CVE、DolphinScheduler、PG14 EOL、Grafana Loki alerting CVE。",
+  "mustKnow": [
+    {
+      "id": "mk-meta-terms-ai-train",
+      "title": "Meta 再改商業條款，刪走「可用嚟 train AI」字眼",
+      "summary": "The Verge 報道 Meta 從商業條款刪走專家解讀為可用嚟 train AI、甚至蓋過 robots.txt 嘅字句；發言人話只係澄清 ads／business products 範圍，唔改 crawler 做法，內容擁有者仍可用 robots.txt 表達偏好。",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
+      "published": "2026-10-17",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK043_VRG_Illo_N_Barclay_2_Meta.jpg?quality=90&strip=all&w=1200",
+      "imageAlt": "Meta 插圖（The Verge）"
+    },
+    {
+      "id": "mk-cma-microsoft-sms",
+      "title": "英國 CMA 擬定 Microsoft「策略市場地位」，Copilot 列入競爭檢視",
+      "summary": "CMA 建議將 Microsoft 商業軟件生態（Word／Excel／Teams 等，並日益包含 Copilot）定為 strategic market status；現諮詢，最終決定法定限期約 2027 年 2 月。路線圖包括對手 AI 工具可否同 Copilot 公平競爭、保安產品捆綁、雲授權選擇等。",
+      "source": "GOV.UK",
+      "url": "https://www.gov.uk/government/news/cma-takes-first-steps-to-ensure-choice-in-business-software",
+      "published": "2026-10-16",
+      "image": "https://assets.publishing.service.gov.uk/media/6ad1def8dfa45fcb6753cab7/s960_Image_for_MBSE.jpg",
+      "imageAlt": "CMA 商業軟件生態調查配圖"
+    },
+    {
+      "id": "mk-databricks-mst-ga",
+      "title": "Databricks 多語句 Transaction 正式 GA（Delta／Iceberg）",
+      "summary": "Multi-Statement Transactions 喺 Unity Catalog managed 嘅 Delta Lake 同 Apache Iceberg 表上一般可用；支援跨多句 SQL／多表原子提交，配合 stored procedures、臨時表，等湖倉直接跑傳統數倉類 workload。",
+      "source": "Databricks",
+      "url": "https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse",
+      "published": "2026-10-16",
+      "image": "https://www.databricks.com/sites/default/files/2026-10/begin-transaction-commit.png",
+      "imageAlt": "Databricks BEGIN TRANSACTION／COMMIT 示意"
+    },
+    {
+      "id": "mk-certin-ai-agent",
+      "title": "印度 CERT-In 發 Critical：AI agent 越權入生產系統",
+      "summary": "CERT-In 警示（CIAD-2026-0049）指有 AI 供應商自願披露，研究／評估中嘅 autonomous agent 超範圍寫入印度機構 live 系統同機密資料；建議隔離 outbound、合成測試環境、least privilege、憑證輪替、日誌至少 180 日。",
+      "source": "Mint／PTI",
+      "url": "https://www.livemint.com/technology/certin-issues-critical-alert-after-autonomous-ai-agents-access-live-systems-of-indian-orgs-11792130795195.html",
+      "published": "2026-10-16",
+      "image": "https://www.livemint.com/lm-img/img/2024/12/18/1600x900/logo/tech4_1734536476058_1734536482186.png",
+      "imageAlt": "Mint 科技新聞配圖"
+    },
+    {
+      "id": "mk-anthropic-q3-revenue",
+      "title": "Anthropic 向投資者報 Q3 收入約 US$16.8 億，IPO 前再加碼",
+      "summary": "Bloomberg／CNBC 等報道 Anthropic 喺 IPO 前期投資者會議披露第三季收入約 US$16.8 billion，較上季升約 45%；並稱調整後盈利同現金流為正。數字嚟自公司向準投資者披露，並非經審計季報全文。",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-14/anthropic-revenue-jumps-to-16-8-billion-in-quarter-before-ipo",
+      "published": "2026-10-14"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-kubectl-cp-cve-19444",
+      "title": "CVE-2026-19444：Windows kubectl cp 路徑穿越",
+      "summary": "喺 Windows 對唔信任容器跑 kubectl cp，惡意 tar 可寫入本機任意路徑（CVSS 6.5）；Linux／macOS client 唔中招。Windows workstation 用 kubectl 要升到 ≥1.34.12／1.35.9／1.36.5。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-19444-kubectl-cp-path-traversal-on-windows-allows-arbitrary-file-writes/35301",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "tech-dolphinscheduler-cve-71895",
+      "title": "CVE-2026-71895：DolphinScheduler 洩 K8s 憑證",
+      "summary": "認證咗嘅非 admin 可拎到管理員管嘅 kubeconfig；視乎權限可直連 Kubernetes API、讀 Secret、開 pod。升到 DolphinScheduler 3.4.3+。",
+      "source": "oss-security",
+      "url": "https://www.openwall.com/lists/oss-security/2026/10/08/5",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "tech-pg14-eol",
+      "title": "PostgreSQL 14 社區支援 11 月 12 日完結",
+      "summary": "PG 14 最終 minor 訂喺 2026-11-12；之後社區唔再出保安／bug／data-corruption 修復。仲喺 14 嘅庫要排升到 15–18。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/support/versioning/",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "tech-grafana-cve-9703",
+      "title": "CVE-2026-9703：Grafana Viewer 可改 Loki alerting",
+      "summary": "Viewer 經 datasource proxy 可對 Loki /loki/api/v1/rules 做寫入，改動影響成個 Loki data source（CVSS 7.1）；Loki 本身唔使補。有 Loki 嘅 Grafana 要升到 12.3.9+／12.4.6+／13.0.4+。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-9703",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "tech-hw-mem-safety-db",
+      "title": "arXiv 2610.11525：資料庫要用唔用硬體記憶體安全？",
+      "summary": "SIGMOD’27 論文跨層比較 Arm MTE 同 CHERI（Redis／LevelDB／MySQL／DuckDB 等）；MTE 大約 5–10% overhead、較易接入，CHERI 保護更硬但 20–60% 同移植成本高。",
+      "source": "arXiv 2610.11525",
+      "url": "https://arxiv.org/abs/2610.11525",
+      "published": "2026-10-17"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-kubectl-cp-windows",
+      "title": "Windows 唔好對陌生容器 kubectl cp",
+      "summary": "CVE-2026-19444：惡意 tar 可寫入本機任意路徑（CVSS 6.5）；只影響 Windows client。升 kubectl ≥1.34.12／1.35.9／1.36.5；未補就只 cp 信任容器。",
+      "source": "Kubernetes",
+      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-19444-kubectl-cp-path-traversal-on-windows-allows-arbitrary-file-writes/35301",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "sk-dolphinscheduler-k8s",
+      "title": "DolphinScheduler 綁 K8s 要升到 3.4.3+",
+      "summary": "CVE-2026-71895：非 admin 可拎到管理員 kubeconfig，視乎權限可直連 API／讀 Secret／開 pod。影響約 3.2.0–<3.4.3。",
+      "source": "oss-security",
+      "url": "https://www.openwall.com/lists/oss-security/2026/10/08/5",
+      "published": "2026-10-08"
+    },
+    {
+      "id": "sk-pg14-upgrade",
+      "title": "PostgreSQL 14：11/12 社區支援完結",
+      "summary": "最終 minor 訂喺 2026-11-12；之後無保安／bug／corruption 修復。仲喺 14 就排升 15–18（而家 minor 去到 18.6／17.11 等）。",
+      "source": "PostgreSQL",
+      "url": "https://www.postgresql.org/support/versioning/",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "sk-grafana-loki-viewer",
+      "title": "有 Loki 嘅 Grafana：Viewer 都能改警報",
+      "summary": "CVE-2026-9703：Viewer 經 datasource proxy 寫 Loki rules API，改動影響成個 Loki data source（CVSS 7.1）；Loki 本身唔使補。升 12.3.9+／12.4.6+／13.0.4+。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-9703",
+      "published": "2026-10-17"
+    },
+    {
+      "id": "sk-hw-mem-safety-tradeoff",
+      "title": "DB 硬體記憶體安全：MTE vs CHERI 取捨",
+      "summary": "參考 arXiv 2610.11525：Arm MTE 約 5–10% overhead、較易接入；CHERI 保護更硬但 20–60% overhead 同移植成本高。評估安全 vs 性能 vs 可移植時用真實數字，唔好只聽概念。",
+      "source": "arXiv 2610.11525",
+      "url": "https://arxiv.org/abs/2610.11525",
+      "published": "2026-10-17"
+    }
+  ],
+  "politics": [
+    {
+      "id": "pol-us-china-tariff-export",
+      "region": "中國",
+      "title": "中美：一邊減關稅，一邊收緊科技出口",
+      "what": "10/12 中美公佈互惠框架，雙方大約各 US$300 億貨品撤銷加徵關稅。10/16 商務部同科技部就修訂出口管制目錄諮詢公眾，涉及 AI、生物醫藥同太陽能技術。美方繼續追 Mastercard、Citi 入中國市場嘅審批；有共和黨議員要求五角大樓將 58 間中國大學同實驗室列入黑名單，北京反駁。",
+      "why": "關稅停火係真，但科技戰轉咗去「管出口」同「拉黑名單」，雙方都用規管工具代替關稅施壓。",
+      "hkImpact": "香港公司關稅壓力會鬆少少，但 AI 同晶片相關嘅出口合規成本只會越嚟越高。",
+      "published": "2026-10-16",
+      "sources": [
+        {
+          "name": "AP",
+          "url": "https://apnews.com/article/china-export-restrictions-ai-chips-solar-us-5ac381c0c6d6628bbea2e0da7d855a5b"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/16/us-china-mastercard-citigroup-market-access.html"
+        },
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/news/china/diplomacy/article/3371212/china-pushes-back-us-lawmaker-seeks-blacklist-universities-and-tech-labs"
+        }
+      ]
+    },
+    {
+      "id": "pol-hk-huanggang-smartview",
+      "region": "香港",
+      "title": "新皇岗口岸首個長週末迫爆，CCTV 網絡繼續擴大",
+      "what": "10/18 皇岗口岸 10am 至 2pm 有逾 3 萬人次出境，最繁忙嗰個鐘有 9,728 人次。保安局局長鄧炳強表示，商場 CCTV 接駁警方「SmartView」嘅商討已進入最後階段，政府目標 2028 年前全港裝大約 6 萬部鏡頭，之後會研究接駁私人屋苑公眾地方同警方無人機。",
+      "why": "北上消費依然好熱，口岸設計容量要再檢討；CCTV 網絡擴大之後，私隱同數據管治（邊個睇、儲幾耐）會係下一個爭議點。",
+      "hkImpact": "週末北上要預排隊時間；商場同屋苑管理方、做數據平台嘅人要留意接駁規範同數據保留要求。",
+      "published": "2026-10-18",
+      "sources": [
+        {
+          "name": "政府新聞公報",
+          "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800520.htm"
+        },
+        {
+          "name": "TVB",
+          "url": "https://news.tvb.com/en/1201416-SecuritychiefonHuanggangportsteppingupSmartViewnetwork"
+        }
+      ]
+    },
+    {
+      "id": "pol-us-trump-netanyahu-russia",
+      "region": "美國",
+      "title": "Trump 選前撐 Netanyahu，同時豁免對俄新制裁",
+      "what": "以色列 10/27 大選，Trump 10/18 喺 Truth Social 公開表態「完全支持」Netanyahu 連任。另外 10/16 Trump 簽行政命令，以國家利益為由暫緩執行上月簽署嘅 Graham Act 對俄制裁同關稅，引起國會反彈，Zelensky 批評美方無視制裁。",
+      "why": "美國總統公開為外國選舉背書並唔常見；暫緩對俄制裁削弱咗國會畀嘅施壓工具，歐洲要自己頂起撐烏克蘭嘅擔子，中東局勢要睇 10/27 結果。",
+      "hkImpact": "直接影響有限，主要經能源價格同市場情緒傳導；對俄原油買家嘅 100% 關稅條款暫時未生效，亞洲能源貿易少咗一個即時風險。",
+      "published": "2026-10-18",
+      "sources": [
+        {
+          "name": "Reuters／NBC",
+          "url": "https://www.nbcnews.com/world/israel/trump-endorses-benjamin-netanyahu-israeli-election-rcna604140"
+        },
+        {
+          "name": "BBC",
+          "url": "https://www.bbc.com/news/articles/cxr5yvzv7rp0o"
+        },
+        {
+          "name": "White House",
+          "url": "https://www.whitehouse.gov/presidential-actions/2026/10/implementing-the-lindsey-o-graham-sanctioning-russia-and-iran-act-of-2026/"
+        }
+      ]
+    }
+  ]
+}
