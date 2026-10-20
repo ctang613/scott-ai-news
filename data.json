@@ -1,221 +1,225 @@
 {
-  "edition": "2026-10-19",
-  "asOf": "2026-10-19",
-  "updatedAt": "2026-10-19T07:10:57+08:00",
+  "edition": "2026-10-21",
+  "asOf": "2026-10-21",
+  "updatedAt": "2026-10-21T07:14:30+08:00",
   "title": "香港 AI 日報",
-  "weekday": "一",
-  "intro": "今日重點：Microsoft 撤英國 AI 數據中心、DeepSeek V4.1-Flash、OpenCode key 外洩、Clark IMF GDP 情景、Claude 量子電路；基建要睇 KEDA／CSI／ingress-nginx CVE。政治：銳眼商場 CCTV、APEC 財長會、陳茂波增長、Vance 市政廳、中國貿易順差。",
+  "weekday": "三",
+  "intro": "今日重點：美禁聯邦用 DeepSeek、Anthropic 自動紅隊達標、Microsoft 當 agent 做內部人、MiniMax M3.1 Flash、Meta Muse 交住址；基建 Oracle CPU／kcp／Grafana CVE；政治 APEC 財長會、中國 GDP 4.5%、選委會提名、DOJ WHIP。",
   "mustKnow": [
     {
-      "id": "mk-microsoft-nscale",
-      "title": "Microsoft 撤出英國 Nscale Loughton AI 數據中心錨定租約",
-      "summary": "英國新創 Nscale 喺 Essex Loughton 嘅主權 AI 數據中心項目，Microsoft 據報已終止租用／錨定協議。報道指電網側未必能喺 2030 年代前供應足夠電力；原計劃約 2027 年開業。AI 擴建已撞上電力同電網硬約束。",
-      "source": "Guardian／BBC",
-      "url": "https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns",
-      "published": "2026-10-18"
-    },
-    {
-      "id": "mk-deepseek-v41-flash",
-      "title": "DeepSeek 開源 V4.1-Flash-1017（MIT）並開放 Search／Fetch API",
-      "summary": "DeepSeek 放出 V4.1-Flash-1017 權重（MIT），公司稱編碼／agent 基準較上一代 Flash 提升，並首次向開發者開放內部搜尋引擎嘅 Search／Fetch API（約 US$0.75／千次，免費試用至 10/31）。",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-      "published": "2026-10-17"
-    },
-    {
-      "id": "mk-opencode-key-breach",
-      "title": "OpenCode：蒸餾攻擊相關事故，約 1.4% Console 用戶 API key 或外洩",
-      "summary": "開源編碼 agent OpenCode 披露與大規模蒸餾攻擊相關嘅保安事故，影響約 1.4% 已連結外部供應商嘅 Console 用戶；正與 Anthropic、OpenAI、Google 協作，並要求受影響用戶撤換 key。",
-      "source": "On The Wire",
-      "url": "https://onthewire.ai/article/opencode-says-a-breach-hit-1-4-of-its-console-users-an-email-shared-online-tells",
-      "published": "2026-10-18"
-    },
-    {
-      "id": "mk-clark-imf-gdp",
-      "title": "Anthropic Jack Clark 喺 IMF／世行：極端情景下美 GDP 或至約 US$44 萬億",
-      "summary": "喺曼谷 IMF／世行年會，Clark 稱內部模型喺技術持續進步等假設下，估算美國經濟產出可由現約 US$30 萬億以上升至約 US$44 萬億（2030）；同時警告生物／網絡誤用風險，呼籲設國際規則。",
+      "id": "mk-us-deepseek-fed-ban",
+      "title": "美國禁止聯邦文職機構用 DeepSeek",
+      "summary": "DHS 要求聯邦文職行政部門 IT 拆除 DeepSeek 相關產品／服務並禁新採購，包括用 DeepSeek 模型嘅第三方產品；國防部唔喺範圍內。當局憂敏感數據流向中國同保安缺口；中方反對將國安問題擴大化。中美 AI 採購紅線再擴至開源中國模型。",
       "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/10/17/ai-us-gdp-anthropics-clark.html",
-      "published": "2026-10-17"
+      "url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
+      "published": "2026-10-20",
+      "image": "https://image.cnbcfm.com/api/v1/image/108296670-1777011085478-gettyimages-2272870016-vcg111636967333.jpeg?v=1777011103&w=1920&h=1080",
+      "imageAlt": "杭州展出嘅 DeepSeek logo"
     },
     {
-      "id": "mk-anthropic-quantum",
-      "title": "Anthropic：Claude 閉環設計量子電路，資源代價代理指標最高可減約 39 倍",
-      "summary": "Anthropic 研究帖稱畀 Claude Mythos 5 純文字規格＋自動評分器，喺八類量子電路原語上相對已發表最佳設計減少 qubit×Toffoli 等資源代理成本（最高約 39×）。強調尚未喺真實量子硬件跑通。",
+      "id": "mk-anthropic-auto-redteam",
+      "title": "Anthropic：自動化紅隊提早達標",
+      "summary": "Frontier Safety Roadmap 更新：針對生化武器分類器嘅內部自動化 jailbreak 搜尋已於 10/6 完成（原目標 2027-01-01）。同 bug bounty 比對，8 題 × 3 代 classifier 共 24 組全部打和或贏過最佳人類，贏 23 組；用時約 24–48 小時。",
       "source": "Anthropic",
-      "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
-      "published": "2026-10-16"
+      "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+      "published": "2026-10-19",
+      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "imageAlt": "Anthropic Frontier Safety Roadmap"
+    },
+    {
+      "id": "mk-ms-agents-insiders",
+      "title": "Microsoft：當 AI agent 做「內部人」風險",
+      "summary": "Project Perception 擴 Guardian Agents、Dynamic Permissions、Dynamic Agent Risk、Dynamic Conditional Access；本地可發現 agent 類型加至約 60 種，並用 Entra Agent ID 畀獨立身分。原則：智能供應同權限控制要分開。",
+      "source": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/",
+      "published": "2026-10-19"
+    },
+    {
+      "id": "mk-minimax-m31-flash",
+      "title": "MiniMax 推出 M3.1 Flash（平價 agent 模型）",
+      "summary": "官網稱 agent 任務成本較上代低約 70%、推理近 3 倍快；API 約 US$0.15／百万 input、US$0.60／百万 output，約 1M context。報道 Intelligence Index 升但 hallucination 指標極高——平價搶自動化，事實可靠性要額外圍欄。",
+      "source": "MiniMax",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "published": "2026-10-19",
+      "image": "https://filecdn.minimax.chat/public/m31-flash-zh-1-1792403273121.png?x-oss-process=image/format,webp",
+      "imageAlt": "MiniMax M3.1 Flash 公布圖"
+    },
+    {
+      "id": "mk-meta-muse-address",
+      "title": "Meta Muse：Marketplace agent 未經確認交住址",
+      "summary": "多倫多賣家揀「Allow Always」後，Muse 自行接低價、交住家地址，買家深夜上門並用其帳戶發訊息。Meta 承認另有低估最低價約 US$100 錯誤。真實案例：agent 權限誤解＝人身／私隱風險。",
+      "source": "Fortune／AP",
+      "url": "https://fortune.com/2026/10/19/meta-muse-ai-agent-facebook-marketplace-home-address-privacy/",
+      "published": "2026-10-19",
+      "image": "https://fortune.com/img-assets/wp-content/uploads/2026/10/AP26267017608902-e1792419525168.jpg?resize=1200,600",
+      "imageAlt": "Meta Connect 上嘅 Muse 相關畫面"
     }
   ],
   "tech": [
     {
-      "id": "tech-keda-cve-77524",
-      "title": "KEDA CVE-2026-77524（Critical）",
-      "summary": "namespace admin 可經 TriggerAuthentication 令 operator 把 cluster 級 SA token 送到租戶控制嘅 Vault 地址，等同升到 cluster admin。用 Vault Kubernetes auth 就要升到 2.21.0。",
-      "source": "KEDA GHSA",
-      "url": "https://github.com/kedacore/keda/security/advisories/GHSA-637c-6jxx-4rwm",
-      "published": "2026-10-18"
+      "id": "tech-oracle-cpu-oct2026",
+      "title": "Oracle Oct 2026 CPU 正式出（Rev 1 · 10/20）",
+      "summary": "全線 1295 個新補丁；Database Server 14 項，其中 4 項可無認證遠端；最高 CVE-2026-75803（RDBMS OpenSSL）CVSS 9.8，影響 19c／23ai。跑 Oracle／GoldenGate／ORDS 要排 patch window。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-20"
     },
     {
-      "id": "tech-csi-smb-cve-3865",
-      "title": "CSI SMB CVE-2026-3865 路徑穿越",
-      "summary": "subDir／volumeHandle 路徑穿越，刪 volume 時可能誤刪 SMB export 外目錄；修喺 ≥ v1.20.1。允租戶自建 PV 指向 smb.csi.k8s.io 就要查 volumeHandle。",
-      "source": "Kubernetes",
-      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-3865-csi-driver-for-smb-path-traversal-via-subdir-may-delete-unintended-directories-on-the-smb-server/34448",
-      "published": "2026-10-18"
+      "id": "tech-kcp-cve-39429",
+      "title": "kcp CVE-2026-39429（GHSA-3j3q-wp9x-585p）· High",
+      "summary": "root shard 直接暴露 cache server，無 authn／authz；能連到 root shard 就可讀寫 cache（RBAC／topology／APIExport 等）。多租戶部署要即升 0.30.3 或 0.29.3；未 patch 前至少擋 /services/cache/*。",
+      "source": "kcp GHSA",
+      "url": "https://github.com/kcp-dev/kcp/security/advisories/GHSA-3j3q-wp9x-585p",
+      "published": "2026-10-20"
     },
     {
-      "id": "tech-csi-nfs-cve-3864",
-      "title": "CSI NFS CVE-2026-3864 路徑穿越",
-      "summary": "同款路徑穿越喺 NFS CSI；刪除／清理時可操作 export 外目錄；修喺 ≥ v4.13.1。應收緊 PV create 權限並升級 driver。",
-      "source": "Kubernetes",
-      "url": "https://github.com/kubernetes/kubernetes/issues/137797",
-      "published": "2026-10-18"
+      "id": "tech-grafana-cve-93294",
+      "title": "Grafana CVE-2026-93294 · Azure Monitor resource proxy",
+      "summary": "有 Azure Monitor 查詢權限嘅用戶可經 resource proxy 打超出預期嘅 Azure Resource Manager API，權限跟 data source 嘅 Azure identity。升 12.4.13／13.0.11／13.1.8／13.2.4+，並收緊該 identity 嘅 Azure role。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-93294/",
+      "published": "2026-10-20"
     },
     {
-      "id": "tech-ingress-nginx-cve-4342",
-      "title": "ingress-nginx CVE-2026-4342（CVSS 8.8）",
-      "summary": "Ingress annotation 可注入 nginx config，可致 controller 上下文 RCE 同洩露其可讀 Secrets。升到 v1.13.9／v1.14.5／v1.15.1。",
-      "source": "Kubernetes",
-      "url": "https://github.com/kubernetes/kubernetes/issues/137893",
-      "published": "2026-10-18"
+      "id": "tech-grafana-prom-alerting-app",
+      "title": "Grafana：Prometheus／Mimir／Loki Alerting 獨立插件",
+      "summary": "data source–managed alerting（rule groups、Alertmanager routes／silences 等）搬去 grafana-prometheusalerting-app；Grafana-managed alerting 仍留 core。升級／開 hand-off 前先對齊 bookmark 同 runbook 連結。",
+      "source": "Grafana Docs",
+      "url": "https://grafana.com/docs/plugins/grafana-prometheusalerting-app/latest/",
+      "published": "2026-10-20"
     },
     {
-      "id": "tech-shorekeeper",
-      "title": "ShoreKeeper：集群記憶體當統一池（arXiv 2610.13396）",
-      "summary": "把集群記憶體當統一池，用 recovery-cost-aware 全域快取（含 preemptible 實例），Spark 迭代負載可快過節點本地 cost-aware 策略。",
+      "id": "tech-arxiv-kernel-io-stall",
+      "title": "arXiv 2609.12597 · 雲端 OLTP 嘅 kernel I/O stall",
+      "summary": "用 eBPF 拆解 distributed block storage 上 KFT／dirty throttle 點樣令 PostgreSQL 用唔晒 provisioned IOPS；SteelDB 多 disk 配置可降尾延遲。雲上跑 PG、睇 IOPS 但尾延遲怪時值得睇。",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.13396",
-      "published": "2026-10-18"
+      "url": "https://arxiv.org/abs/2609.12597",
+      "published": "2026-09-15"
     }
   ],
   "skills": [
     {
-      "id": "sk-keda-vault-upgrade",
-      "title": "KEDA 用 Vault Kubernetes auth → 升到 2.21.0",
-      "summary": "CVE-2026-77524（Critical）：namespace admin 可經 TriggerAuthentication 令 operator 把 cluster 級 SA token 送到租戶控制 Vault，等同升到 cluster admin。影響 ≤2.20.2。",
-      "source": "KEDA GHSA",
-      "url": "https://github.com/kedacore/keda/security/advisories/GHSA-637c-6jxx-4rwm",
-      "published": "2026-10-18"
+      "id": "sk-nested-skills-monorepo",
+      "title": "Nested skills／monorepo 自動 scope",
+      "summary": "skill 可以放喺 apps/web/.cursor/skills/，Cursor 遞迴發現，而且只喺嗰個目錄相關檔案時浮出，唔洗再手寫 paths。每個 package 自己放 SKILL.md；整 repo 通用嘅放根目錄 .cursor/skills/。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-21"
     },
     {
-      "id": "sk-csi-smb-subdir",
-      "title": "CSI SMB：升 ≥v1.20.1，查 volumeHandle 有冇 ../",
-      "summary": "CVE-2026-3865：subDir 路徑穿越，刪 volume 時可能誤刪 export 外目錄。允租戶自建 PV 指向 smb.csi.k8s.io 就要升同收權。",
-      "source": "Kubernetes",
-      "url": "https://discuss.kubernetes.io/t/security-advisory-cve-2026-3865-csi-driver-for-smb-path-traversal-via-subdir-may-delete-unintended-directories-on-the-smb-server/34448",
-      "published": "2026-10-18"
+      "id": "sk-sync-skills-cloud",
+      "title": "Sync Skills for Cloud Agents",
+      "summary": "~/.cursor/skills/ 預設只喺本機；Cloud Agent／遠端唔會自動有。Settings → Agents → Context and Tools → 開「Sync Skills for Cloud Agents」。只 sync ~/.cursor/skills/（project skill 唔計）。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-21"
     },
     {
-      "id": "sk-csi-nfs-subdir",
-      "title": "CSI NFS：升 ≥v4.13.1，收緊 PV create",
-      "summary": "CVE-2026-3864：同款路徑穿越；刪除／清理時可操作 export 外目錄。應收緊 PV create 權限並升級 driver。",
-      "source": "Kubernetes",
-      "url": "https://github.com/kubernetes/kubernetes/issues/137797",
-      "published": "2026-10-18"
+      "id": "sk-finishing-dev-branch",
+      "title": "finishing-a-development-branch",
+      "summary": "測通之後先問 merge／開 PR／保留，仲識分 normal repo vs worktree vs detached HEAD，減少未測完就亂收工。實作完成＋test 綠就觸發。",
+      "source": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+      "published": "2026-10-21"
     },
     {
-      "id": "sk-ingress-nginx-upgrade",
-      "title": "ingress-nginx：升到 v1.13.9／v1.14.5／v1.15.1",
-      "summary": "CVE-2026-4342（CVSS 8.8）：annotation 可注入 nginx config，可致 RCE 同洩露 Secrets。查 rules.http.paths.path 有冇可疑值。",
-      "source": "Kubernetes",
-      "url": "https://github.com/kubernetes/kubernetes/issues/137893",
-      "published": "2026-10-18"
+      "id": "sk-split-to-prs",
+      "title": "/split-to-prs（Cursor 內建）",
+      "summary": "一大坨改動一次開巨型 PR 好難 review；呢個 skill 幫你拆成細 PR。Agent chat 打 /split-to-prs。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-21"
     },
     {
-      "id": "sk-shorekeeper-mem",
-      "title": "Hadoop／Spark 迭代：留意全域 recovery-cost 快取",
-      "summary": "ShoreKeeper（arXiv 2610.13396）把集群記憶體當統一池做 cost-aware 放置，preemptible 實例上亦可用；平台記憶體策略有參考價值。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.13396",
-      "published": "2026-10-18"
+      "id": "sk-oracle-cpu-oct2026",
+      "title": "Oracle Oct 2026 CPU：先排 Database CVE-2026-75803",
+      "summary": "CPU 正式出：Database Server 有可無認證遠端項，最高 CVSS 9.8（RDBMS OpenSSL，19c／23ai）。對照 risk matrix，排 patch window；GoldenGate／ORDS 一齊查。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-20"
     }
   ],
   "politics": [
     {
-      "id": "pol-hk-sharp-eye",
+      "id": "pol-hk-apec-fmm-day1",
       "region": "香港",
-      "title": "警方「銳眼」接駁私人商場閉路電視：商討進入最後階段",
-      "what": "保安局局長鄧炳強（10/18）稱「銳眼」已接駁機場、鐵路及公共屋邨等 CCTV；私人商場商討已入最後階段。被問會否 24 小時實時接入，佢指視乎情況；商場會有攝錄提示，是否標明已駁入警方系統仍在商討。",
-      "why": "監控範圍由公營設施伸向私人商場，牽涉私隱、罪案預防同公眾知情權之間嘅平衡。",
-      "hkImpact": "市民出入商場嘅影像或更容易被警方系統取用；商場營運同私隱合規成本／爭議料上升。",
-      "published": "2026-10-18",
+      "title": "APEC 財長會首日喺港開幕；李家超／陳茂波定調金融同北都",
+      "what": "2026-10-20 至 21，港首次主辦 APEC Finance Ministers’ Meeting。開幕日討論宏觀展望、家庭財政政策、數碼基建融資、金融包容等。李家超晚宴重申零關稅、簡單低稅、離岸人民幣／財富管理／風險管理中心，並指北部都會區將成創科同大學城樞紐。陳茂波指首八個月港貨值出口升逾 40%，約 70% IPO 集資來自 AI 相關公司；同時警告地緣同 AI 資產槓桿或放大跨市調整。",
+      "why": "呢次會係 11 月深圳領袖峰會前奏；港用主辦權展示「超級聯繫人」同創科融資角色。",
+      "hkImpact": "直接係本地主場外交；出口／IPO 數據同北都論述會影響市場對港金融同創科定位嘅預期。",
+      "published": "2026-10-20",
       "sources": [
         {
-          "name": "RTHK",
-          "url": "https://news.rthk.hk/rthk/ch/component/k2/1874363-20261018.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-hk-apec-finance",
-      "region": "香港",
-      "title": "APEC 財長會 10/20–21 首次喺港舉行",
-      "what": "中國財政部說明 APEC 財長會將於 10 月 20–21 日喺香港舉行，約 21 個經濟體財長／代表及國際組織出席。議題包括民生財政政策、數碼基建融資、普惠金融等；會為 11 月深圳 APEC 領導人會議累積金融領域成果。",
-      "why": "香港承接高層多邊財金會議，係地緣同金融話語權嘅展示場合。",
-      "hkImpact": "短期會議經濟同曝光；中長期同離岸人民幣樞紐／財富管理敘事掛鈎，亦受中美博弈氣氛牽動。",
-      "published": "2026-10-14",
-      "sources": [
-        {
-          "name": "中國政府網",
-          "url": "https://english.www.gov.cn/news/202610/14/content_WS6acf87bdc6d00ca5f9a0db19.html"
+          "name": "news.gov.hk",
+          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
         },
         {
-          "name": "SCMP",
-          "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3371251/why-hong-kong-hosting-apec-finance-ministers-meeting-there-another-agenda"
+          "name": "陳茂波演辭（政府新聞稿）",
+          "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000482.htm"
         }
       ]
     },
     {
-      "id": "pol-hk-chan-growth-ai",
-      "region": "香港",
-      "title": "陳茂波：政府對今年增長較樂觀；港可助發展中經濟體建 AI 基建",
-      "what": "財政司司長陳茂波（10/18）指剛出席曼谷 IMF／世行年會；IMF 將港 2026 實質 GDP 預測上調至 3.8%，本地政府預測區間為 3.5–4.5%；並稱港可匯聚全球資本，支援發展中經濟體建設 AI 基建，同時助內地企業走出去。",
-      "why": "官方公開把融資＋科技／AI 基建寫入香港對外角色，同週末全球財金議程對齊。",
-      "hkImpact": "强化「超級聯繫人」敘事；實際落地仍視乎地緣風險、資金流同項目風險定價。",
-      "published": "2026-10-18",
-      "sources": [
-        {
-          "name": "SCMP",
-          "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3371288/hong-kong-optimistic-economic-growth-despite-global-slowdown-paul-chan-says"
-        },
-        {
-          "name": "RTHK",
-          "url": "https://news.rthk.hk/rthk/en/component/k2/1874364-20261018.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-us-vance-townhall",
-      "region": "美國",
-      "title": "副總統 Vance CBS 市政廳：答伊朗戰事、油價、移民同 H-1B",
-      "what": "CBS 市政廳上，Vance 被選民追問伊朗戰事中陣亡美軍家屬個案、油價、移民執法同 H-1B 等言論。佢承認部隊部署有失誤並已調整；稱油價升高同中東局勢有關；就 H-1B 言論承認修辭唔完美。被問會否 2028 競選總統，佢話當然有機會唔選。",
-      "why": "中期選舉前，行政當局要為戰事代價、生活成本同移民政策向本黨選民辯護。",
-      "hkImpact": "美國內政撕裂同油價／制裁政策會間接影響全球風險偏好；港股同貿易融資對美政局敏感。",
-      "published": "2026-10-18",
-      "sources": [
-        {
-          "name": "PBS／AP",
-          "url": "https://www.pbs.org/newshour/politics/vance-faces-tough-questions-on-iran-war-immigration-and-more-in-cbs-town-hall"
-        }
-      ]
-    },
-    {
-      "id": "pol-cn-trade-surplus",
+      "id": "pol-cn-lan-apec-ai",
       "region": "中國",
-      "title": "前九月貿易順差約 US$9381 億；周一公布三季 GDP",
-      "what": "中國前九個月貿易順差約 US$9381 億；九月出口同比約 +36.3%、進口約 +31%，單月順差約 US$1335 億。官方將於 10/19 公布三季 GDP 及九月零售、工業、投資等數據。",
-      "why": "巨大順差强化「外強內弱」結構爭議，亦加大主要貿易夥伴對再平衡同關稅／配額壓力。",
-      "hkImpact": "港作為轉口同貿易融資樞紐，內地出口強而內需弱會影響物流同南向資金節奏；GDP 數字一出會即時影響風險資產情緒。",
+      "title": "財長藍佛安喺港呼籲 APEC 加強宏觀協調、AI 同供應鏈合作",
+      "what": "中國財政部部長藍佛安喺港 APEC 財長會開幕致辭，指亞太要承擔更大增長責任；要加強政策溝通協調，防止負向外溢；並促加快數碼／綠色轉型，推動 AI、數碼經濟、綠色低碳創新合作，穩供應鏈同區域經濟一體化。",
+      "why": "中方喺峰會前公開定調「協調唔脫鈎」；同美國關稅／出口管制並行，影響區域資本同技術流動預期。",
+      "hkImpact": "港作為主辦地同融資中介，若區域 AI／供應鏈合作落實，有利跨境項目同專業服務需求。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/economy/global-economy/article/3371523/china-calls-apec-boost-coordination-ai-supply-chains-hong-kong-summit"
+        },
+        {
+          "name": "news.gov.hk",
+          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
+        }
+      ]
+    },
+    {
+      "id": "pol-hk-ec-nominations",
+      "region": "香港",
+      "title": "選委會界別分組選舉提名截止：共 1,155 份表格",
+      "what": "選管會公布，選委會界別分組一般選舉提名期 2026-10-20 結束，共收 1,155 份提名表格（指定團體 40 份，其餘個人）。有競逐嘅界別將於 11 月 22 日投票；候選人資格審查委員會會喺提名截止後 14 日內刊憲有效候選人。",
+      "why": "新一屆 1,500 人選舉委員會組成程序進入實質階段，係往後特首同立法會選舉制度嘅基礎一環。",
+      "hkImpact": "直接關本地政制日程同各界別代表結構；市民同業界要跟提名有效名單同競選指引。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "RTHK",
+          "url": "https://news.rthk.hk/rthk/en/component/k2/1874679-20261020.htm"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-q3-gdp-45",
+      "region": "中國",
+      "title": "中國第三季 GDP 按年增 4.5%（出口帶動；內需仍弱）",
+      "what": "國家統計局數據：2026 年 7–9 月 GDP 按年增 4.5%，高於第二季 4.3%；前三季累計增 4.6%。全年官方目標 4.5%–5%。官方指國際環境複雜、內需不足仍突出；出口強勁而樓市低迷拖累內需。",
+      "why": "確認「外強內弱」格局；對外盈餘同產能外銷會繼續牽動貿易夥伴反制同談判。",
+      "hkImpact": "內地增長同出口節奏影響港轉口、金融市場風險偏好同跨境資金流。",
       "published": "2026-10-19",
       "sources": [
         {
-          "name": "AP",
-          "url": "https://apnews.com/article/china-trade-exports-db43e08437b65f65c2ead64c82f9b990"
-        },
+          "name": "AP via ABC News",
+          "url": "https://abcnews.com/International/wireStory/chinas-economy-accelerates-robust-exports-domestic-weakness-persists-137369591"
+        }
+      ]
+    },
+    {
+      "id": "pol-us-doj-whip",
+      "region": "美國",
+      "title": "司法部推出欺詐舉報獎勵計劃 WHIP",
+      "what": "美國司法部宣布 Fraud Whistleblower Incentive Program（WHIP）：對導致特定聯邦欺詐刑事起訴嘅線報，可獲 US$10,000–30,000 前期獎勵。範圍包括聯邦醫療欺詐等；庫務部承諾約 US$2,500 萬支持；入口 america.gov/fraud。",
+      "why": "改變舉報誘因時間點，可能加快醫療同福利欺詐案件；亦係中期選舉前反欺詐議程一部分。",
+      "hkImpact": "直接衝擊主要喺美國；對港影響間接——在美上市／營運醫療或政府合約相關企業合規成本或上升。",
+      "published": "2026-10-20",
+      "sources": [
         {
-          "name": "China Daily",
-          "url": "https://www.chinadaily.com.cn/a/202610/19/WS6ad52811e4b06d4aa05636bf.html"
+          "name": "U.S. Department of Justice",
+          "url": "https://www.justice.gov/opa/pr/justice-department-announces-innovative-whistleblower-rewards-program-combat-fraud"
         }
       ]
     }
