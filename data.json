@@ -1,225 +1,203 @@
 {
-  "edition": "2026-10-21",
-  "asOf": "2026-10-21",
-  "updatedAt": "2026-10-21T07:15:21+08:00",
+  "edition": "2026-10-30",
+  "asOf": "2026-10-30",
+  "updatedAt": "2026-10-30T07:36:59+08:00",
   "title": "香港 AI 日報",
-  "weekday": "三",
-  "intro": "今日重點：美禁聯邦用 DeepSeek、Anthropic 自動紅隊達標、Microsoft 當 agent 做內部人、MiniMax M3.1 Flash、Meta Muse 交住址；基建 Oracle CPU／kcp／Grafana CVE；政治 APEC 財長會、中國 GDP 4.5%、選委會提名、DOJ WHIP。",
+  "weekday": "五",
+  "intro": "今日重點：Google Gemini 4 Carbon、OpenAI 更新 Model Spec、加拿大最多 CA$16 億入股 Cohere、紐約禁不安全 AI chatbot 畀未成年、Microsoft 一季從 OpenAI 入帳約 US$100 億；基建 Grafana／Argo CD／Harbor／Oracle DBMS_VECTOR CVE；政治宏福苑獨立調查報告、二十屆五中全會、聯儲局維持 3.75%–4.00%。",
   "mustKnow": [
     {
-      "id": "mk-us-deepseek-fed-ban",
-      "title": "美國禁止聯邦文職機構用 DeepSeek",
-      "summary": "DHS 要求聯邦文職行政部門 IT 拆除 DeepSeek 相關產品／服務並禁新採購，包括用 DeepSeek 模型嘅第三方產品；國防部唔喺範圍內。當局憂敏感數據流向中國同保安缺口；中方反對將國安問題擴大化。中美 AI 採購紅線再擴至開源中國模型。",
-      "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
-      "published": "2026-10-20",
-      "image": "https://image.cnbcfm.com/api/v1/image/108296670-1777011085478-gettyimages-2272870016-vcg111636967333.jpeg?v=1777011103&w=1920&h=1080",
-      "imageAlt": "杭州展出嘅 DeepSeek logo"
+      "id": "mk-gemini-4-carbon",
+      "title": "Google 推出 Gemini 4 Carbon：強調網絡安全同長程 agent",
+      "summary": "Google DeepMind 宣布下一款 frontier 模型 Gemini 4 Carbon（10/28）：稱 Artificial Analysis Intelligence Index v5.0 排第一（59）；網絡安全基準 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0%。先向部份網絡防衛者同 Fairwind 夥伴開放；入門價同 Argon：每百萬 input US$2、output US$10（暫定；其後升至 4／20）。",
+      "source": "Google Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "published": "2026-10-28",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_carbon_102726_social_share.width-1300.png",
+      "imageAlt": "Gemini 4 Carbon 公布用嘅社交分享圖"
     },
     {
-      "id": "mk-anthropic-auto-redteam",
-      "title": "Anthropic：自動化紅隊提早達標",
-      "summary": "Frontier Safety Roadmap 更新：針對生化武器分類器嘅內部自動化 jailbreak 搜尋已於 10/6 完成（原目標 2027-01-01）。同 bug bounty 比對，8 題 × 3 代 classifier 共 24 組全部打和或贏過最佳人類，贏 23 組；用時約 24–48 小時。",
-      "source": "Anthropic",
-      "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
-      "published": "2026-10-19",
-      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
-      "imageAlt": "Anthropic Frontier Safety Roadmap"
+      "id": "mk-openai-model-spec",
+      "title": "OpenAI 更新 Model Spec：用五個核心價值重組行為指引",
+      "summary": "OpenAI（10/29）更新公開 Model Spec，圍繞五個價值重組：忠於人類意圖、減害、誠實透明、人類自主、關懷；並加入脈絡／監督／agency 指引，調整行為預設，同時退役大部份細項風格指引。規格描述目標行為，模型仍未完全對齊；歡迎公眾就價值同取捨畀意見。",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/updated-model-spec",
+      "published": "2026-10-29",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/75veJvi069XNefheZKrGT3/524e301a9565289e83b5a666d47b3da5/model-spec-update-more-capable-beneficial-ai-seo.png?w=1600&h=900&fit=fill",
+      "imageAlt": "OpenAI Model Spec 更新宣傳圖"
     },
     {
-      "id": "mk-ms-agents-insiders",
-      "title": "Microsoft：當 AI agent 做「內部人」風險",
-      "summary": "Project Perception 擴 Guardian Agents、Dynamic Permissions、Dynamic Agent Risk、Dynamic Conditional Access；本地可發現 agent 類型加至約 60 種，並用 Entra Agent ID 畀獨立身分。原則：智能供應同權限控制要分開。",
-      "source": "Microsoft Security Blog",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/",
-      "published": "2026-10-19"
+      "id": "mk-canada-cohere-stake",
+      "title": "加拿大宣布最多約 CA$16 億入股 Cohere",
+      "summary": "總理 Mark Carney（10/29）宣布政府擬以股權投資最多約 CA$16 億入股多倫多 AI 公司 Cohere，與 NVIDIA、Bell、Schwarz Group 等私人投資者同期宣布。條件包括：2030 年前至少 1,000 個加拿大技術職位、至少 CA$17 億本地算力基建、維持加拿大註冊同總部，並與 Canadian AI Safety Institute 合作。分期投放並定期匯報。",
+      "source": "Prime Minister of Canada",
+      "url": "https://www.pm.gc.ca/en/news/news-releases/2026/10/29/canada-announces-landmark-investment-cohere-scale-secure-sovereign-ai",
+      "published": "2026-10-29"
     },
     {
-      "id": "mk-minimax-m31-flash",
-      "title": "MiniMax 推出 M3.1 Flash（平價 agent 模型）",
-      "summary": "官網稱 agent 任務成本較上代低約 70%、推理近 3 倍快；API 約 US$0.15／百万 input、US$0.60／百万 output，約 1M context。報道 Intelligence Index 升但 hallucination 指標極高——平價搶自動化，事實可靠性要額外圍欄。",
-      "source": "MiniMax",
-      "url": "https://www.minimax.io/blog/minimax-m31f",
-      "published": "2026-10-19",
-      "image": "https://filecdn.minimax.chat/public/m31-flash-zh-1-1792403273121.png?x-oss-process=image/format,webp",
-      "imageAlt": "MiniMax M3.1 Flash 公布圖"
+      "id": "mk-ny-ai-chatbot-minors",
+      "title": "紐約州立法：禁止向未成年提供不安全 AI chatbot 功能",
+      "summary": "州長 Kathy Hochul（10/28）簽署 S.9051B／A.10379C：公司若未確認用戶非未成年，不得向未滿 18 歲提供假扮真人、建立情感依賴、鼓勵自傷、涉及性內容等功能；須做年齡核實（至少一種唔單靠政府證件），並刪除年齡資料。違反可由州檢察長追民事罰最高每宗 US$25,000。同日亦簽嬰兒監視器安全法。",
+      "source": "NY Governor",
+      "url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-protect-kids-ai-chatbots-and-ensure-baby",
+      "published": "2026-10-28",
+      "image": "https://www.governor.ny.gov/sites/default/files/styles/cover_image_660x400_/public/2026-10/aibabymonitor2.jpg?h=b5f6a62e&itok=7gXOR_6S",
+      "imageAlt": "紐約州 AI 同嬰兒監視器安全立法宣傳圖"
     },
     {
-      "id": "mk-meta-muse-address",
-      "title": "Meta Muse：Marketplace agent 未經確認交住址",
-      "summary": "多倫多賣家揀「Allow Always」後，Muse 自行接低價、交住家地址，買家深夜上門並用其帳戶發訊息。Meta 承認另有低估最低價約 US$100 錯誤。真實案例：agent 權限誤解＝人身／私隱風險。",
-      "source": "Fortune／AP",
-      "url": "https://fortune.com/2026/10/19/meta-muse-ai-agent-facebook-marketplace-home-address-privacy/",
-      "published": "2026-10-19",
-      "image": "https://fortune.com/img-assets/wp-content/uploads/2026/10/AP26267017608902-e1792419525168.jpg?resize=1200,600",
-      "imageAlt": "Meta Connect 上嘅 Muse 相關畫面"
+      "id": "mk-ms-openai-10b-revenue",
+      "title": "Microsoft 一季從 OpenAI 相關安排入帳約 US$100 億",
+      "summary": "TechCrunch（10/28）引監管文件：截至 9/30 一季，Microsoft 從與 OpenAI 嘅商業安排（含收入分成）錄得約 US$100 億收入，約佔該季總收入 US$923 億近 11%；FY2026 全年相關收入 US$241 億。同期對 OpenAI 應收約 US$72 億；持股由約 25%（6 月）略降至 9 月約 24%。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+      "published": "2026-10-28",
+      "image": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-2153474575.jpg?resize=1200,800",
+      "imageAlt": "Microsoft 總部相關畫面"
     }
   ],
   "tech": [
     {
-      "id": "tech-oracle-cpu-oct2026",
-      "title": "Oracle Oct 2026 CPU 正式出（Rev 1 · 10/20）",
-      "summary": "全線 1295 個新補丁；Database Server 14 項，其中 4 項可無認證遠端；最高 CVE-2026-75803（RDBMS OpenSSL）CVSS 9.8，影響 19c／23ai。跑 Oracle／GoldenGate／ORDS 要排 patch window。",
+      "id": "tech-grafana-cve-100105",
+      "title": "Grafana CVE-2026-100105 · Alerting contact point 授權繞過",
+      "summary": "High（CVSS 7.7，2026-10-27）：有 edit contact point 但唔應改 protected 欄嘅用戶，可切 legacy schema 改 destination URL 等受保護設定，洩 stored credential／轉走告警。固定版本：12.4.14／13.0.12／13.1.9／13.2.5+（12.4 以前另有分支修補範圍）。升完核對 contact point URL／integration schema。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-100105/",
+      "published": "2026-10-27"
+    },
+    {
+      "id": "tech-argo-kustomize-remote-ref",
+      "title": "Argo CD GHSA-9v9p · Kustomize remote ref 可喺 repo-server 跑指令",
+      "summary": "Critical（CVE-2026-113708，公開約 10/7）：Kustomize 將 remote URL 嘅 ref／version 無分隔符傳畀 git fetch；以 - 開頭嘅值（如 --upload-pack=<command>）可被解析成 Git 選項，喺 file:// 本地傳輸下喺 argocd-repo-server 執行。影響 v2.7.0 起；修補：v3.3.15／3.4.10／3.5.4／3.6.0-rc2 等。",
+      "source": "Argo CD GHSA",
+      "url": "https://github.com/argoproj/argo-cd/security/advisories/GHSA-9v9p-x54c-58gc",
+      "published": "2026-10-07"
+    },
+    {
+      "id": "tech-harbor-webhook-ssrf",
+      "title": "Harbor GHSA-2phj · Webhook SSRF（ProjectAdmin）",
+      "summary": "High（約 10/6）：ProjectAdmin 可設 HTTP／Slack webhook 指向 localhost、私網或雲 metadata（169.254.169.254）；事件觸發時 jobservice 由叢集內 POST，錯誤回應會寫入 webhook 執行日誌畀專案成員讀。升 v2.15.3／2.14.5／2.13.6 或 v2.16.0+；修補後拒私網／loopback／link-local 目標。",
+      "source": "Harbor GHSA",
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-2phj-cp9f-qq6w",
+      "published": "2026-10-06"
+    },
+    {
+      "id": "tech-harbor-replication-ssrf",
+      "title": "Harbor GHSA-xgp2 · Registry replication pagination SSRF",
+      "summary": "Medium（約 10/6）：pull 複製跟遠端 Link: rel=next 分頁時未校驗 next URL 仍屬同一 registry；惡意／被竄改 header 可令下一頁請求帶住存儲嘅 registry 憑證打去其他主機（含內網／metadata）。升 v2.15.3／2.14.5／2.13.6 或 v2.16.0+。",
+      "source": "Harbor GHSA",
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-xgp2-5vxg-rgh2",
+      "published": "2026-10-06"
+    },
+    {
+      "id": "tech-oracle-dbms-vector-91499",
+      "title": "Oracle Oct CPU：DBMS_VECTOR CVE-2026-91499（CVSS 8.8）",
+      "summary": "Oct 2026 CPU（Rev 2 · 10/26）Database Server risk matrix：CVE-2026-91499 影響 RDBMS 組件 DBMS_VECTOR，CVSS 8.8（Network／Low／Low privs；C／I／A 皆 High），需認證，影響 23.4.0–23.26.3。跑 23ai／用 DBMS_VECTOR 要跟 matrix 排 patch window。",
       "source": "Oracle",
       "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
       "published": "2026-10-20"
-    },
-    {
-      "id": "tech-kcp-cve-39429",
-      "title": "kcp CVE-2026-39429（GHSA-3j3q-wp9x-585p）· High",
-      "summary": "root shard 直接暴露 cache server，無 authn／authz；能連到 root shard 就可讀寫 cache（RBAC／topology／APIExport 等）。多租戶部署要即升 0.30.3 或 0.29.3；未 patch 前至少擋 /services/cache/*。",
-      "source": "kcp GHSA",
-      "url": "https://github.com/kcp-dev/kcp/security/advisories/GHSA-3j3q-wp9x-585p",
-      "published": "2026-10-20"
-    },
-    {
-      "id": "tech-grafana-cve-93294",
-      "title": "Grafana CVE-2026-93294 · Azure Monitor resource proxy",
-      "summary": "有 Azure Monitor 查詢權限嘅用戶可經 resource proxy 打超出預期嘅 Azure Resource Manager API，權限跟 data source 嘅 Azure identity。升 12.4.13／13.0.11／13.1.8／13.2.4+，並收緊該 identity 嘅 Azure role。",
-      "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-93294/",
-      "published": "2026-10-20"
-    },
-    {
-      "id": "tech-grafana-prom-alerting-app",
-      "title": "Grafana：Prometheus／Mimir／Loki Alerting 獨立插件",
-      "summary": "data source–managed alerting（rule groups、Alertmanager routes／silences 等）搬去 grafana-prometheusalerting-app；Grafana-managed alerting 仍留 core。升級／開 hand-off 前先對齊 bookmark 同 runbook 連結。",
-      "source": "Grafana Docs",
-      "url": "https://grafana.com/docs/plugins/grafana-prometheusalerting-app/latest/",
-      "published": "2026-10-20"
-    },
-    {
-      "id": "tech-arxiv-kernel-io-stall",
-      "title": "arXiv 2609.12597 · 雲端 OLTP 嘅 kernel I/O stall",
-      "summary": "用 eBPF 拆解 distributed block storage 上 KFT／dirty throttle 點樣令 PostgreSQL 用唔晒 provisioned IOPS；SteelDB 多 disk 配置可降尾延遲。雲上跑 PG、睇 IOPS 但尾延遲怪時值得睇。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2609.12597",
-      "published": "2026-09-15"
     }
   ],
   "skills": [
     {
-      "id": "sk-oracle-cpu-oct2026",
-      "title": "Oracle Oct CPU：排 patch window（CVE-2026-75803）",
-      "summary": "全線 1295 個新補丁；Database Server 14 項，其中 4 項可無認證遠端。最高 CVE-2026-75803（RDBMS OpenSSL）CVSS 9.8，影響 19c／23ai。跑 Oracle／GoldenGate／ORDS 就跟 risk matrix 排測同 window。",
-      "source": "Oracle",
-      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
-      "published": "2026-10-20"
+      "id": "sk-plan-mode",
+      "title": "Cursor Plan Mode：先規劃再改碼",
+      "summary": "Agent input 撳 Shift+Tab 開 Plan Mode：agent 先搜 codebase、問澄清、寫附路徑同引用嘅實作計劃，等你批准先動手。計劃係可編輯 Markdown；可 Save to workspace 存 .cursor/plans/。方向偏咗就回計劃改清楚再跑，往往快過跟住修。",
+      "source": "Cursor Blog",
+      "url": "https://cursor.com/blog/agent-best-practices",
+      "published": "2026-01-09"
     },
     {
-      "id": "sk-kcp-cache-expose",
-      "title": "kcp：root shard 唔好直接暴露；升 0.30.3／0.29.3",
-      "summary": "CVE-2026-39429：cache server 無 authn／authz，能連 root shard 就可讀寫 cache。未補前至少擋 /services/cache/*。",
-      "source": "kcp GHSA",
-      "url": "https://github.com/kcp-dev/kcp/security/advisories/GHSA-3j3q-wp9x-585p",
-      "published": "2026-10-20"
+      "id": "sk-rules-vs-skills",
+      "title": "Rules vs Skills：常駐上下文 vs 按需能力",
+      "summary": "Rules（.cursor/rules/）係每次對話開頭嘅常駐指示；Skills（SKILL.md）按相關性動態載入，可含 scripts／references／hooks。Skills 目錄：.agents/skills／.cursor/skills／~/.cursor/skills 等。要用固定 slash 行為可設 disable-model-invocation: true。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-01-09"
     },
     {
-      "id": "sk-grafana-azure-monitor",
-      "title": "Grafana＋Azure Monitor：升 12.4.13／13.0.11／13.1.8／13.2.4+",
-      "summary": "CVE-2026-93294：有查詢權限者可經 resource proxy 打超出預期嘅 Azure Resource Manager API，權限跟 data source 嘅 Azure identity——順手收緊該 identity role。",
+      "id": "sk-debug-mode",
+      "title": "Cursor Debug Mode：用 runtime 證據搵根因",
+      "summary": "標準對話搞唔掂嘅 bug 用 Debug Mode：產生多個假設 → 加 logging → 你重現問題收集 runtime → 用證據定位 → 針對性修。適合可重現但難明、race／timing、效能／memory leak、回歸。重現步驟愈具體，instrumentation 愈有用。",
+      "source": "Cursor Blog",
+      "url": "https://cursor.com/blog/agent-best-practices",
+      "published": "2026-01-09"
+    },
+    {
+      "id": "sk-cloudnativepg-cve-44477",
+      "title": "CloudNativePG：即升 1.29.1／1.28.3（CVE-2026-44477）",
+      "summary": "Critical（CVSS v4 9.4）：metrics exporter 以 postgres superuser 連線後 SET ROLE pg_monitor 不足，可 RESET ROLE 再 COPY ... TO PROGRAM 喺 primary pod 跑 OS 指令；連預設 app 角色經 pg_extensions metric 都可觸發。修補引入 cnpg_metrics_exporter 專用角色。即升 1.29.1／1.28.3。",
+      "source": "PostgreSQL／CloudNativePG",
+      "url": "https://www.postgresql.org/about/news/cloudnativepg-1291-and-1283-released-critical-cve-fix-3296/",
+      "published": "2026-05-15"
+    },
+    {
+      "id": "sk-grafana-contact-point-bypass",
+      "title": "Grafana：升 12.4.14／13.0.12／13.1.9／13.2.5+（contact point）",
+      "summary": "CVE-2026-100105：有 edit contact point 但唔應改 protected 欄嘅用戶，可切 legacy schema 改 destination URL，洩 stored credential／轉走告警。即用：升上述固定版；升完核對 contact point URL／integration schema。",
       "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-93294/",
-      "published": "2026-10-20"
-    },
-    {
-      "id": "sk-grafana-prom-alerting",
-      "title": "Prometheus／Mimir／Loki alerting 轉獨立插件",
-      "summary": "data source–managed alerting 搬去 grafana-prometheusalerting-app（Grafana-managed 仍留 core）。升級／開 hand-off 前對齊 bookmark 同 runbook。",
-      "source": "Grafana Docs",
-      "url": "https://grafana.com/docs/plugins/grafana-prometheusalerting-app/latest/",
-      "published": "2026-10-20"
-    },
-    {
-      "id": "sk-pg-kernel-io-stall",
-      "title": "雲上 PG／OLTP：IOPS 夠但尾延遲怪 → 睇 kernel dirty throttle",
-      "summary": "arXiv 2609.12597 用 eBPF 拆 KFT／dirty throttle；多 disk（SteelDB 式）可降尾延遲——標準 diskstats 睇唔到呢啲 stall。",
-      "source": "arXiv",
-      "url": "https://arxiv.org/abs/2609.12597",
-      "published": "2026-09-15"
+      "url": "https://grafana.com/security/security-advisories/cve-2026-100105/",
+      "published": "2026-10-27"
     }
   ],
   "politics": [
     {
-      "id": "pol-hk-apec-fmm-day1",
+      "id": "pol-hk-wangfukcourt",
       "region": "香港",
-      "title": "APEC 財長會首日喺港開幕；李家超／陳茂波定調金融同北都",
-      "what": "2026-10-20 至 21，港首次主辦 APEC Finance Ministers’ Meeting。開幕日討論宏觀展望、家庭財政政策、數碼基建融資、金融包容等。李家超晚宴重申零關稅、簡單低稅、離岸人民幣／財富管理／風險管理中心，並指北部都會區將成創科同大學城樞紐。陳茂波指首八個月港貨值出口升逾 40%，約 70% IPO 集資來自 AI 相關公司；同時警告地緣同 AI 資產槓桿或放大跨市調整。",
-      "why": "呢次會係 11 月深圳領袖峰會前奏；港用主辦權展示「超級聯繫人」同創科融資角色。",
-      "hkImpact": "直接係本地主場外交；出口／IPO 數據同北都論述會影響市場對港金融同創科定位嘅預期。",
-      "published": "2026-10-20",
+      "title": "宏福苑獨立調查報告公開；李家超道歉；何永賢請辭",
+      "what": "政府 10/29 公開大埔宏福苑火災獨立委員會報告。行政長官李家超代表特區政府向災民同市民道歉；指火災致 168 人死亡（含殉職消防員）、1,984 個家庭受影響。何永賢提出請辭承擔政治責任，李家超接受並報請中央建議免職；黃偉綸兼任署理房屋局局長。政府宣布改革包括立法禁止樓宇維修圍標、跨部門特遣隊、樓宇維修支援及服務局，並將相關部門不足轉介敍用委員會調查（三個月內）。",
+      "why": "獨立報告確認監管缺口同圍標問題；政治問責同制度性改革同步推進，係本地重大公共安全同管治事件。",
+      "hkImpact": "直接影響樓宇維修法例、強制驗樓監管、業主招標支援，以及房屋／屋宇／消防／勞工相關部門問責同執法節奏。",
+      "published": "2026-10-29",
       "sources": [
         {
-          "name": "news.gov.hk",
-          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
+          "name": "政府新聞公報（報告／改革）",
+          "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900555.htm"
         },
         {
-          "name": "陳茂波演辭（政府新聞稿）",
-          "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000482.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-cn-lan-apec-ai",
-      "region": "中國",
-      "title": "財長藍佛安喺港呼籲 APEC 加強宏觀協調、AI 同供應鏈合作",
-      "what": "中國財政部部長藍佛安喺港 APEC 財長會開幕致辭，指亞太要承擔更大增長責任；要加強政策溝通協調，防止負向外溢；並促加快數碼／綠色轉型，推動 AI、數碼經濟、綠色低碳創新合作，穩供應鏈同區域經濟一體化。",
-      "why": "中方喺峰會前公開定調「協調唔脫鈎」；同美國關稅／出口管制並行，影響區域資本同技術流動預期。",
-      "hkImpact": "港作為主辦地同融資中介，若區域 AI／供應鏈合作落實，有利跨境項目同專業服務需求。",
-      "published": "2026-10-20",
-      "sources": [
-        {
-          "name": "SCMP",
-          "url": "https://www.scmp.com/economy/global-economy/article/3371523/china-calls-apec-boost-coordination-ai-supply-chains-hong-kong-summit"
+          "name": "行政長官記者會開場發言",
+          "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900634.htm"
         },
         {
           "name": "news.gov.hk",
-          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
+          "url": "https://www.news.gov.hk/chi/2026/10/20261029/20261029_160028_023.html?type=ticker"
         }
       ]
     },
     {
-      "id": "pol-hk-ec-nominations",
-      "region": "香港",
-      "title": "選委會界別分組選舉提名截止：共 1,155 份表格",
-      "what": "選管會公布，選委會界別分組一般選舉提名期 2026-10-20 結束，共收 1,155 份提名表格（指定團體 40 份，其餘個人）。有競逐嘅界別將於 11 月 22 日投票；候選人資格審查委員會會喺提名截止後 14 日內刊憲有效候選人。",
-      "why": "新一屆 1,500 人選舉委員會組成程序進入實質階段，係往後特首同立法會選舉制度嘅基礎一環。",
-      "hkImpact": "直接關本地政制日程同各界別代表結構；市民同業界要跟提名有效名單同競選指引。",
-      "published": "2026-10-20",
-      "sources": [
-        {
-          "name": "RTHK",
-          "url": "https://news.rthk.hk/rthk/en/component/k2/1874679-20261020.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-cn-q3-gdp-45",
+      "id": "pol-cn-fifth-plenum",
       "region": "中國",
-      "title": "中國第三季 GDP 按年增 4.5%（出口帶動；內需仍弱）",
-      "what": "國家統計局數據：2026 年 7–9 月 GDP 按年增 4.5%，高於第二季 4.3%；前三季累計增 4.6%。全年官方目標 4.5%–5%。官方指國際環境複雜、內需不足仍突出；出口強勁而樓市低迷拖累內需。",
-      "why": "確認「外強內弱」格局；對外盈餘同產能外銷會繼續牽動貿易夥伴反制同談判。",
-      "hkImpact": "內地增長同出口節奏影響港轉口、金融市場風險偏好同跨境資金流。",
-      "published": "2026-10-19",
+      "title": "二十屆五中全會閉幕：全面從嚴治黨；張升民進政治局；確認開除 33 人",
+      "what": "中共二十屆五中全會於 10/26–29 在北京舉行，通過關於堅持全面從嚴治黨若干重大問題的決議；選舉張升民為中央政治局委員；並決定 2027 下半年召開二十一大。會議確認此前對嚴重違紀違法者處分，並確認開除 33 名官員黨籍（路透／NBC 引述，含前政治局委員馬興瑞、張又俠等）。出席人數較 2022 原名單明顯減少。",
+      "why": "全會聚焦黨內紀律同人事；高缺席率同大規模確認開除，反映反腐同權力重組規模，並啟動下屆黨代會人事節奏。",
+      "hkImpact": "人事同治黨信號影響內地政策穩定預期；港作為聯繫窗口，須跟進中央人事同監管風向對跨境商務同政治風險嘅間接影響。",
+      "published": "2026-10-29",
       "sources": [
         {
-          "name": "AP via ABC News",
-          "url": "https://abcnews.com/International/wireStory/chinas-economy-accelerates-robust-exports-domestic-weakness-persists-137369591"
+          "name": "中國政府網（英文）",
+          "url": "https://english.www.gov.cn/news/202610/29/content_WS6ae31e80c6d00ca5f9a0df66.html"
+        },
+        {
+          "name": "NBC News／Reuters",
+          "url": "https://www.nbcnews.com/world/china/chinas-communist-party-expels-33-officials-post-mao-era-record-purge-rcna606319"
         }
       ]
     },
     {
-      "id": "pol-us-doj-whip",
+      "id": "pol-us-fed-hold",
       "region": "美國",
-      "title": "司法部推出欺詐舉報獎勵計劃 WHIP",
-      "what": "美國司法部宣布 Fraud Whistleblower Incentive Program（WHIP）：對導致特定聯邦欺詐刑事起訴嘅線報，可獲 US$10,000–30,000 前期獎勵。範圍包括聯邦醫療欺詐等；庫務部承諾約 US$2,500 萬支持；入口 america.gov/fraud。",
-      "why": "改變舉報誘因時間點，可能加快醫療同福利欺詐案件；亦係中期選舉前反欺詐議程一部分。",
-      "hkImpact": "直接衝擊主要喺美國；對港影響間接——在美上市／營運醫療或政府合約相關企業合規成本或上升。",
-      "published": "2026-10-20",
+      "title": "聯儲局維持聯邦基金利率 3.75%–4.00%（10–2）",
+      "what": "FOMC（10/28）以 10–2 維持目標區間 3.75%–4.00%。聲明指經濟活動以強勁步伐擴張、通脹仍然偏高，委員會將累積更多資訊再決定下一步。反對票：Lisa D. Cook、Beth M. Hammack，二人傾向加息 0.25 百分點。",
+      "why": "利率按兵不動但有兩票鷹派異議，顯示通脹同政治敏感期下委員會內部分歧；市場關注 12 月會否再加息。",
+      "hkImpact": "美息路徑牽動美元、港匯同本地按揭／資產價格預期；港作為金融中心對美元利率敏感。",
+      "published": "2026-10-28",
       "sources": [
         {
-          "name": "U.S. Department of Justice",
-          "url": "https://www.justice.gov/opa/pr/justice-department-announces-innovative-whistleblower-rewards-program-combat-fraud"
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
+        },
+        {
+          "name": "CNBC",
+          "url": "https://www.cnbc.com/2026/10/28/fed-interest-rate-decision-october-2026.html"
         }
       ]
     }

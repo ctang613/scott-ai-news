@@ -1,0 +1,227 @@
+{
+  "edition": "2026-10-21",
+  "asOf": "2026-10-21",
+  "updatedAt": "2026-10-21T07:15:21+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "三",
+  "intro": "今日重點：美禁聯邦用 DeepSeek、Anthropic 自動紅隊達標、Microsoft 當 agent 做內部人、MiniMax M3.1 Flash、Meta Muse 交住址；基建 Oracle CPU／kcp／Grafana CVE；政治 APEC 財長會、中國 GDP 4.5%、選委會提名、DOJ WHIP。",
+  "mustKnow": [
+    {
+      "id": "mk-us-deepseek-fed-ban",
+      "title": "美國禁止聯邦文職機構用 DeepSeek",
+      "summary": "DHS 要求聯邦文職行政部門 IT 拆除 DeepSeek 相關產品／服務並禁新採購，包括用 DeepSeek 模型嘅第三方產品；國防部唔喺範圍內。當局憂敏感數據流向中國同保安缺口；中方反對將國安問題擴大化。中美 AI 採購紅線再擴至開源中國模型。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html",
+      "published": "2026-10-20",
+      "image": "https://image.cnbcfm.com/api/v1/image/108296670-1777011085478-gettyimages-2272870016-vcg111636967333.jpeg?v=1777011103&w=1920&h=1080",
+      "imageAlt": "杭州展出嘅 DeepSeek logo"
+    },
+    {
+      "id": "mk-anthropic-auto-redteam",
+      "title": "Anthropic：自動化紅隊提早達標",
+      "summary": "Frontier Safety Roadmap 更新：針對生化武器分類器嘅內部自動化 jailbreak 搜尋已於 10/6 完成（原目標 2027-01-01）。同 bug bounty 比對，8 題 × 3 代 classifier 共 24 組全部打和或贏過最佳人類，贏 23 組；用時約 24–48 小時。",
+      "source": "Anthropic",
+      "url": "https://www.anthropic.com/responsible-scaling-policy/updates",
+      "published": "2026-10-19",
+      "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "imageAlt": "Anthropic Frontier Safety Roadmap"
+    },
+    {
+      "id": "mk-ms-agents-insiders",
+      "title": "Microsoft：當 AI agent 做「內部人」風險",
+      "summary": "Project Perception 擴 Guardian Agents、Dynamic Permissions、Dynamic Agent Risk、Dynamic Conditional Access；本地可發現 agent 類型加至約 60 種，並用 Entra Agent ID 畀獨立身分。原則：智能供應同權限控制要分開。",
+      "source": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/",
+      "published": "2026-10-19"
+    },
+    {
+      "id": "mk-minimax-m31-flash",
+      "title": "MiniMax 推出 M3.1 Flash（平價 agent 模型）",
+      "summary": "官網稱 agent 任務成本較上代低約 70%、推理近 3 倍快；API 約 US$0.15／百万 input、US$0.60／百万 output，約 1M context。報道 Intelligence Index 升但 hallucination 指標極高——平價搶自動化，事實可靠性要額外圍欄。",
+      "source": "MiniMax",
+      "url": "https://www.minimax.io/blog/minimax-m31f",
+      "published": "2026-10-19",
+      "image": "https://filecdn.minimax.chat/public/m31-flash-zh-1-1792403273121.png?x-oss-process=image/format,webp",
+      "imageAlt": "MiniMax M3.1 Flash 公布圖"
+    },
+    {
+      "id": "mk-meta-muse-address",
+      "title": "Meta Muse：Marketplace agent 未經確認交住址",
+      "summary": "多倫多賣家揀「Allow Always」後，Muse 自行接低價、交住家地址，買家深夜上門並用其帳戶發訊息。Meta 承認另有低估最低價約 US$100 錯誤。真實案例：agent 權限誤解＝人身／私隱風險。",
+      "source": "Fortune／AP",
+      "url": "https://fortune.com/2026/10/19/meta-muse-ai-agent-facebook-marketplace-home-address-privacy/",
+      "published": "2026-10-19",
+      "image": "https://fortune.com/img-assets/wp-content/uploads/2026/10/AP26267017608902-e1792419525168.jpg?resize=1200,600",
+      "imageAlt": "Meta Connect 上嘅 Muse 相關畫面"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-oracle-cpu-oct2026",
+      "title": "Oracle Oct 2026 CPU 正式出（Rev 1 · 10/20）",
+      "summary": "全線 1295 個新補丁；Database Server 14 項，其中 4 項可無認證遠端；最高 CVE-2026-75803（RDBMS OpenSSL）CVSS 9.8，影響 19c／23ai。跑 Oracle／GoldenGate／ORDS 要排 patch window。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "tech-kcp-cve-39429",
+      "title": "kcp CVE-2026-39429（GHSA-3j3q-wp9x-585p）· High",
+      "summary": "root shard 直接暴露 cache server，無 authn／authz；能連到 root shard 就可讀寫 cache（RBAC／topology／APIExport 等）。多租戶部署要即升 0.30.3 或 0.29.3；未 patch 前至少擋 /services/cache/*。",
+      "source": "kcp GHSA",
+      "url": "https://github.com/kcp-dev/kcp/security/advisories/GHSA-3j3q-wp9x-585p",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "tech-grafana-cve-93294",
+      "title": "Grafana CVE-2026-93294 · Azure Monitor resource proxy",
+      "summary": "有 Azure Monitor 查詢權限嘅用戶可經 resource proxy 打超出預期嘅 Azure Resource Manager API，權限跟 data source 嘅 Azure identity。升 12.4.13／13.0.11／13.1.8／13.2.4+，並收緊該 identity 嘅 Azure role。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-93294/",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "tech-grafana-prom-alerting-app",
+      "title": "Grafana：Prometheus／Mimir／Loki Alerting 獨立插件",
+      "summary": "data source–managed alerting（rule groups、Alertmanager routes／silences 等）搬去 grafana-prometheusalerting-app；Grafana-managed alerting 仍留 core。升級／開 hand-off 前先對齊 bookmark 同 runbook 連結。",
+      "source": "Grafana Docs",
+      "url": "https://grafana.com/docs/plugins/grafana-prometheusalerting-app/latest/",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "tech-arxiv-kernel-io-stall",
+      "title": "arXiv 2609.12597 · 雲端 OLTP 嘅 kernel I/O stall",
+      "summary": "用 eBPF 拆解 distributed block storage 上 KFT／dirty throttle 點樣令 PostgreSQL 用唔晒 provisioned IOPS；SteelDB 多 disk 配置可降尾延遲。雲上跑 PG、睇 IOPS 但尾延遲怪時值得睇。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.12597",
+      "published": "2026-09-15"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-oracle-cpu-oct2026",
+      "title": "Oracle Oct CPU：排 patch window（CVE-2026-75803）",
+      "summary": "全線 1295 個新補丁；Database Server 14 項，其中 4 項可無認證遠端。最高 CVE-2026-75803（RDBMS OpenSSL）CVSS 9.8，影響 19c／23ai。跑 Oracle／GoldenGate／ORDS 就跟 risk matrix 排測同 window。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "sk-kcp-cache-expose",
+      "title": "kcp：root shard 唔好直接暴露；升 0.30.3／0.29.3",
+      "summary": "CVE-2026-39429：cache server 無 authn／authz，能連 root shard 就可讀寫 cache。未補前至少擋 /services/cache/*。",
+      "source": "kcp GHSA",
+      "url": "https://github.com/kcp-dev/kcp/security/advisories/GHSA-3j3q-wp9x-585p",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "sk-grafana-azure-monitor",
+      "title": "Grafana＋Azure Monitor：升 12.4.13／13.0.11／13.1.8／13.2.4+",
+      "summary": "CVE-2026-93294：有查詢權限者可經 resource proxy 打超出預期嘅 Azure Resource Manager API，權限跟 data source 嘅 Azure identity——順手收緊該 identity role。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-93294/",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "sk-grafana-prom-alerting",
+      "title": "Prometheus／Mimir／Loki alerting 轉獨立插件",
+      "summary": "data source–managed alerting 搬去 grafana-prometheusalerting-app（Grafana-managed 仍留 core）。升級／開 hand-off 前對齊 bookmark 同 runbook。",
+      "source": "Grafana Docs",
+      "url": "https://grafana.com/docs/plugins/grafana-prometheusalerting-app/latest/",
+      "published": "2026-10-20"
+    },
+    {
+      "id": "sk-pg-kernel-io-stall",
+      "title": "雲上 PG／OLTP：IOPS 夠但尾延遲怪 → 睇 kernel dirty throttle",
+      "summary": "arXiv 2609.12597 用 eBPF 拆 KFT／dirty throttle；多 disk（SteelDB 式）可降尾延遲——標準 diskstats 睇唔到呢啲 stall。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.12597",
+      "published": "2026-09-15"
+    }
+  ],
+  "politics": [
+    {
+      "id": "pol-hk-apec-fmm-day1",
+      "region": "香港",
+      "title": "APEC 財長會首日喺港開幕；李家超／陳茂波定調金融同北都",
+      "what": "2026-10-20 至 21，港首次主辦 APEC Finance Ministers’ Meeting。開幕日討論宏觀展望、家庭財政政策、數碼基建融資、金融包容等。李家超晚宴重申零關稅、簡單低稅、離岸人民幣／財富管理／風險管理中心，並指北部都會區將成創科同大學城樞紐。陳茂波指首八個月港貨值出口升逾 40%，約 70% IPO 集資來自 AI 相關公司；同時警告地緣同 AI 資產槓桿或放大跨市調整。",
+      "why": "呢次會係 11 月深圳領袖峰會前奏；港用主辦權展示「超級聯繫人」同創科融資角色。",
+      "hkImpact": "直接係本地主場外交；出口／IPO 數據同北都論述會影響市場對港金融同創科定位嘅預期。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "news.gov.hk",
+          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
+        },
+        {
+          "name": "陳茂波演辭（政府新聞稿）",
+          "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000482.htm"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-lan-apec-ai",
+      "region": "中國",
+      "title": "財長藍佛安喺港呼籲 APEC 加強宏觀協調、AI 同供應鏈合作",
+      "what": "中國財政部部長藍佛安喺港 APEC 財長會開幕致辭，指亞太要承擔更大增長責任；要加強政策溝通協調，防止負向外溢；並促加快數碼／綠色轉型，推動 AI、數碼經濟、綠色低碳創新合作，穩供應鏈同區域經濟一體化。",
+      "why": "中方喺峰會前公開定調「協調唔脫鈎」；同美國關稅／出口管制並行，影響區域資本同技術流動預期。",
+      "hkImpact": "港作為主辦地同融資中介，若區域 AI／供應鏈合作落實，有利跨境項目同專業服務需求。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/economy/global-economy/article/3371523/china-calls-apec-boost-coordination-ai-supply-chains-hong-kong-summit"
+        },
+        {
+          "name": "news.gov.hk",
+          "url": "https://www.news.gov.hk/eng/2026/10/20261020/20261020_202158_843.html"
+        }
+      ]
+    },
+    {
+      "id": "pol-hk-ec-nominations",
+      "region": "香港",
+      "title": "選委會界別分組選舉提名截止：共 1,155 份表格",
+      "what": "選管會公布，選委會界別分組一般選舉提名期 2026-10-20 結束，共收 1,155 份提名表格（指定團體 40 份，其餘個人）。有競逐嘅界別將於 11 月 22 日投票；候選人資格審查委員會會喺提名截止後 14 日內刊憲有效候選人。",
+      "why": "新一屆 1,500 人選舉委員會組成程序進入實質階段，係往後特首同立法會選舉制度嘅基礎一環。",
+      "hkImpact": "直接關本地政制日程同各界別代表結構；市民同業界要跟提名有效名單同競選指引。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "RTHK",
+          "url": "https://news.rthk.hk/rthk/en/component/k2/1874679-20261020.htm"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-q3-gdp-45",
+      "region": "中國",
+      "title": "中國第三季 GDP 按年增 4.5%（出口帶動；內需仍弱）",
+      "what": "國家統計局數據：2026 年 7–9 月 GDP 按年增 4.5%，高於第二季 4.3%；前三季累計增 4.6%。全年官方目標 4.5%–5%。官方指國際環境複雜、內需不足仍突出；出口強勁而樓市低迷拖累內需。",
+      "why": "確認「外強內弱」格局；對外盈餘同產能外銷會繼續牽動貿易夥伴反制同談判。",
+      "hkImpact": "內地增長同出口節奏影響港轉口、金融市場風險偏好同跨境資金流。",
+      "published": "2026-10-19",
+      "sources": [
+        {
+          "name": "AP via ABC News",
+          "url": "https://abcnews.com/International/wireStory/chinas-economy-accelerates-robust-exports-domestic-weakness-persists-137369591"
+        }
+      ]
+    },
+    {
+      "id": "pol-us-doj-whip",
+      "region": "美國",
+      "title": "司法部推出欺詐舉報獎勵計劃 WHIP",
+      "what": "美國司法部宣布 Fraud Whistleblower Incentive Program（WHIP）：對導致特定聯邦欺詐刑事起訴嘅線報，可獲 US$10,000–30,000 前期獎勵。範圍包括聯邦醫療欺詐等；庫務部承諾約 US$2,500 萬支持；入口 america.gov/fraud。",
+      "why": "改變舉報誘因時間點，可能加快醫療同福利欺詐案件；亦係中期選舉前反欺詐議程一部分。",
+      "hkImpact": "直接衝擊主要喺美國；對港影響間接——在美上市／營運醫療或政府合約相關企業合規成本或上升。",
+      "published": "2026-10-20",
+      "sources": [
+        {
+          "name": "U.S. Department of Justice",
+          "url": "https://www.justice.gov/opa/pr/justice-department-announces-innovative-whistleblower-rewards-program-combat-fraud"
+        }
+      ]
+    }
+  ]
+}
