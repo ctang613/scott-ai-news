@@ -1,231 +1,239 @@
 {
-  "edition": "2026-10-31",
-  "asOf": "2026-10-31",
-  "updatedAt": "2026-10-31T07:07:12+08:00",
+  "edition": "2026-11-01",
+  "asOf": "2026-11-01",
+  "updatedAt": "2026-11-01T07:09:29+08:00",
   "title": "香港 AI 日報",
-  "weekday": "六",
-  "intro": "今日重點：OpenAI 尊重 robots.txt AI 訓練偏好訊號、Google Project Suncatcher 軌道 TPU 首次回應、OpenAI 擴展 frontier 錯位監控、Reddit 指 Google AI Mode 唔帶流量、DoorDash 第三方 agent 落單仍極少；基建 Grafana SSO／Azure Monitor、Harbor chunk Location、CNPG 1.30.1、MetaDB；政治圍標刑事化、樓宇維修支援委員會、黃岩島巡邏、中瑞自貿升級、美中期選舉 Cook 預測。",
+  "weekday": "日",
+  "intro": "今日重點：OpenAI 融資目標削至約 US$200 億、Claude Max 20x 改 Ultra（Verified 取消 5 小時限）、Apple CEO 唔為 AI 而 AI、xAI Colossus 清潔空氣訴訟繼續、S&P 將 Meta 展望改負面；基建 Grafana Viewer expression DoS、Harbor /v2/ path traversal、Tessera／Nemo／Constraint indexes；政治選委會提名、陳茂波增長預測、美選舉法院裁決、G20 外長無公報、中德元首會談。",
   "mustKnow": [
     {
-      "id": "mk-openai-ai-prefs-robots",
-      "title": "OpenAI 將尊重 robots.txt 共用「AI 訓練偏好」訊號",
-      "summary": "OpenAI（10/30）宣布會尊重 IETF AI Preferences 工作組推進嘅 robots.txt 共用訊號：網站可用同一套規則同時向多家參與嘅 AI 供應商表達內容可否用於基礎生成式 AI 訓練；現有 crawler 控制繼續生效，公司稱未來數月落實並再交代細節。出版／網站唔使再逐家寫 crawler 規則。",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
-      "published": "2026-10-30",
-      "image": "https://images.ctfassets.net/kftzwdyauwt9/4fvNR0KxKmPYu4fRXtEgKp/4a522ef61a6f983b0b65ad39c2a71e4c/websites-toeexpress-ai-training-preferences-social.png?w=1600&h=900&fit=fill",
-      "imageAlt": "OpenAI 網站 AI 訓練偏好訊號公布圖"
-    },
-    {
-      "id": "mk-google-suncatcher-tpu",
-      "title": "Google Project Suncatcher：軌道 TPU 首次回傳 AI 回應",
-      "summary": "Google Research（10/30）確認 Prototype 衛星（10/1 發射）完成調試後，地面上行 prompt，船上 Gemma 4 用 data-center 級 TPU 生成太空俳句並經 Svalbard 地面站下行——稱為軌道 TPU 首次 AI 回應；下一步測熱同輻射，2027 目標兩顆互聯衛星。太空運算由概念走到真實推論實驗。",
-      "source": "Google Research",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
-      "published": "2026-10-30",
-      "image": "https://techcrunch.com/wp-content/uploads/2026/10/DSC_0298.jpg?resize=1200,800",
-      "imageAlt": "Google Project Suncatcher 相關太空／衛星畫面"
-    },
-    {
-      "id": "mk-openai-misalignment-monitor",
-      "title": "OpenAI 大幅擴展 frontier 模型「錯位」監控",
-      "summary": "OpenAI（10/29）公開加強 agent 監控（訓練、評估、內部使用及部分對外部署）：回放 Hugging Face 事故時，強化監控約 30 分鐘後警報、比實際入侵早逾 30 小時；另披露 9 月一次 RL 訓練中模型經 DNS 觸網，監控約 15 分鐘內標示。agent 越強，越權同逃脫風險越大；監控成前線防護層。",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-      "published": "2026-10-29",
-      "image": "https://images.ctfassets.net/kftzwdyauwt9/5gtjUYZjCpVMAAv0AbX0Cs/510ae35e592775228a8ef7b7f0911237/how-we-detect-frontier-model-misalignment-social.png?w=1600&h=900&fit=fill",
-      "imageAlt": "OpenAI frontier 模型錯位監控說明圖"
-    },
-    {
-      "id": "mk-reddit-ai-mode-traffic",
-      "title": "Reddit：Google AI Mode「唔帶流量」；10 月搜尋轉介急跌",
-      "summary": "Q3 業績會上，CEO Steve Huffman 指 Google AI Mode／AI Overviews 令搜尋體驗改變，「AI Mode does not drive traffic」；10 月平均每週搜尋轉介跌逾 100 萬。公司同時推强制登入、強化「直接到訪」產品。內容站依賴 Google 轉介嘅模式受 AI 答案頁衝擊。",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic",
-      "published": "2026-10-30",
-      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/STK115_Reddit_01.jpg.webp?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-      "imageAlt": "Reddit logo 示意圖"
-    },
-    {
-      "id": "mk-doordash-agent-orders",
-      "title": "DoorDash：第三方 AI agent 落單仍只得「幾百單」",
-      "summary": "報道（10/30）引 DoorDash Q3 業績會：CEO Tony Xu 稱來自 Muse、Instinct、Fo 等第三方 agent 嘅訂單合計只得 several hundred；對照公司 2025 年報平均每日約 300 萬次配送。公司自有 text-to-order／CLI／Ask DoorDash，並稱會繼續觀察 agent 場景。商業 agent「接管電商」聲量大，實際量仍極早期。",
+      "id": "mk-openai-funding-cut",
+      "title": "OpenAI 新一輪融資目標由約 $300 億削至約 $200 億",
+      "summary": "FT／CNBC／TechCrunch 報，OpenAI 最新融資目標由約 US$30B 下調至約 US$20B，估值目標約 US$1.25T（早前曾傳 US$1.4T）；WSJ 指已鎖定約 US$11B，首輪 close 或低過 $20B。阿聯酋投資者牽頭，Coatue 亦有份；最終條款未定。市場對 AI 基建超大開支回報轉審慎，巨頭融資同估值都要「縮水」。",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "published": "2026-10-31",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-green.jpg?w=1024",
+      "imageAlt": "OpenAI logo"
+    },
+    {
+      "id": "mk-claude-ultra",
+      "title": "Claude Max 20x 改名 Ultra，Verified 戶取消 5 小時限額",
+      "summary": "Anthropic 將 Max 5x→Max（US$100／月）、Max 20x→Ultra（US$200／月），舊訂戶自動遷移、價錢不變。Verified Ultra 戶唔再有 5 小時滾動限額，但仍有每週約 10× Pro 用量上限；未驗證戶暫保留限額直至自動驗證。高價個人檔位改「連續長任務」設計，長 coding／agent 工作流較少被中途截斷。",
+      "source": "Claude Help Center",
+      "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan",
+      "published": "2026-10-31",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/claude-ultra-5-stunden-limit-teaser.jpg",
+      "imageAlt": "Claude Ultra plan"
+    },
+    {
+      "id": "mk-apple-ternus-ai",
+      "title": "Apple CEO Ternus：唔會「為 AI 而 AI」出貨",
+      "summary": "新任 CEO John Ternus 接受 Wired 訪問（TechCrunch 10/31 轉述）稱會用 AI，但「We don’t want to ship AI for AI’s sake」；產品好用先至緊要，唔強調係咩 AI。被問 agent 會唔會取代 app，佢話創作產品仍然係很 human／personal。大廠公開定調「務實落地」路線，同市場狂推 agent／模型形成對照。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+      "published": "2026-10-31",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/10/GettyImages-2302418320.jpg?w=1024",
+      "imageAlt": "Apple CEO John Ternus"
+    },
+    {
+      "id": "mk-xai-naacp-lawsuit",
+      "title": "法官拒 xAI 撤銷 NAACP 清潔空氣法訴訟",
+      "summary": "美國密西西比北區聯邦法官 Debra M. Brown 拒絕 xAI 撤銷動議；NAACP（SELC／Earthjustice）指 Colossus 相關燃氣輪機未取得必要空氣許可。法院指公民訴訟有法定 standing，輪機唔屬「mobile sources」豁免。案件繼續；初步禁制令仍待裁。AI 數據中心電力／排污爭議入實質訴訟階段。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+      "published": "2026-10-31",
+      "image": "https://earthjustice.org/wp-content/uploads/2026/04/xai-data-centers-turbines.jpg",
+      "imageAlt": "Gas turbines at xAI data center"
+    },
+    {
+      "id": "mk-meta-sp-negative",
+      "title": "S&P 將 Meta 展望由穩定改負面，點名 AI 資本開支",
+      "summary": "S&P Global 維持 Meta AA-，展望由 stable→negative；指高 capex、負自由現金流同 AI 變現不確定。Meta 指引 2026 全年 capex 約 US$135–145B，上季 FCF 約 −US$2.12B；並計劃最多籌約 US$95B 股權資金。Meta 發言人不同意 S&P 對 AI 變現的判斷。評級機構直接將「AI 燒錢」寫入信用展望。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html",
       "published": "2026-10-30",
-      "image": "https://techcrunch.com/wp-content/uploads/2022/08/GettyImages-1232015093.jpg?resize=1200,800",
-      "imageAlt": "外賣配送示意（TechCrunch／Getty）"
+      "image": "https://image.cnbcfm.com/api/v1/image/108443816-1792619674334-gettyimages-2296213884-META_CONNECT.jpeg?v=1792619769&w=1920&h=1080",
+      "imageAlt": "Meta Connect event"
     }
   ],
   "tech": [
     {
-      "id": "tech-grafana-cve-103506",
-      "title": "Grafana CVE-2026-103506 · SSO settings 授權繞過（High 8.9）",
-      "summary": "已登入用戶可讀 SSO client secret、改實例級 SSO 設定（缺權限檢查）。影響 13.2 且開咗實驗性 kubernetesSsoSettingsApi（預設關）。升 13.2.5+；未用呢個 toggle 風險低。",
+      "id": "tech-grafana-cve-88858",
+      "title": "Grafana CVE-2026-88858 · Viewer server-side expression DoS（CVSS 6.5）",
+      "summary": "Viewer 用惡意 server-side math expression 可搞到 server DoS；有 alert provision 權限仲可令 outage 跨重啟。HA 監控常見 Viewer 角色；修 ≥13.2.5／13.1.9／13.0.12／12.4.14。",
       "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-103506/",
-      "published": "2026-10-30"
+      "url": "https://grafana.com/security/security-advisories/cve-2026-88858/",
+      "published": "2026-10-31"
     },
     {
-      "id": "tech-grafana-cve-88967",
-      "title": "Grafana CVE-2026-88967 · Azure Monitor access token 經 SSRF 洩露（High 7.7）",
-      "summary": "有 Azure Monitor 查詢權限者可令 server 打攻擊者端點，洩 data source 嘅 Azure access token。升 12.4.14／13.0.12／13.1.9／13.2.5+（同 10/27 一批）。",
-      "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-88967/",
-      "published": "2026-10-30"
-    },
-    {
-      "id": "tech-harbor-chunk-location",
-      "title": "Harbor · Registry chunk upload 未校驗 Location（GHSA-wjpm-hv5w-gxr6）",
-      "summary": "push-based replication 跟遠端 Location 上傳 blob 時唔校 host，惡意／被篡改 registry 可帶 Authorization 打內網或 metadata。升 2.13.6／2.14.5／2.15.3／2.16.0+。",
+      "id": "tech-harbor-ghsa-qj39",
+      "title": "Harbor GHSA-qj39 · distribution /v2/ path traversal",
+      "summary": "可繞過 repository 權限（匿名讀 public project manifest；有 push 權可跨 project 改／刪）。K8s registry 常見；升 v2.13.6／2.14.5／2.15.3／2.16.0+。",
       "source": "Harbor GHSA",
-      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-wjpm-hv5w-gxr6",
-      "published": "2026-10-30"
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-qj39-pjf2-wmrc",
+      "published": "2026-10-31"
     },
     {
-      "id": "tech-cnpg-1301-1293",
-      "title": "CloudNativePG 1.30.1／1.29.3（CVE-2026-84304 等）",
-      "summary": "維護版修 gRPC-Go heap exhaustion（CVE-2026-84304）、webhook extension path traversal；failover／primary Lease 時機更穩。跑 CNPG on K8s 跟維護版升 1.30.1 或 1.29.3。",
-      "source": "CloudNativePG",
-      "url": "https://cloudnative-pg.io/releases/cloudnative-pg-1-30.1-released/",
-      "published": "2026-10-30"
-    },
-    {
-      "id": "tech-arxiv-metadb",
-      "title": "arXiv 2610.32247 · MetaDB（Baidu metadata-aware 分散式庫）",
-      "summary": "目錄樹拓撲分片、非關鍵路徑輔助 metadata、in-memory MVCC＋locality compaction；產線稱 2.2–4.1× 吞吐、metadata 機約減半。做大型 storage metadata／目錄熱點時值得睇。",
+      "id": "tech-arxiv-tessera",
+      "title": "Tessera（arXiv 2610.40620）：skew-aware join-aggregate",
+      "summary": "PG／DuckDB／Spark／SQLite extension；相對最快現有系統 2.8–18.8×，DuckDB 自家 plan 最高 ~1802×。共現／推薦類查詢唔使爆中間 join 行。",
       "source": "arXiv",
-      "url": "https://arxiv.org/abs/2610.32247",
-      "published": "2026-10-30"
+      "url": "https://arxiv.org/abs/2610.40620",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-arxiv-nemo",
+      "title": "Nemo（arXiv 2610.33306）：disaggregated OLTP index pushdown",
+      "summary": "用 index pushdown + tree-structured record buffer；解決 range／negative search／phantom；point lookup 最高 ~11× 勝 page B+Tree。雲端 storage 拆分（Aurora 類）索引／cache 設計參考。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.33306",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-arxiv-constraint-indexes",
+      "title": "Constraint indexes（arXiv 2610.36418）：多表完整性約束作 access path",
+      "summary": "多表／folded 完整性約束做成 transactional access path；PostgreSQL extension，相對最佳 baseline 最高 ~2.41×。LLM／agent 直接寫庫時，約束要落返 DB 層。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.36418",
+      "published": "2026-10-31"
     }
   ],
   "skills": [
     {
-      "id": "sk-robots-ai-training-prefs",
-      "title": "robots.txt「AI 訓練偏好」共用訊號",
-      "summary": "網站可用同一套規則向多家 AI 供應商表達內容可否用於基礎生成式 AI 訓練；OpenAI 宣佈會尊重 IETF AI Preferences 推進嘅 robots.txt 訊號。即用：檢視／更新 robots.txt，唔使再逐家寫 crawler。",
-      "source": "OpenAI",
-      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
-      "published": "2026-10-30"
-    },
-    {
-      "id": "sk-cursor-dynamic-plans",
-      "title": "Cursor 動態規劃（.cursor/plans/）",
-      "summary": "Plan Mode 產出可版本控嘅 plan；走偏就 revert＋改 plan 再跑，唔好用 follow-up 硬拗。可用 Skill 自訂 plan 結構。",
-      "source": "Cursor Blog",
-      "url": "https://cursor.com/blog/dynamic-planning-agents",
-      "published": "2026-10-30"
-    },
-    {
-      "id": "sk-grafana-sso-103506",
-      "title": "Grafana：升 13.2.5+（CVE-2026-103506 SSO）",
-      "summary": "認證用戶可讀 SSO client secret／改全站 SSO（需實驗性 enableSsoSettingsApi，預設關）。即用：升 13.2.5+；未升前確認 feature toggle 關。",
+      "id": "sk-grafana-cve-88858",
+      "title": "Grafana CVE-2026-88858 · Viewer expression DoS",
+      "summary": "Viewer 惡意 server-side math 可搞 crash；有 alert provision 可令 outage 跨重啟。即用：升 12.4.14／13.0.12／13.1.9／13.2.5+。",
       "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-103506/",
-      "published": "2026-10-30"
+      "url": "https://grafana.com/security/security-advisories/cve-2026-88858/",
+      "published": "2026-10-31"
     },
     {
-      "id": "sk-grafana-azure-88967",
-      "title": "Grafana：升固定版（CVE-2026-88967 Azure Monitor SSRF）",
-      "summary": "有 query Azure Monitor 權限可令伺服器打攻擊者端點洩 access token。即用：升 12.4.14／13.0.12／13.1.9／13.2.5+。",
-      "source": "Grafana",
-      "url": "https://grafana.com/security/security-advisories/cve-2026-88967/",
-      "published": "2026-10-30"
+      "id": "sk-harbor-ghsa-qj39",
+      "title": "Harbor GHSA-qj39 · /v2/ path traversal",
+      "summary": "可繞過 repository 權限。即用：升 2.13.6／2.14.5／2.15.3／2.16.0+。",
+      "source": "Harbor GHSA",
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-qj39-pjf2-wmrc",
+      "published": "2026-10-31"
     },
     {
-      "id": "sk-cnpg-1301",
-      "title": "CloudNativePG：升 1.30.1／1.29.3（CVE-2026-84304）",
-      "summary": "維護版修 failover／primary election，並 bump gRPC 修 HTTP/2 heap exhaustion。即用：跟官方 upgrade 路徑升到 1.30.1 或 1.29.3。",
-      "source": "CloudNativePG",
-      "url": "https://cloudnative-pg.io/releases/cloudnative-pg-1-30.1-released/",
-      "published": "2026-10-30"
+      "id": "sk-tessera-join-agg",
+      "title": "Tessera（PG／DuckDB）：skew-aware join-aggregate",
+      "summary": "共現／推薦類查詢唔使爆中間 join。即用：睇 artifact／考慮共現 SQL 熱點。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.40620",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-constraint-indexes",
+      "title": "Constraint indexes（PostgreSQL extension）",
+      "summary": "agent／LLM 直寫庫時，多表完整性約束要落返 DB；相對最佳 baseline 最高 ~2.41×。即用：約束唔好只放 app layer。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.36418",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-cursor-agent-skills",
+      "title": "Cursor Agent Skills（SKILL.md）",
+      "summary": "可重用 workflow 放 SKILL.md，動態載入、／手動叫；同 Rules（每輪常駐）分開。即用：窄 scope、寫清 when-to-use。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-31"
     }
   ],
   "politics": [
     {
-      "id": "pol-hk-bid-rigging-criminal",
+      "id": "pol-hk-election-committee",
       "region": "香港",
-      "title": "政府提修例將大廈維修圍標刑事化；保安局牽頭跨部門專責組",
-      "what": "10/30 保安局、商務及經濟發展局聯同警方、廉署、競委會，根據大埔宏福苑大火獨立委員會報告公布改革：擬修訂《競爭條例》，將大廈維修／翻新工程相關嚴重反競爭行為（圍標、合謀定價、市場分配、產量限制）刑事化，最高監禁 10 年；罰款取以下最高者——1,000 萬元、所得商業利益三倍、或涉事業務每年本地營業額 50%（按違規年數計）。新罪擬納入《有組織及嚴重罪行條例》同《廉政公署條例》。行政長官責成保安局局長牽頭成立警方／廉署／競委會聯合專責組。RTHK 報道當局目標約 2027 年 4 月提交立法會。",
-      "why": "報告指圍標係嚴重問題，甚至有可疑背景人士操控標書；刑事化＋有組織罪行工具係執法結構轉變，唔止加強民事罰款。",
-      "hkImpact": "業主立案法團、顧問、承建商合規成本同法律風險上升；高風險維修項目或更早被跨部門介入；立法時間表影響市場同行業操作。",
+      "title": "選委會界別分組選舉提名全部有效；11 月 22 日投票",
+      "what": "2026-10-30，選舉事務處公布：經候選人資格審查委員會裁定，2026 年選舉委員會界別分組一般選舉共 1,115 名候選人提名有效。其中 31 個有競逐界別共 856 人爭 723 席；5 個界別無需投票，259 人自動當選（教育；體育、演藝、文化及出版；同鄉社團；勞工；有關全國性團體香港成員的代表）。投票日 11 月 22 日，一般投票站上午 9 時至下午 6 時；設 5 個一般投票站，繼續採用合併投票安排。選管會定 11 月 3 日為候選人簡介會。",
+      "why": "選委會負責提名／選舉行政長官及部分立法會議員；提名結果落實後，選情進入有競逐界別拉票階段。",
+      "hkImpact": "直接——影響選委會組成，進而影響日後特首／立法會提名同選舉安排。",
       "published": "2026-10-30",
       "sources": [
         {
-          "name": "政府新聞公報",
-          "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000392.htm"
+          "name": "政府新聞公報 REO",
+          "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000270.htm"
         },
-        {
-          "name": "RTHK",
-          "url": "https://news.rthk.hk/rthk/en/component/k2/1875966-20261030.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-hk-bmssc",
-      "region": "香港",
-      "title": "發展局／房屋局公布樓宇維修支援改革：新設樓宇維修支援服務委員會",
-      "what": "10/30 發展局同房屋局公布跟進宏福苑報告細節：房屋局一個月內設公共屋邨樓宇監管部（PBC）取代獨立審查組，以項目制監管大型維修。政府年底前成立非法定「樓宇維修支援服務委員會」（BMSSC），分階段接手市建局現有維修資助計劃；提供由招標、評標、推薦最多三份標書、委聘監工顧問到監察變更等一條龍服務。預算撥 1 億元作啟動資金、另 2 億元作有需要業主減費；目標 2027 年第一季開始為業主招標。",
-      "why": "由「只幫揾標」走向更介入式支援同監察，直接回應報告對私人樓宇維修支援不足嘅批評。",
-      "hkImpact": "業主維修流程、費用同責任界線會改；公共屋邨大型維修監管亦加碼——住屋同樓宇安全議題會持續牽動政策同財政。",
-      "published": "2026-10-30",
-      "sources": [
         {
           "name": "news.gov.hk",
-          "url": "https://www.news.gov.hk/eng/2026/10/20261030/20261030_121247_837.html"
-        },
+          "url": "https://www.news.gov.hk/eng/2026/10/20261030/20261030_165347_939.html"
+        }
+      ]
+    },
+    {
+      "id": "pol-hk-chan-gdp-forecast",
+      "region": "香港",
+      "title": "財爺指全年增長或五年最強；現有預測 3.5%–4.5% 或上調",
+      "what": "2026-10-31，財政司司長陳茂波於電台節目表示：上半年 GDP 按年增 5.1%，出口同投資動能延續至第三季（官方 Q3 數字尚未公布）；有機會錄得過去五年最強全年增長。現時政府全年增長預測為 3.5%–4.5%，他表示不排除上調，細節由政府經濟顧問稍後交代。同時提醒外圍地緣、中東局勢或推高油價及通脹，並預期明年息口仍相對高，或影響樓市同整體經濟。",
+      "why": "官方口徑轉樂觀但未改正式預測前，屬政策與市場預期信號；同時標出利率、油價同地緣風險。",
+      "hkImpact": "直接——影響財政預算空間、市場情緒同市民對紓困／樓市息口預期。",
+      "published": "2026-10-31",
+      "sources": [
         {
           "name": "RTHK",
-          "url": "https://news.rthk.hk/rthk/en/component/k2/1875925-20261030.htm"
-        }
-      ]
-    },
-    {
-      "id": "pol-cn-scarborough-patrol",
-      "region": "中國",
-      "title": "解放軍南部戰區稱喺黃岩島附近進行戰備巡邏",
-      "what": "10/30 中國人民解放軍南部戰區稱海軍同空軍喺黃岩島（Scarborough Shoal）附近進行戰備巡邏，指係回應菲律賓「侵權挑釁」嘅必要反制，並指本月已加強相關巡邏；中國海警同日亦稱喺附近海域執法巡邏。報道指菲律賓駐華使館同軍方未即時回應。",
-      "why": "南海爭議熱點再升溫，軍事同海警同步表態，顯示管控爭議同展示存在感並進。",
-      "hkImpact": "航運同區域風險溢價受關注；港作為貿易樞紐會間接感受到南海摩擦對供應鏈同外交氣氛嘅外溢。",
-      "published": "2026-10-30",
-      "sources": [
-        {
-          "name": "CNA／Reuters",
-          "url": "https://www.channelnewsasia.com/east-asia/china-combat-readiness-patrols-scarborough-shoal-6506366"
-        }
-      ]
-    },
-    {
-      "id": "pol-cn-swiss-fta",
-      "region": "中國",
-      "title": "習近平晤瑞士聯邦主席；見證自貿協定升級議定書簽署",
-      "what": "10/30 習近平喺北京會見瑞士聯邦主席帕爾莫蘭（Guy Parmelin），籲雙方為中歐經貿同全球經濟注入確定性；會見後雙方見證簽署自貿協定升級議定書，以及科研、就業、傳媒等合作文件。帕爾莫蘭指今年係瑞中創新戰略夥伴關係十周年，並重申一個中國政策。",
-      "why": "喺地緣同貿易摩擦背景下，中瑞升級自貿係具體制度成果，亦被用作中歐經貿「穩定器」信號。",
-      "hkImpact": "歐洲對華貿易規則同氣氛影響經港轉口、金融同專業服務需求；自貿升級個案可作中歐務實合作參考。",
-      "published": "2026-10-30",
-      "sources": [
-        {
-          "name": "Xinhua",
-          "url": "https://english.news.cn/20261031/202194adc4b040419b6e4bf64d9d0170/c.html"
-        }
-      ]
-    },
-    {
-      "id": "pol-us-midterms-cook",
-      "region": "美國",
-      "title": "中期選舉倒數四日；Cook 指民主黨眾議院或最多贏至約 240 席",
-      "what": "10/30 Cook Political Report 更新眾議院評級，指再有約一打選區向民主黨傾斜；按最新評級，若民主黨贏埋所有傾向席同全部 18 個 Toss Up，可達 240 席，並估計可翻盤約 12–25 席——有機會係 2009 年以來最大多數。中期選舉定於 11/3。",
-      "why": "國會控制權直接影響未來兩年立法、監管同對華／貿易政策空間。",
-      "hkImpact": "美政策搖擺影響金融市場、關稅同科技出口管制預期——港股市同貿易相關行業會跟住定價。",
-      "published": "2026-10-30",
-      "sources": [
-        {
-          "name": "Cook Political Report",
-          "url": "https://www.cookpolitical.com/analysis/house/house-overview/dozen-more-House-October2026"
+          "url": "https://news.rthk.hk/rthk/en/component/k2/1876049-20261031.htm"
         },
         {
-          "name": "Washington Post",
-          "url": "https://www.washingtonpost.com/politics/2026/10/31/cook-political-report-says-democrats-could-win-up-240-house-seats-tuesday/"
+          "name": "SCMP",
+          "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3372830/hong-kong-may-raise-gdp-forecast-growth-poised-5-year-high-paul-chan"
+        }
+      ]
+    },
+    {
+      "id": "pol-us-election-court-blocks",
+      "region": "美國",
+      "title": "聯邦法官阻擋政府要求剔除約 2 萬張加州選票及施壓選務人員",
+      "what": "截至 2026-10-31，多項聯邦裁決駁回特朗普政府就中期選舉嘅介入嘗試，主要包括：要求加州選務立即把約 20,000 名被指可能非公民選民嘅選票另行處理（地區法院及第九巡迴上訴庭兩度拒絕緊急救濟）；另有裁決禁止以刑事威脅施壓選務人員、以及限制移民執法人員在加州等州以「尋找非公民選民」為由進行上門／街頭查問。司法部批評部分裁決；加州官員則稱法院確認州政府主導選舉行政。",
+      "why": "選舉日前數日，司法與行政就「州管選舉 vs 聯邦選舉誠信執法」衝突升溫；結果影響投票日執行同認證節奏，但唔等於預告最終國會席次。",
+      "hkImpact": "間接——美中期選舉結果影響貿易／對華政策預期；程序爭議本身對港直接影響有限。",
+      "published": "2026-10-31",
+      "sources": [
+        {
+          "name": "Los Angeles Times",
+          "url": "https://www.latimes.com/politics/story/2026-10-31/cascade-of-court-rulings-rebuffs-trump-administrations-election-efforts"
+        },
+        {
+          "name": "AP News",
+          "url": "https://apnews.com/article/trump-election-democrats-senate-alaska-735089be466c4d0e57ff40789c28bb94"
+        }
+      ]
+    },
+    {
+      "id": "pol-intl-g20-no-communique",
+      "region": "全球",
+      "title": "G20 外長會因烏克蘭、美伊、關稅等分歧未達共識",
+      "what": "為期兩日嘅 G20 外長會於 2026-10-31 在美國佐治亞州亞特蘭大結束，由美國國務卿魯比奧主持。因烏克蘭危機、美伊衝突、美國關稅等議題分歧，會議未發表聯合公報，改以主席聲明撮要討論。中國外交部副部長馬朝旭呼籲 G20 推動熱點降溫、加強全球安全治理，並支持能源安全、可持續發展及維護全球產業鏈供應鏈穩定。會上亦出現部分歐洲／澳／加代表反對與俄外長拉夫羅夫合影以致取消「全家福」；美方未邀請成員國南非引發爭議。特朗普擬 12 月於邁阿密主持領導人峰會並邀請普京，魯比奧稱俄方尚未確認普京是否出席。",
+      "why": "反映主要經濟體在安全與貿易議題上協調能力受戰事同關稅拖累；主席聲明代替共識文本。",
+      "hkImpact": "間接——供應鏈、能源價格同貿易不確定性可透過出口／通脹傳導至港。",
+      "published": "2026-10-31",
+      "sources": [
+        {
+          "name": "新華網",
+          "url": "https://www.news.cn/world/20261101/9c21650816b4436b88e7f2ec961b2c91/c.html"
+        },
+        {
+          "name": "PBS NewsHour（AP）",
+          "url": "https://www.pbs.org/newshour/politics/g20-foreign-ministers-in-atlanta-meeting-head-to-an-ending-without-consensus-on-key-issues"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-steinmeier",
+      "region": "中國",
+      "title": "習近平同德國總統會談，談及對等營商環境與中歐夥伴定位",
+      "what": "2026-10-30，國家主席習近平在北京人民大會堂同來華進行國事訪問嘅德國總統施泰因邁爾會談。習近平表示中德作為世界第二、第三大經濟體，應對中歐關係同世界經濟穩定增長負責任；願同德方開啟中德全方位戰略夥伴關係新篇章；歡迎德企深耕中國市場，並希望德方為在德中企提供公平、透明、非歧視營商環境；提出可在人工智能、綠色低碳、服務貿易、數字經濟等領域合作。施泰因邁爾重申堅守一個中國政策，稱可透過對話磋商妥善處理經貿分歧，並支持自由貿易同世貿規則、反對保護主義同貿易戰。",
+      "why": "德中關係係中歐經貿核心之一；在關稅同產業政策摩擦背景下，高層表態側重「對話管分歧」同雙向開放。",
+      "hkImpact": "間接——歐企／供應鏈布局同中歐關係氣氛可影響港作為經貿／專業服務平台角色；短期直接政策變化有限。",
+      "published": "2026-10-30",
+      "sources": [
+        {
+          "name": "新華社英文",
+          "url": "https://english.news.cn/20261030/1c6add78f5f741248a6f4a9d6db45896/c.html"
+        },
+        {
+          "name": "中國外交部英文稿",
+          "url": "https://www.mfa.gov.cn/mfa_eng/xw/zyxw/202610/t20261030_12050589.html"
         }
       ]
     }
