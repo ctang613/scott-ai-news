@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate data.json against schema/digest.schema.json.
 
-Uses the stdlib only. Exits 0 when the 2026-11-01 digest is well formed:
+Uses the stdlib only. Exits 0 when the 2026-11-02 digest is well formed:
 mustKnow, tech, and skills each have exactly five items, updatedAt in
 Asia/Hong_Kong is on that edition date or later, and every local thumbnail exists.
 politics is optional: missing or empty stays valid; a populated section has
@@ -36,7 +36,7 @@ POLITICS_REGIONS = ("美國", "中國", "香港", "全球")
 POLITICS_REQUIRED = ("id", "region", "title", "what", "why", "hkImpact", "published", "sources")
 POLITICS_OPTIONAL = ("image", "imageAlt")
 SOURCE_REQUIRED = ("name", "url")
-EDITION = "2026-11-01"
+EDITION = "2026-11-02"
 HK = ZoneInfo("Asia/Hong_Kong")
 
 

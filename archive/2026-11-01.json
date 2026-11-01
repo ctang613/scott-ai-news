@@ -1,0 +1,241 @@
+{
+  "edition": "2026-11-01",
+  "asOf": "2026-11-01",
+  "updatedAt": "2026-11-01T07:09:29+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "日",
+  "intro": "今日重點：OpenAI 融資目標削至約 US$200 億、Claude Max 20x 改 Ultra（Verified 取消 5 小時限）、Apple CEO 唔為 AI 而 AI、xAI Colossus 清潔空氣訴訟繼續、S&P 將 Meta 展望改負面；基建 Grafana Viewer expression DoS、Harbor /v2/ path traversal、Tessera／Nemo／Constraint indexes；政治選委會提名、陳茂波增長預測、美選舉法院裁決、G20 外長無公報、中德元首會談。",
+  "mustKnow": [
+    {
+      "id": "mk-openai-funding-cut",
+      "title": "OpenAI 新一輪融資目標由約 $300 億削至約 $200 億",
+      "summary": "FT／CNBC／TechCrunch 報，OpenAI 最新融資目標由約 US$30B 下調至約 US$20B，估值目標約 US$1.25T（早前曾傳 US$1.4T）；WSJ 指已鎖定約 US$11B，首輪 close 或低過 $20B。阿聯酋投資者牽頭，Coatue 亦有份；最終條款未定。市場對 AI 基建超大開支回報轉審慎，巨頭融資同估值都要「縮水」。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "published": "2026-10-31",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-green.jpg?w=1024",
+      "imageAlt": "OpenAI logo"
+    },
+    {
+      "id": "mk-claude-ultra",
+      "title": "Claude Max 20x 改名 Ultra，Verified 戶取消 5 小時限額",
+      "summary": "Anthropic 將 Max 5x→Max（US$100／月）、Max 20x→Ultra（US$200／月），舊訂戶自動遷移、價錢不變。Verified Ultra 戶唔再有 5 小時滾動限額，但仍有每週約 10× Pro 用量上限；未驗證戶暫保留限額直至自動驗證。高價個人檔位改「連續長任務」設計，長 coding／agent 工作流較少被中途截斷。",
+      "source": "Claude Help Center",
+      "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan",
+      "published": "2026-10-31",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/claude-ultra-5-stunden-limit-teaser.jpg",
+      "imageAlt": "Claude Ultra plan"
+    },
+    {
+      "id": "mk-apple-ternus-ai",
+      "title": "Apple CEO Ternus：唔會「為 AI 而 AI」出貨",
+      "summary": "新任 CEO John Ternus 接受 Wired 訪問（TechCrunch 10/31 轉述）稱會用 AI，但「We don’t want to ship AI for AI’s sake」；產品好用先至緊要，唔強調係咩 AI。被問 agent 會唔會取代 app，佢話創作產品仍然係很 human／personal。大廠公開定調「務實落地」路線，同市場狂推 agent／模型形成對照。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+      "published": "2026-10-31",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/10/GettyImages-2302418320.jpg?w=1024",
+      "imageAlt": "Apple CEO John Ternus"
+    },
+    {
+      "id": "mk-xai-naacp-lawsuit",
+      "title": "法官拒 xAI 撤銷 NAACP 清潔空氣法訴訟",
+      "summary": "美國密西西比北區聯邦法官 Debra M. Brown 拒絕 xAI 撤銷動議；NAACP（SELC／Earthjustice）指 Colossus 相關燃氣輪機未取得必要空氣許可。法院指公民訴訟有法定 standing，輪機唔屬「mobile sources」豁免。案件繼續；初步禁制令仍待裁。AI 數據中心電力／排污爭議入實質訴訟階段。",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+      "published": "2026-10-31",
+      "image": "https://earthjustice.org/wp-content/uploads/2026/04/xai-data-centers-turbines.jpg",
+      "imageAlt": "Gas turbines at xAI data center"
+    },
+    {
+      "id": "mk-meta-sp-negative",
+      "title": "S&P 將 Meta 展望由穩定改負面，點名 AI 資本開支",
+      "summary": "S&P Global 維持 Meta AA-，展望由 stable→negative；指高 capex、負自由現金流同 AI 變現不確定。Meta 指引 2026 全年 capex 約 US$135–145B，上季 FCF 約 −US$2.12B；並計劃最多籌約 US$95B 股權資金。Meta 發言人不同意 S&P 對 AI 變現的判斷。評級機構直接將「AI 燒錢」寫入信用展望。",
+      "source": "CNBC",
+      "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html",
+      "published": "2026-10-30",
+      "image": "https://image.cnbcfm.com/api/v1/image/108443816-1792619674334-gettyimages-2296213884-META_CONNECT.jpeg?v=1792619769&w=1920&h=1080",
+      "imageAlt": "Meta Connect event"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-grafana-cve-88858",
+      "title": "Grafana CVE-2026-88858 · Viewer server-side expression DoS（CVSS 6.5）",
+      "summary": "Viewer 用惡意 server-side math expression 可搞到 server DoS；有 alert provision 權限仲可令 outage 跨重啟。HA 監控常見 Viewer 角色；修 ≥13.2.5／13.1.9／13.0.12／12.4.14。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-88858/",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-harbor-ghsa-qj39",
+      "title": "Harbor GHSA-qj39 · distribution /v2/ path traversal",
+      "summary": "可繞過 repository 權限（匿名讀 public project manifest；有 push 權可跨 project 改／刪）。K8s registry 常見；升 v2.13.6／2.14.5／2.15.3／2.16.0+。",
+      "source": "Harbor GHSA",
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-qj39-pjf2-wmrc",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-arxiv-tessera",
+      "title": "Tessera（arXiv 2610.40620）：skew-aware join-aggregate",
+      "summary": "PG／DuckDB／Spark／SQLite extension；相對最快現有系統 2.8–18.8×，DuckDB 自家 plan 最高 ~1802×。共現／推薦類查詢唔使爆中間 join 行。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.40620",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-arxiv-nemo",
+      "title": "Nemo（arXiv 2610.33306）：disaggregated OLTP index pushdown",
+      "summary": "用 index pushdown + tree-structured record buffer；解決 range／negative search／phantom；point lookup 最高 ~11× 勝 page B+Tree。雲端 storage 拆分（Aurora 類）索引／cache 設計參考。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.33306",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "tech-arxiv-constraint-indexes",
+      "title": "Constraint indexes（arXiv 2610.36418）：多表完整性約束作 access path",
+      "summary": "多表／folded 完整性約束做成 transactional access path；PostgreSQL extension，相對最佳 baseline 最高 ~2.41×。LLM／agent 直接寫庫時，約束要落返 DB 層。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.36418",
+      "published": "2026-10-31"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-grafana-cve-88858",
+      "title": "Grafana CVE-2026-88858 · Viewer expression DoS",
+      "summary": "Viewer 惡意 server-side math 可搞 crash；有 alert provision 可令 outage 跨重啟。即用：升 12.4.14／13.0.12／13.1.9／13.2.5+。",
+      "source": "Grafana",
+      "url": "https://grafana.com/security/security-advisories/cve-2026-88858/",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-harbor-ghsa-qj39",
+      "title": "Harbor GHSA-qj39 · /v2/ path traversal",
+      "summary": "可繞過 repository 權限。即用：升 2.13.6／2.14.5／2.15.3／2.16.0+。",
+      "source": "Harbor GHSA",
+      "url": "https://github.com/goharbor/harbor/security/advisories/GHSA-qj39-pjf2-wmrc",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-tessera-join-agg",
+      "title": "Tessera（PG／DuckDB）：skew-aware join-aggregate",
+      "summary": "共現／推薦類查詢唔使爆中間 join。即用：睇 artifact／考慮共現 SQL 熱點。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.40620",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-constraint-indexes",
+      "title": "Constraint indexes（PostgreSQL extension）",
+      "summary": "agent／LLM 直寫庫時，多表完整性約束要落返 DB；相對最佳 baseline 最高 ~2.41×。即用：約束唔好只放 app layer。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.36418",
+      "published": "2026-10-31"
+    },
+    {
+      "id": "sk-cursor-agent-skills",
+      "title": "Cursor Agent Skills（SKILL.md）",
+      "summary": "可重用 workflow 放 SKILL.md，動態載入、／手動叫；同 Rules（每輪常駐）分開。即用：窄 scope、寫清 when-to-use。",
+      "source": "Cursor Docs",
+      "url": "https://cursor.com/docs/skills",
+      "published": "2026-10-31"
+    }
+  ],
+  "politics": [
+    {
+      "id": "pol-hk-election-committee",
+      "region": "香港",
+      "title": "選委會界別分組選舉提名全部有效；11 月 22 日投票",
+      "what": "2026-10-30，選舉事務處公布：經候選人資格審查委員會裁定，2026 年選舉委員會界別分組一般選舉共 1,115 名候選人提名有效。其中 31 個有競逐界別共 856 人爭 723 席；5 個界別無需投票，259 人自動當選（教育；體育、演藝、文化及出版；同鄉社團；勞工；有關全國性團體香港成員的代表）。投票日 11 月 22 日，一般投票站上午 9 時至下午 6 時；設 5 個一般投票站，繼續採用合併投票安排。選管會定 11 月 3 日為候選人簡介會。",
+      "why": "選委會負責提名／選舉行政長官及部分立法會議員；提名結果落實後，選情進入有競逐界別拉票階段。",
+      "hkImpact": "直接——影響選委會組成，進而影響日後特首／立法會提名同選舉安排。",
+      "published": "2026-10-30",
+      "sources": [
+        {
+          "name": "政府新聞公報 REO",
+          "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000270.htm"
+        },
+        {
+          "name": "news.gov.hk",
+          "url": "https://www.news.gov.hk/eng/2026/10/20261030/20261030_165347_939.html"
+        }
+      ]
+    },
+    {
+      "id": "pol-hk-chan-gdp-forecast",
+      "region": "香港",
+      "title": "財爺指全年增長或五年最強；現有預測 3.5%–4.5% 或上調",
+      "what": "2026-10-31，財政司司長陳茂波於電台節目表示：上半年 GDP 按年增 5.1%，出口同投資動能延續至第三季（官方 Q3 數字尚未公布）；有機會錄得過去五年最強全年增長。現時政府全年增長預測為 3.5%–4.5%，他表示不排除上調，細節由政府經濟顧問稍後交代。同時提醒外圍地緣、中東局勢或推高油價及通脹，並預期明年息口仍相對高，或影響樓市同整體經濟。",
+      "why": "官方口徑轉樂觀但未改正式預測前，屬政策與市場預期信號；同時標出利率、油價同地緣風險。",
+      "hkImpact": "直接——影響財政預算空間、市場情緒同市民對紓困／樓市息口預期。",
+      "published": "2026-10-31",
+      "sources": [
+        {
+          "name": "RTHK",
+          "url": "https://news.rthk.hk/rthk/en/component/k2/1876049-20261031.htm"
+        },
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/news/hong-kong/hong-kong-economy/article/3372830/hong-kong-may-raise-gdp-forecast-growth-poised-5-year-high-paul-chan"
+        }
+      ]
+    },
+    {
+      "id": "pol-us-election-court-blocks",
+      "region": "美國",
+      "title": "聯邦法官阻擋政府要求剔除約 2 萬張加州選票及施壓選務人員",
+      "what": "截至 2026-10-31，多項聯邦裁決駁回特朗普政府就中期選舉嘅介入嘗試，主要包括：要求加州選務立即把約 20,000 名被指可能非公民選民嘅選票另行處理（地區法院及第九巡迴上訴庭兩度拒絕緊急救濟）；另有裁決禁止以刑事威脅施壓選務人員、以及限制移民執法人員在加州等州以「尋找非公民選民」為由進行上門／街頭查問。司法部批評部分裁決；加州官員則稱法院確認州政府主導選舉行政。",
+      "why": "選舉日前數日，司法與行政就「州管選舉 vs 聯邦選舉誠信執法」衝突升溫；結果影響投票日執行同認證節奏，但唔等於預告最終國會席次。",
+      "hkImpact": "間接——美中期選舉結果影響貿易／對華政策預期；程序爭議本身對港直接影響有限。",
+      "published": "2026-10-31",
+      "sources": [
+        {
+          "name": "Los Angeles Times",
+          "url": "https://www.latimes.com/politics/story/2026-10-31/cascade-of-court-rulings-rebuffs-trump-administrations-election-efforts"
+        },
+        {
+          "name": "AP News",
+          "url": "https://apnews.com/article/trump-election-democrats-senate-alaska-735089be466c4d0e57ff40789c28bb94"
+        }
+      ]
+    },
+    {
+      "id": "pol-intl-g20-no-communique",
+      "region": "全球",
+      "title": "G20 外長會因烏克蘭、美伊、關稅等分歧未達共識",
+      "what": "為期兩日嘅 G20 外長會於 2026-10-31 在美國佐治亞州亞特蘭大結束，由美國國務卿魯比奧主持。因烏克蘭危機、美伊衝突、美國關稅等議題分歧，會議未發表聯合公報，改以主席聲明撮要討論。中國外交部副部長馬朝旭呼籲 G20 推動熱點降溫、加強全球安全治理，並支持能源安全、可持續發展及維護全球產業鏈供應鏈穩定。會上亦出現部分歐洲／澳／加代表反對與俄外長拉夫羅夫合影以致取消「全家福」；美方未邀請成員國南非引發爭議。特朗普擬 12 月於邁阿密主持領導人峰會並邀請普京，魯比奧稱俄方尚未確認普京是否出席。",
+      "why": "反映主要經濟體在安全與貿易議題上協調能力受戰事同關稅拖累；主席聲明代替共識文本。",
+      "hkImpact": "間接——供應鏈、能源價格同貿易不確定性可透過出口／通脹傳導至港。",
+      "published": "2026-10-31",
+      "sources": [
+        {
+          "name": "新華網",
+          "url": "https://www.news.cn/world/20261101/9c21650816b4436b88e7f2ec961b2c91/c.html"
+        },
+        {
+          "name": "PBS NewsHour（AP）",
+          "url": "https://www.pbs.org/newshour/politics/g20-foreign-ministers-in-atlanta-meeting-head-to-an-ending-without-consensus-on-key-issues"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-steinmeier",
+      "region": "中國",
+      "title": "習近平同德國總統會談，談及對等營商環境與中歐夥伴定位",
+      "what": "2026-10-30，國家主席習近平在北京人民大會堂同來華進行國事訪問嘅德國總統施泰因邁爾會談。習近平表示中德作為世界第二、第三大經濟體，應對中歐關係同世界經濟穩定增長負責任；願同德方開啟中德全方位戰略夥伴關係新篇章；歡迎德企深耕中國市場，並希望德方為在德中企提供公平、透明、非歧視營商環境；提出可在人工智能、綠色低碳、服務貿易、數字經濟等領域合作。施泰因邁爾重申堅守一個中國政策，稱可透過對話磋商妥善處理經貿分歧，並支持自由貿易同世貿規則、反對保護主義同貿易戰。",
+      "why": "德中關係係中歐經貿核心之一；在關稅同產業政策摩擦背景下，高層表態側重「對話管分歧」同雙向開放。",
+      "hkImpact": "間接——歐企／供應鏈布局同中歐關係氣氛可影響港作為經貿／專業服務平台角色；短期直接政策變化有限。",
+      "published": "2026-10-30",
+      "sources": [
+        {
+          "name": "新華社英文",
+          "url": "https://english.news.cn/20261030/1c6add78f5f741248a6f4a9d6db45896/c.html"
+        },
+        {
+          "name": "中國外交部英文稿",
+          "url": "https://www.mfa.gov.cn/mfa_eng/xw/zyxw/202610/t20261030_12050589.html"
+        }
+      ]
+    }
+  ]
+}
