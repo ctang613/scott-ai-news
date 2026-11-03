@@ -1,0 +1,193 @@
+{
+  "edition": "2026-11-02",
+  "asOf": "2026-11-02",
+  "updatedAt": "2026-11-02T07:12:14+08:00",
+  "title": "香港 AI 日報",
+  "weekday": "一",
+  "intro": "今日重點：沙特阿美入股 HUMAIN 49%、DeepSeek Super-agent、Meta×Fourier 人形機械人、英國 CMA 查 Meta 條款、Anthropic 浮水印漏洞；基建 cert-manager／Argo CD／ESO CVE、Oracle OpenSSL 9.8、learned index rebuild；政治美中期選舉前夕、台海海警巡航、深圳 APEC 倒數。",
+  "mustKnow": [
+    {
+      "id": "mk-aramco-humain",
+      "title": "沙特阿美入股 HUMAIN 49%，注資約 US$26 億",
+      "summary": "阿美同主權基金 PIF 宣布完成交易：阿美經全資附屬公司持有國家 AI 公司 HUMAIN 49%，PIF 保留 51%；阿美 2026 年現金投入約 99 億里亞爾（約 US$26 億），另加 AI／算力／數碼資產。目標包括 2030 年前部署約 3 GW AI 數據中心。中東主權資本正式把「能源＋AI 基建」綁成國家級產能。",
+      "source": "Aramco",
+      "url": "https://www.aramco.com/en/news-media/news/2026/pif-and-aramco-close-humain-transaction-to-accelerate-humains-global-growth",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "mk-deepseek-super-agent",
+      "title": "DeepSeek 公開「Super-agent」更自主編程代理構想",
+      "summary": "南華早報報道，DeepSeek Harness 團隊發表技術文章，預覽可減少人類協調多個 AI agent、監察進度嘅「super agent」方案，對標 OpenAI／Anthropic 編程助手戰線。中國開源／研究原型繼續推「少人看管」代理。",
+      "source": "SCMP",
+      "url": "https://www.scmp.com/tech/article/3372884/deepseek-unveils-ai-super-agent-coding-race-openai-anthropic",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "mk-meta-fourier-humanoid",
+      "title": "Meta 據報聯中國 Fourier 三個月做出人形機械人原型",
+      "summary": "路透引述 The Information：Meta 同中國初創 Fourier 合作製成人形機械人原型，並已著手第二代；路透未能即時獨立核實。報道指屬家用／內部研究方向，暫無出售計劃。大廠把多模態 AI 伸向實體機械人，同時牽涉中美技術合作敏感度。",
+      "source": "CNA／Reuters",
+      "url": "https://www.channelnewsasia.com/business/meta-builds-humanoid-robot-chinese-startup-fourier-information-says-6509811",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "mk-cma-meta-terms",
+      "title": "英國 CMA 立案調查 Meta 商業條款（含 AI 用內容）",
+      "summary": "英國競爭及市場管理局（CMA）10 月 30 日按《1998 年競爭法》開查：Meta 擬修訂條款或容許其擷取出版商／企業網站內容，用嚟開發包括 AI 功能在內嘅自家產品，而對方未必有實質選擇。Meta 已暫停推出並諮詢業界；CMA 強調尚未裁定違法。",
+      "source": "GOV.UK／CMA",
+      "url": "https://www.gov.uk/government/news/cma-opens-investigation-into-metas-commercial-terms--2",
+      "published": "2026-10-30"
+    },
+    {
+      "id": "mk-anthropic-watermark",
+      "title": "Anthropic 為舊版 Claude 加文字浮水印；兩款可用採樣參數繞過",
+      "summary": "The Decoder 引述 Anthropic 致 API 客戶電郵：將為 Mythos 5、Opus 4.7、Opus 4.6、Sonnet 4.6 加不可見文字浮水印（配合歐盟 AI 法透明度過渡）；但 Opus 4.6／Sonnet 4.6 只在 temperature／top_p／top_k 維持預設時生效，改任一項即可避開。新模型已預設有標。",
+      "source": "The Decoder",
+      "url": "https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/",
+      "published": "2026-11-01"
+    }
+  ],
+  "tech": [
+    {
+      "id": "tech-cert-manager-cve-62290",
+      "title": "cert-manager CVE-2026-62290 · 直接建 ACME Challenge 可偷用 ClusterIssuer DNS 憑證",
+      "summary": "有權 create challenges.acme.cert-manager.io 就可繞過 Issuer／ClusterIssuer DNS01 政策，用平台級 DNS／acme-dns 憑證打去攻擊者 host。修 1.19.6／1.20.3；HA／K8s 多租戶幾乎必裝。",
+      "source": "cert-manager GHSA",
+      "url": "https://github.com/cert-manager/cert-manager/security/advisories/GHSA-8rvj-mm4h-c258",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "tech-argo-cd-cve-55797",
+      "title": "Argo CD CVE-2026-55797 · SSH repo proxy URL 可命令注入 repo-server",
+      "summary": "惡意 SOCKS5／SSH proxy host 可逃出 ProxyCommand，喺 repo-server 跑任意指令並讀 Git／Helm／OCI 憑證。升 3.3.15／3.4.10／3.5.4+。",
+      "source": "Argo CD GHSA",
+      "url": "https://github.com/argoproj/argo-cd/security/advisories/GHSA-j6cw-g6p4-7hch",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "tech-eso-cve-109546",
+      "title": "External Secrets Operator CVE-2026-109546 · ExternalSecret 可做成 SA token 提權",
+      "summary": "2.4.0–2.12.0 用 path 式 annotation target 可繞過舊修，令 operator 建長壽 SA token Secret。修 2.13.0；DBA／data-platform 常用 ESO 拉 DB 密碼。",
+      "source": "ESO GHSA",
+      "url": "https://github.com/external-secrets/external-secrets/security/advisories/GHSA-v6x5-m838-gqph",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "tech-oracle-openssl-75803",
+      "title": "Oracle Oct 2026 CPU：Database OpenSSL CVE-2026-75803（CVSS 9.8）",
+      "summary": "RDBMS（OpenSSL）CVE-2026-75803 評 9.8，TLS、無需帳密可遠端利用；影響 19.3–19.32 同 23.4.0–23.26.3（client-only 都要打）。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-01"
+    },
+    {
+      "id": "tech-arxiv-synced-rebuilds",
+      "title": "arXiv 2610.33770：Synchronized Rebuilds——Learned Index 並發 insert 隱藏成本",
+      "summary": "逾 4000 次實驗顯示 gapped-array learned index 並發 insert 會同步爆發 node rebuild，延遲遠差過 B-tree；臨時 rebuild buffer＋背景 rebuild 可削 >100µs insert。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.33770",
+      "published": "2026-10-31"
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk-cert-manager-62290",
+      "title": "cert-manager CVE-2026-62290 · 升 1.19.6／1.20.3+",
+      "summary": "直接建 ACME Challenge 可偷用 ClusterIssuer DNS 憑證。即用：升 1.19.6／1.20.3+；多租戶收緊 aggregate-edit。",
+      "source": "cert-manager GHSA",
+      "url": "https://github.com/cert-manager/cert-manager/security/advisories/GHSA-8rvj-mm4h-c258",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "sk-argo-cd-55797",
+      "title": "Argo CD CVE-2026-55797 · 升 3.3.15／3.4.10／3.5.4+",
+      "summary": "SSH repo proxy URL 命令注入 repo-server。即用：升固定版，審視 proxy／repo URL 來源。",
+      "source": "Argo CD GHSA",
+      "url": "https://github.com/argoproj/argo-cd/security/advisories/GHSA-j6cw-g6p4-7hch",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "sk-eso-109546",
+      "title": "External Secrets Operator · 升 2.13.0+",
+      "summary": "ExternalSecret path 式 annotation target 可做成 SA token 提權（2.4.0–2.12.0）。即用：升 2.13.0+。",
+      "source": "ESO GHSA",
+      "url": "https://github.com/external-secrets/external-secrets/security/advisories/GHSA-v6x5-m838-gqph",
+      "published": "2026-11-01"
+    },
+    {
+      "id": "sk-oracle-cpu-oct2026",
+      "title": "Oracle Oct 2026 CPU · OpenSSL CVE-2026-75803",
+      "summary": "RDBMS OpenSSL 無認證遠端 TLS（CVSS 9.8）。即用：跟 Oct CPU 風險矩陣排程補丁；client-only 都要打。",
+      "source": "Oracle",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "published": "2026-10-01"
+    },
+    {
+      "id": "sk-synced-rebuilds",
+      "title": "Synchronized Rebuilds（learned index）",
+      "summary": "gapped-array learned index 並發 insert 會同步爆發 node rebuild。即用：高併發寫入／索引設計唔好只睇讀取 benchmark。",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.33770",
+      "published": "2026-10-31"
+    }
+  ],
+  "politics": [
+    {
+      "id": "pol-us-midterms-eve",
+      "region": "美國",
+      "title": "中期選舉前夕：提前投票逾 5000 萬；眾院民主黨優勢、參院仍膠着",
+      "what": "投票日為 2026-11-03。截至 11/1，Florida 大學統計提前投票已逾約 5300 萬（高於 2022 同期約 4600 萬），民主黨提前票佔比高於共和黨。Nate Silver FLIPR（11/1）估民主黨奪回眾院機會約 95%、平均淨增約 25 席；Cook 指民主黨眾院或翻 12–25 席（至約 227–240），參院稱「輕微看好」民主黨但仍有七場 toss-up。預測≠結果。",
+      "why": "提前票反映動員差異，唔等於最終黨派勝負；參院仍可因少數州翻盤。國會控制權直接影響未來兩年立法節奏。",
+      "hkImpact": "間接——國會控制權影響對華貿易／科技出口／關稅路徑預期。",
+      "published": "2026-11-01",
+      "sources": [
+        {
+          "name": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/11/1/more-than-50-million-votes-cast-in-us-midterm-elections-what-does-it-mean"
+        },
+        {
+          "name": "Guardian",
+          "url": "https://www.theguardian.com/us-news/2026/nov/01/key-takeaways-midterm-elections-early-voting"
+        },
+        {
+          "name": "Cook",
+          "url": "https://thecookpoliticalreport.substack.com/p/two-senate-and-a-dozen-house-moves"
+        }
+      ]
+    },
+    {
+      "id": "pol-cn-taiwan-coast-guard",
+      "region": "中國",
+      "title": "大陸海警加強台灣周邊巡航；台方跟蹤並譴責",
+      "what": "SCMP（11/1）報道中國海警稱「護士」艦編隊在台灣以東進行常態執法巡航，10 月起加強相關水域管控；部署涵蓋東部接近至金門、東沙附近水域。台方指相關部署違反國際法、破壞和平穩定，並派出船艦跟蹤。",
+      "why": "屬灰色地帶施壓常態化；雙方口徑南轅北轍，短期難見降溫機制。",
+      "hkImpact": "間接／有限——台海氣氛可透過金融風險偏好同供應鏈預期傳導。",
+      "published": "2026-11-01",
+      "sources": [
+        {
+          "name": "SCMP",
+          "url": "https://www.scmp.com/news/china/politics/article/3372875/beijing-ramps-maritime-patrols-around-taiwan-prompting-taipei-shadow-ships"
+        }
+      ]
+    },
+    {
+      "id": "pol-apec-shenzhen",
+      "region": "全球",
+      "title": "深圳 APEC 11/18–19 進入倒數；美中「休戰」表象下仍較勁",
+      "what": "中國日報（11/1）報道深圳為 APEC 經濟領袖會議（主題「共建亞太命運共同體」）加緊場地／通關／交通準備。Guardian（11/1）分析指關稅休戰延至明年 1 月後表面降溫，但雙方仍以供應鏈、關鍵礦產同高科技出口管制爭優勢，未建立可限制下一輪衝突的互信機制。",
+      "why": "峰會季係穩定預期窗口，但成果視中期選舉後華府節奏同具體協議執行。",
+      "hkImpact": "間接——貿易／物流／專業服務氣氛；短期本地政策聯動有限。",
+      "published": "2026-11-01",
+      "sources": [
+        {
+          "name": "China Daily",
+          "url": "https://www.chinadaily.com.cn/a/202611/01/WS6ae6a510e4b06d4aa056648f.html"
+        },
+        {
+          "name": "Guardian",
+          "url": "https://www.theguardian.com/world/2026/nov/01/us-china-trade-war-trump-xi"
+        }
+      ]
+    }
+  ]
+}
